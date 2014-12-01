@@ -1,0 +1,118 @@
+.navbar-header h1.navbar-brand{
+	
+	color:#FFFFFF;
+	font-weight:bold;	
+	 font-size: 1.5em;
+	 -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+}
+
+.collapse .nav > li > a.head {
+	
+	color:#FFFFFF;
+	margin-top:10px;
+	font-weight:bold;
+	font-size: 1.2em;
+	 -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+}		
+.collapse .nav > li > a.head:hover , a.head:active {
+	 border-radius: 1em;
+    color: #990000;
+    background-color: #fed136;
+}
+@media(min-width:768px) {
+    .navbar .container-fluid {
+        background-color: #191919;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+        
+    }
+  } 
+  
+.carousel {
+  height: 600px;
+ 
+}
+
+
+.carousel .item {
+  height: 600px;
+  background-color: #777;
+}
+.carousel .carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 700px;
+}   
+ 
+
+.container .section-heading {
+	
+    margin-bottom: 65px;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+@media(min-width:768px) {
+   .container {
+        padding: 50px 0;
+    }
+}
+.popup .modal-dialog{
+	min-width:50%;
+}
+.container-fluid .contact{
+	text-transform: uppercase;
+	font-size:40px;
+	color: #FFFFFF;
+}
+.row .form-group {
+    margin-top: 30px;
+}
+
+.row .form-group input,
+.row .form-group textarea {
+    padding: 15px;
+}
+
+.row .form-group input.form-control {
+    height: auto;
+}
+
+.row .form-group textarea.form-control {
+    height: 214px;
+}
+.button .btn {
+	color: #FFFFFF;
+    background-color: #fed136;
+    margin-top:30px;
+    height:60px;
+    text-transform:uppercase;
+    font-weight:bold;
+    font-size:20px;
+   }
+.modal-body .btn{
+	margin-top:25px;
+	height:40px;
+    text-transform:uppercase;
+    font-weight:bold;
+    font-size:15px;
+}  
+
+.container .col-xs-12{
+	
+	height:550px;
+
+}
+.container .management {
+		margin-top:80px;
+}
+.img-thumbnail {
+	width:200px;
+	height:200px;
+}
