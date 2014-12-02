@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title> Contact Page </title>
+  <title>Contact Page</title>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <link rel="stylesheet" href="{{ url_for('static',filename='firstpage.css') }} ">
@@ -23,15 +23,14 @@
     <div class="container-fluid" >
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-
-        <h1 class="navbar-brand">STARTech</h1>
+        <h1 href="/" class="head navbar-brand">STARtech</h1>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li><a class="head" href="/">Home</a></li>
 
-          <li><a class="head" href="#" data-toggle="modal" data-target="#myModal2">Register/Login </a></li>
+          <li><a class="head" href="#" data-toggle="modal" data-target="#myModal2">Register/Login</a></li>
           <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog" style="min-width:800px;">
 
@@ -71,122 +70,117 @@
 
                         <a href = "/customerDashboard" ><button type="button" class="btn btn-primary" id="signUp" >Login</button></a>
                         <button type="reset"  class="btn btn-default">Cancel</button>
-
-
-
-                      </div></form> </div>
-
-
-                    </div>
-                  </div>
-
-                  <div class="modal-footer">
-
+                      </div>
+                    </form>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <li><a class="head" href="/about">About</a></li>
-            <li><a class="head" href="/contact">Contact us</a></li>
-
-
-          </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-      </div>
-      <!-- /.container -->
-    </nav>
-    <!-- Header closed -->  
-
-    <div class="container">
-      <div class="row">
-       <div class="col-xs-12">
-
-        <h2 class="management" align="center"><b>Management</b></h2><br>
-
-        <p><b>Visionary data scientists. Accomplished industry Veterans. Trusted advisors. Proven investors. OurCo is led by a world-class team that believes in data's potential to change the world. Our company is proud to be hacked by Intel Capital, Invetor Growth Capital (IGC), QuestMark PArtners, Goldman Sachs, TransLink capital and other strategic investors.
-        </b></p><br><br>
-
-
-        <div align="center">
-          <h2><b>Executive Team</b></h2>
-        </div><br>
-
-
-        <div class="row">
-
-         <div class="col-xs-2">
-          <a href="#" class="img-circle"  data-toggle="modal" data-target="#myModal">
-            <img src="{{ url_for('static', filename='images/ashwini.jpg') }}"  class="img-circle" style="height:200px;width:200px;">
-          </a>
-          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                  <img src="{{ url_for('static', filename='images/ashwini.jpg') }}"  class="img-circle" style="height:200px;width:200px;float:left;">
-                  <p style="font-size:20px;font-weight:bold;"> Ashwini Shekar</p>
-                  <p style="font-size:20px;font-weight:bold;">[Software Developer]</p>
-                  <img src="images/2.png"  style="width:20px;margin-left:5px;" >
-                </div>
-
-                <div class="modal-footer">
-                 <p style="float:left;font-weight:bold;"> Software Developer Description</p><br><br>
-                 <p> Responsible for providing technical expertise and recommendations in assessing new IT software projects and initiatives to support and enhance our existing systems.</p>
-               </div>
-             </div>
-           </div>
-         </div>
-       </div>
-       <div class="col-xs-2  col-xs-offset-1">
-        <a href="#" class="img-circle">
-          <img src="{{ url_for('static', filename='images/richa.jpg') }}" class="img-circle" data-toggle="modal" data-target="#myModal1" style="height:200px;width:200px;">
-        </a>
-        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <img src="{{ url_for('static', filename='images/richa.jpg') }}"  class="img-circle" style="height:200px;width:200px;float:left;">
-                <p style="font-size:20px;font-weight:bold;">Richa Singh</p>
-                <p style="font-size:20px;font-weight:bold;">[Software Developer]</p>
-                <img src="images/2.png"  style="width:20px;margin-left:5px;" >
               </div>
 
               <div class="modal-footer">
-               <p style="float:left;font-weight:bold;"> Software Developer Description</p><br><br>
-               <p>Plays a key role in the design, installation, testing and maintenance of software systems. She is responsible for writing and coding individual programs.</p>
 
-             </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <li><a class="head" href="/about">About</a></li>
+        <li><a class="head" href="/contact">Contact us</a></li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- Header closed -->  
+
+<div class="container">
+  <div class="row">
+   <div class="col-xs-12">
+
+    <h2 class="management" align="center"><b>Management</b></h2><br>
+
+    <p><b>Visionary data scientists. Accomplished industry Veterans. Trusted advisors. Proven investors. OurCo is led by a world-class team that believes in data's potential to change the world. Our company is proud to be hacked by Intel Capital, Invetor Growth Capital (IGC), QuestMark PArtners, Goldman Sachs, TransLink capital and other strategic investors.
+    </b></p><br><br>
+
+
+    <div align="center">
+      <h2><b>Executive Team</b></h2>
+    </div><br>
+
+
+    <div class="row">
+
+     <div class="col-xs-2">
+      <a href="#" class="img-circle"  data-toggle="modal" data-target="#myModal">
+        <img src="{{ url_for('static', filename='images/ashwini.jpg') }}"  class="img-circle" style="height:200px;width:200px;">
+      </a>
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <img src="{{ url_for('static', filename='images/ashwini.jpg') }}"  class="img-circle" style="height:200px;width:200px;float:left;">
+              <p style="font-size:20px;font-weight:bold;">Ashwini Shekar</p>
+              <p style="font-size:20px;font-weight:bold;">[Software Developer]</p>
+              <img src="{{ url_for('static', filename='images/2.png') }}"  style="width:20px;margin-left:5px;" >
+            </div>
+
+            <div class="modal-footer">
+             <p style="float:left;font-weight:bold;"> Software Developer Description</p><br><br>
+             <p> Responsible for providing technical expertise and recommendations in assessing new IT software projects and initiatives to support and enhance our existing systems.</p>
            </div>
          </div>
        </div>
      </div>
-     <div class="col-xs-2  col-xs-offset-1">
-      <a href="#" class="img-circle">
-       <img src="{{ url_for('static', filename='images/teju_pic.jpg') }}"  class="img-circle" data-toggle="modal" data-target="#myModal5"  style="height:200px;width:200px;">
-     </a>
-     <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   </div>
+   <div class="col-xs-2  col-xs-offset-1">
+    <a href="#" class="img-circle">
+      <img src="{{ url_for('static', filename='images/richa.jpg') }}" class="img-circle" data-toggle="modal" data-target="#myModal1" style="height:200px;width:200px;">
+    </a>
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <img src="{{ url_for('static', filename='images/teju_pic.jpg') }}"  class="img-circle" style="height:200px;width:200px;float:left;">
-            <p style="font-size:20px;font-weight:bold;">Tejasvi Bojja</p>
+            <img src="{{ url_for('static', filename='images/richa.jpg') }}"  class="img-circle" style="height:200px;width:200px;float:left;">
+            <p style="font-size:20px;font-weight:bold;">Richa Singh</p>
             <p style="font-size:20px;font-weight:bold;">[Software Developer]</p>
-            <img src="images/2.png"  style="width:20px;margin-left:5px;" >
+            <img src="{{ url_for('static', filename='images/2.png') }}"  style="width:20px;margin-left:5px;" >
           </div>
 
           <div class="modal-footer">
            <p style="float:left;font-weight:bold;"> Software Developer Description</p><br><br>
-           <p> Responsible for designing systems for consumer applications, such as those used in games, according to the BLS. Depending on client need, they may develop custom-made software for consumer applications or design databases for organizations.</p>
+           <p>Plays a key role in the design, installation, testing and maintenance of software systems. She is responsible for writing and coding individual programs.</p>
+
          </div>
        </div>
      </div>
    </div>
  </div>
  <div class="col-xs-2  col-xs-offset-1">
+  <a href="#" class="img-circle">
+   <img src="{{ url_for('static', filename='images/teju_pic.jpg') }}"  class="img-circle" data-toggle="modal" data-target="#myModal5"  style="height:200px;width:200px;">
+ </a>
+ <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <img src="{{ url_for('static', filename='images/teju_pic.jpg') }}"  class="img-circle" style="height:200px;width:200px;float:left;">
+        <p style="font-size:20px;font-weight:bold;">Tejasvi Bojja</p>
+        <p style="font-size:20px;font-weight:bold;">[Software Developer]</p>
+        <img src="{{ url_for('static', filename='images/2.png') }}"  style="width:20px;margin-left:5px;" >
+      </div>
+
+      <div class="modal-footer">
+       <p style="float:left;font-weight:bold;"> Software Developer Description</p><br><br>
+       <p> Responsible for designing systems for consumer applications, such as those used in games, according to the BLS. Depending on client need, they may develop custom-made software for consumer applications or design databases for organizations.</p>
+     </div>
+   </div>
+ </div>
+</div>
+</div>
+<div class="col-xs-2  col-xs-offset-1">
   <a href="#" class="img-circle">
     <img src="{{ url_for('static', filename='images/sneha.jpg') }}"   class="img-circle"  data-toggle="modal" data-target="#myModal3"  style="height:200px;width:200px;">
   </a>
@@ -198,7 +192,7 @@
           <img src="{{ url_for('static', filename='images/sneha.jpg') }}"  class="img-circle" style="height:200px;width:200px;float:left;">
           <p style="font-size:20px;font-weight:bold;">Sneha Kulkarni</p>
           <p style="font-size:20px;font-weight:bold;">[Software Developer]</p>
-          <img src="images/2.png"  style="width:20px;margin-left:5px;" >
+          <img src="{{ url_for('static', filename='images/2.png') }}"  style="width:20px;margin-left:5px;" >
         </div>
 
         <div class="modal-footer">
@@ -212,8 +206,6 @@
 </div>
 </div>
 </div></div></div>
-
-
 <br>
 
 <!--Footer starts--> 
@@ -256,14 +248,9 @@
 
   </form>
 
-
   <p style="text-align:center;margin-top:150px;color:#fed136;">Copy rights- STARtech inc 2014</p></div>
 </footer>
 <!-- Footer closed -->
-
-
-
-
 
 </body>    
 </html>
