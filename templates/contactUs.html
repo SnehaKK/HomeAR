@@ -1,271 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title> Contact Page </title>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title> Contact Page </title>
 
-     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-     <link rel="stylesheet" href="firstpage.css">
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-     
- </head>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static',filename='firstpage.css') }} ">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+</head>
 
 <body>
-  
-               
-    <!-- Header starts --> 
-	 <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid" >
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-               
-                <h1 class="navbar-brand">STARTech</h1>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-        <li><a class="head" href="/">Home</a></li>
-       
+
+
+  <!-- Header starts --> 
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid" >
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+
+        <h1 class="navbar-brand">STARTech</h1>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="head" href="/">Home</a></li>
+
           <li><a class="head" href="#" data-toggle="modal" data-target="#myModal2">Register/Login </a></li>
           <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog" style="min-width:800px;">
-  	
-  		
-    <div class="modal-content">
-       	<div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-      </div>
-       <div class="modal-body">
-       	
-        <div class="container">
-          <div class="row"> 
-             <form>
-          	  <div class="col-xs-3 ">
-          	  	<h1> Register</h1>
-          	  	
-          	  	Type
-          	  	<select class="form-control">
-                <option value="one">--Select a user type--</option>
-                 <option value="two">Retailer</option>
-                <option value="three">Customer</option>
-                </select>    
-                   <br>
-          	  	Username<input type="text" class="form-control" id="username" name="username" onchange="validFunction()" />
-          	  	<br>Email<input type="email" class="form-control" id="email" name="email" onchange="validFunction()" />
-          	  	<br>Password<input type="password" class="form-control" id="password" name="password" onchange="validFunction()" />
-          	  	<br>Re-Password<input type="password" class="form-control" id="re-password" name="re-password" onchange="validFunction()" />
-          	  	<a href = "#" ><button type="button" class="btn btn-primary" id="signUp" >Register</button></a>
-          	  	<button type="reset" class="btn btn-default">Clear</button>
-          	  	
-             </div>
-              <div class="col-xs-3 col-xs-offset-1">
-          	  	<h1> Login</h1>
-          	  	Username<input type="text" class="form-control" id="username" name="username" onchange="validFunction()" />
-          	  	
-          	  	<br>Password<input type="password" class="form-control" id="password" name="password" onchange="validFunction()" />
-          	  
-          	  	<a href = "#" ><button type="button" class="btn btn-primary" id="signUp" >Login</button></a>
-          	   <button type="reset"  class="btn btn-default">Cancel</button>
-          	    
-                 
-          	  	
-             </div></form> </div>
-                  
-         
-        </div>
-      </div>
-      
-      <div class="modal-footer">
-       
-      </div>
-    </div>
-  </div>
-</div>
-          
-          <li><a class="head" href="#">About</a></li>
-           <li><a class="head" href="#">Contact us</a></li>
-          
-        
-      </ul>
+            <div class="modal-dialog" style="min-width:800px;">
+
+
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body">
+
+                  <div class="container">
+                    <div class="row"> 
+                     <form>
+                       <div class="col-xs-3 ">
+                        <h1> Register</h1>
+
+                        Type
+                        <select class="form-control">
+                          <option value="one">--Select a user type--</option>
+                          <option value="two">Retailer</option>
+                          <option value="three">Customer</option>
+                        </select>    
+                        <br>
+                        Username<input type="text" class="form-control" id="username" name="username" onchange="validFunction()" />
+                        <br>Email<input type="email" class="form-control" id="email" name="email" onchange="validFunction()" />
+                        <br>Password<input type="password" class="form-control" id="password" name="password" onchange="validFunction()" />
+                        <br>Re-Password<input type="password" class="form-control" id="re-password" name="re-password" onchange="validFunction()" />
+                        <a href = "#" ><button type="button" class="btn btn-primary" id="signUp" >Register</button></a>
+                        <button type="reset" class="btn btn-default">Clear</button>
+
+                      </div>
+                      <div class="col-xs-3 col-xs-offset-1">
+                        <h1> Login</h1>
+                        Username<input type="text" class="form-control" id="username" name="username" onchange="validFunction()" />
+
+                        <br>Password<input type="password" class="form-control" id="password" name="password" onchange="validFunction()" />
+
+                        <a href = "/customerDashboard" ><button type="button" class="btn btn-primary" id="signUp" >Login</button></a>
+                        <button type="reset"  class="btn btn-default">Cancel</button>
+
+
+
+                      </div></form> </div>
+
+
+                    </div>
+                  </div>
+
+                  <div class="modal-footer">
+
+                  </div>
+                </div>
+              </div>
             </div>
-            <!-- /.navbar-collapse -->
+
+            <li><a class="head" href="/about">About</a></li>
+            <li><a class="head" href="/contact">Contact us</a></li>
+
+
+          </ul>
         </div>
-        <!-- /.container -->
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
     </nav>
     <!-- Header closed -->  
 
-<div class="container">
-<div class="row">
-	<div class="col-xs-12">
-		   
-    <h2 class="management" align="center"><b>Management</b></h2><br>
-    
-       <p><b>Visionary data scientists. Accomplished industry Veterans. Trusted advisors. Proven investors. OurCo is led by a world-class team that believes in data's potential to change the world. Our company is proud to be hacked by Intel Capital, Invetor Growth Capital (IGC), QuestMark PArtners, Goldman Sachs, TransLink capital and other strategic investors.
-       </b></p><br><br>
-    
-     
-<div align="center">
-<h2><b>Executive Team</b></h2>
-</div><br>
+    <div class="container">
+      <div class="row">
+       <div class="col-xs-12">
 
-   
+        <h2 class="management" align="center"><b>Management</b></h2><br>
+
+        <p><b>Visionary data scientists. Accomplished industry Veterans. Trusted advisors. Proven investors. OurCo is led by a world-class team that believes in data's potential to change the world. Our company is proud to be hacked by Intel Capital, Invetor Growth Capital (IGC), QuestMark PArtners, Goldman Sachs, TransLink capital and other strategic investors.
+        </b></p><br><br>
+
+
+        <div align="center">
+          <h2><b>Executive Team</b></h2>
+        </div><br>
+
+
         <div class="row">
-            
-            	    <div class="col-xs-2">
-                <a href="#" class="img-circle"  data-toggle="modal" data-target="#myModal">
-                    <img src="images/ashwini.jpg"  class="img-circle" style="height:200px;width:200px;">
-                </a>
-                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <img src="images/ashwini.jpg"  class="img-circle" style="height:200px;width:200px;float:left;">
-        <p style="font-size:20px;font-weight:bold;"> Ashwini Shekar</p>
-        <p style="font-size:20px;font-weight:bold;">[Software Developer]</p>
-        <img src="images/2.png"  style="width:20px;margin-left:5px;" >
-      </div>
-      
-      <div class="modal-footer">
-      	<p style="float:left;font-weight:bold;"> Software Developer Description</p><br><br>
-        <p> Responsible for providing technical expertise and recommendations in assessing new IT software projects and initiatives to support and enhance our existing systems.</p>
-      </div>
-    </div>
-  </div>
-</div>
-            </div>
-            <div class="col-xs-2  col-xs-offset-1">
-                <a href="#" class="img-circle">
-                    <img src="images/richa.jpg" class="img-circle" data-toggle="modal" data-target="#myModal1" style="height:200px;width:200px;">
-                </a>
-                 <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <img src="images/richa.jpg"  class="img-circle" style="height:200px;width:200px;float:left;">
-        <p style="font-size:20px;font-weight:bold;">Richa Singh</p>
-        <p style="font-size:20px;font-weight:bold;">[Software Developer]</p>
-        <img src="images/2.png"  style="width:20px;margin-left:5px;" >
-      </div>
-      
-      <div class="modal-footer">
-         <p style="float:left;font-weight:bold;"> Software Developer Description</p><br><br>
-        <p>Plays a key role in the design, installation, testing and maintenance of software systems. She is responsible for writing and coding individual programs.</p>
-         
-      </div>
-    </div>
-  </div>
-</div>
-            </div>
-            <div class="col-xs-2  col-xs-offset-1">
-                <a href="#" class="img-circle">
-                   <img src="images/teju_pic.jpg"  class="img-circle" data-toggle="modal" data-target="#myModal5"  style="height:200px;width:200px;">
-                </a>
-                   <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <img src="images/teju_pic.jpg"  class="img-circle" style="height:200px;width:200px;float:left;">
-        <p style="font-size:20px;font-weight:bold;">Tejasvi Bojja</p>
-        <p style="font-size:20px;font-weight:bold;">[Software Developer]</p>
-        <img src="images/2.png"  style="width:20px;margin-left:5px;" >
-      </div>
-      
-      <div class="modal-footer">
-       <p style="float:left;font-weight:bold;"> Software Developer Description</p><br><br>
-        <p> Responsible for designing systems for consumer applications, such as those used in games, according to the BLS. Depending on client need, they may develop custom-made software for consumer applications or design databases for organizations.</p>
-      </div>
-    </div>
-  </div>
-</div>
-            </div>
-            <div class="col-xs-2  col-xs-offset-1">
-                <a href="#" class="img-circle">
-                    <img src="images/sneha.jpg"   class="img-circle"  data-toggle="modal" data-target="#myModal3"  style="height:200px;width:200px;">
-                </a>
-                   <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <img src="images/sneha.jpg"  class="img-circle" style="height:200px;width:200px;float:left;">
-        <p style="font-size:20px;font-weight:bold;">Sneha Kulkarni</p>
-        <p style="font-size:20px;font-weight:bold;">[Software Developer]</p>
-        <img src="images/2.png"  style="width:20px;margin-left:5px;" >
-      </div>
-      
-      <div class="modal-footer">
-        <p style="float:left;font-weight:bold;"> Software Developer Description</p>
-        <br><br>
-        <p> Responsible for troubleshooting technical issues and identifying the modifications needed in existing applications to meet changing user requirements.</p>
-      </div>
-    </div>
-  </div>
-</div>
+
+         <div class="col-xs-2">
+          <a href="#" class="img-circle"  data-toggle="modal" data-target="#myModal">
+            <img src="{{ url_for('static', filename='images/ashwini.jpg') }}"  class="img-circle" style="height:200px;width:200px;">
+          </a>
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                  <img src="{{ url_for('static', filename='images/ashwini.jpg') }}"  class="img-circle" style="height:200px;width:200px;float:left;">
+                  <p style="font-size:20px;font-weight:bold;"> Ashwini Shekar</p>
+                  <p style="font-size:20px;font-weight:bold;">[Software Developer]</p>
+                  <img src="images/2.png"  style="width:20px;margin-left:5px;" >
+                </div>
+
+                <div class="modal-footer">
+                 <p style="float:left;font-weight:bold;"> Software Developer Description</p><br><br>
+                 <p> Responsible for providing technical expertise and recommendations in assessing new IT software projects and initiatives to support and enhance our existing systems.</p>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+       <div class="col-xs-2  col-xs-offset-1">
+        <a href="#" class="img-circle">
+          <img src="{{ url_for('static', filename='images/richa.jpg') }}" class="img-circle" data-toggle="modal" data-target="#myModal1" style="height:200px;width:200px;">
+        </a>
+        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <img src="{{ url_for('static', filename='images/richa.jpg') }}"  class="img-circle" style="height:200px;width:200px;float:left;">
+                <p style="font-size:20px;font-weight:bold;">Richa Singh</p>
+                <p style="font-size:20px;font-weight:bold;">[Software Developer]</p>
+                <img src="images/2.png"  style="width:20px;margin-left:5px;" >
               </div>
-            </div>
-     </div></div></div>
-     
-      
+
+              <div class="modal-footer">
+               <p style="float:left;font-weight:bold;"> Software Developer Description</p><br><br>
+               <p>Plays a key role in the design, installation, testing and maintenance of software systems. She is responsible for writing and coding individual programs.</p>
+
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     <div class="col-xs-2  col-xs-offset-1">
+      <a href="#" class="img-circle">
+       <img src="{{ url_for('static', filename='images/teju_pic.jpg') }}"  class="img-circle" data-toggle="modal" data-target="#myModal5"  style="height:200px;width:200px;">
+     </a>
+     <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <img src="{{ url_for('static', filename='images/teju_pic.jpg') }}"  class="img-circle" style="height:200px;width:200px;float:left;">
+            <p style="font-size:20px;font-weight:bold;">Tejasvi Bojja</p>
+            <p style="font-size:20px;font-weight:bold;">[Software Developer]</p>
+            <img src="images/2.png"  style="width:20px;margin-left:5px;" >
+          </div>
+
+          <div class="modal-footer">
+           <p style="float:left;font-weight:bold;"> Software Developer Description</p><br><br>
+           <p> Responsible for designing systems for consumer applications, such as those used in games, according to the BLS. Depending on client need, they may develop custom-made software for consumer applications or design databases for organizations.</p>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+ <div class="col-xs-2  col-xs-offset-1">
+  <a href="#" class="img-circle">
+    <img src="{{ url_for('static', filename='images/sneha.jpg') }}"   class="img-circle"  data-toggle="modal" data-target="#myModal3"  style="height:200px;width:200px;">
+  </a>
+  <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <img src="{{ url_for('static', filename='images/sneha.jpg') }}"  class="img-circle" style="height:200px;width:200px;float:left;">
+          <p style="font-size:20px;font-weight:bold;">Sneha Kulkarni</p>
+          <p style="font-size:20px;font-weight:bold;">[Software Developer]</p>
+          <img src="images/2.png"  style="width:20px;margin-left:5px;" >
+        </div>
+
+        <div class="modal-footer">
+          <p style="float:left;font-weight:bold;"> Software Developer Description</p>
+          <br><br>
+          <p> Sneha deployed the project on Cloud. She implemented the backend functionalities like login, registration and database connectivity using flask. She is also responsible for troubleshooting technical issues and identifying the modifications needed in existing applications to meet changing user requirements.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div></div></div>
+
+
 <br>
 
 <!--Footer starts--> 
 <footer>
 	<div class="container-fluid" style="background:black;">
 		
-		 <div class="col-xs-5 col-xs-offset-5">
-		 	<h4 class="contact"> CONTACT US </h4>
-		 </div>
-		 
-                    <form name="sentMessage" id="contactForm" >
-                        <div class="row">
-                            <div class="col-md-4 col-md-offset-2">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Your Name *" id="name1"> 
-                                    
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Your Email *" id="email1">
-                                  
-                                </div>
-                                <div class="form-group">
-                                    <input type="number" class="form-control" placeholder="Your Phone *" id="phone">
-                                   
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <textarea class="form-control" placeholder="Your Message *" id="message"></textarea>
-                                 
-                                </div>
-                            </div>
-                           </div>
-                            <div class="button">
-                            <div class="col-md-12 text-center">
-                             
-                                <button type="submit" class="btn btn-xl">Send Message</button>
-                            </div>
-                            </div>
-                        
-                    </form>
-               
-       
-       <p style="text-align:center;margin-top:150px;color:#fed136;">Copy rights- my corp, inc 2014</p></div>
+   <div class="col-xs-5 col-xs-offset-5">
+    <h4 class="contact"> CONTACT US </h4>
+  </div>
+
+  <form name="sentMessage" id="contactForm" >
+    <div class="row">
+      <div class="col-md-4 col-md-offset-2">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Your Name *" id="name1"> 
+
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" placeholder="Your Email *" id="email1">
+
+        </div>
+        <div class="form-group">
+          <input type="number" class="form-control" placeholder="Your Phone *" id="phone">
+
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <textarea class="form-control" placeholder="Your Message *" id="message"></textarea>
+
+        </div>
+      </div>
+    </div>
+    <div class="button">
+      <div class="col-md-12 text-center">
+
+        <button type="submit" class="btn btn-xl">Send Message</button>
+      </div>
+    </div>
+
+  </form>
+
+
+  <p style="text-align:center;margin-top:150px;color:#fed136;">Copy rights- STARtech inc 2014</p></div>
 </footer>
 <!-- Footer closed -->
 
 
 
-    
-    
-    </body>    
+
+
+</body>    
 </html>
 
-    
