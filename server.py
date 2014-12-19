@@ -107,7 +107,7 @@ def generate_file_data(filelist):
 def generate_graph():
 	if request.method == 'GET':
 		print request
-		return render_template('test.html', data = read_file('test.csv'), fileList = generate_file_data(get_list_of_files()))
+		return render_template('retailerDashboard.html', data = read_file('test.csv'), fileList = generate_file_data(get_list_of_files()))
 	# if request.method == 'POST':
 
 	return "Graph generated Successfully!"
@@ -116,7 +116,10 @@ def generate_graph():
 def get_graph():
 	if request.method == 'GET':
 		print request
-		return render_template('test.html', data = read_file('test.csv'), fileList = generate_file_data(get_list_of_files()))
+		return render_template('retailerDashboard.html', data = read_file('test.csv'), fileList = generate_file_data(get_list_of_files()))
+	if request.method == 'POST':
+		print request
+		return render_template('retailerDashboard.html', data = read_file('test.csv'), fileList = generate_file_data(get_list_of_files()))
 
 @app.route('/searchProduct',methods =['GET','POST'])
 def search_products():
@@ -176,11 +179,12 @@ def search():
 
 @app.route('/customerDashboard', methods =['GET','POST'])
 def dashboard():
-	return render_template('customerDashboard.html')#, status = "Search Successful!", item2 = listProd, itemlist = listProd)
+	return render_template('customerDashboard.html')
+	#, status = "Search Successful!", item2 = listProd, itemlist = listProd)
 
 @app.route('/retailerDashboard', methods =['GET','POST'])
 def retailer_dashboard():
-	return render_template('retailerDashboard.html')
+	return render_template('retailerDashboard.html', data = read_file('test.csv'), fileList = generate_file_data(get_list_of_files()))
 
 @app.route('/about')
 def about():

@@ -136,17 +136,11 @@ $(function() {
       </div>
       <div class="navbar-collapse collapse" id="navbar-main">
         <ul class="nav navbar-nav navbar-right">
-
-
           <li><a class="head" href="/">Home</a></li>
-
-          <li><a class="head" href="#" data-toggle="modal" data-target="#myModal2">Register/Login </a></li>
-          
+          <li><a class="head" href="#" data-toggle="modal" data-target="#myModal2">Register/Login </a></li>      
           <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="popup">
               <div class="modal-dialog">
-
-
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
@@ -157,47 +151,40 @@ $(function() {
                       <div class="container">
                        <form>
                         <div class="row"> 
-                         <div class="col-lg-3">
-                           <h3 class="register"> Register </h3>
-                           <div class="form-group">
-                            <select class="form-control">
-                              <option value="one">--Select a user type--</option>
-                              <option value="two" id="retailer">Retailer</option>
-                              <option value="three" id="customer">Customer</option>
-                            </select>   
-                          </div>
-                          <div class="form-group">
-                            Username<input type="text" class="form-control" placeholder="Your name" id="username">
-                          </div>
-                          <div class="form-group">
-                            Email<input type="email" class="form-control" placeholder="abc@example.com" id="useremail">
-                          </div>
-                          <div class="form-group">
-                           Password<input type="password" class="form-control" placeholder="Enter Password" id="pswd">
+                          <div class="col-lg-3">
+                            <h3 class="register"> Register</h3>
+                            <div class="form-group">
+                              <select class="form-control">
+                                <option value="one">--Select a user type--</option>
+                                <option value="two" id="retailer">Retailer</option>
+                                <option value="three" id="customer">Customer</option>
+                              </select>   
+                            </div>
 
-                         </div>
-                         <div class="form-group">
-                          Re-Password<input type="password" class="form-control" placeholder="Enter the same Password *" id="pswd1">
+                            <div class="form-group">Username<input type="text" class="form-control" placeholder="Your name" id="username">
+                            </div>
+                            <div class="form-group">Email<input type="email" class="form-control" placeholder="abc@example.com" id="useremail">
+                            </div>
+                            <div class="form-group">Password<input type="password" class="form-control" placeholder="Enter Password" id="pswd">
+                            </div>
+                            <div class="form-group">Re-Password<input type="password" class="form-control" placeholder="Enter the same Password *" id="pswd1">
+                            </div>
+                            <a href="/customerDashboard"><button type="button" class="btn btn-primary" id="signUp" >Register</button></a>
+                            <button type="reset" class="btn btn-default">Clear</button>
+                          </div>
 
+                          <div class="col-lg-3 col-lg-offset-1">
+                            <h4 class="login"> Login </h4>
+
+                            <div class="form-group">Username<input type="text" class="form-control" placeholder="Your name" id="username1">
+                            </div>
+                            <div class="form-group">Password<input type="password" class="form-control" placeholder="Enter Password" id="password1">
+                            </div>
+                            <a href = "/customerDashboard" ><button type="button" class="btn btn-primary" id="login" onclick="login();" >Login</button></a>
+                            <button type="reset"  class="btn btn-default">Cancel</button>
+                          </div>
                         </div>
-
-                        <a href="/customerDashboard"><button type="button" class="btn btn-primary" id="signUp" >Register</button></a>
-                        <button type="reset" class="btn btn-default">Clear</button>
-                      </div>                            
-                      <div class="col-lg-3 col-lg-offset-1">
-                       <h4 class="login"> Login </h4>
-
-                       <div class="form-group">
-                        Username<input type="text" class="form-control" placeholder="Your name" id="username1">
-                      </div>
-                      <div class="form-group">
-                        Password<input type="password" class="form-control" placeholder="Enter Password" id="password1">
-                      </div>
-                      <a href = "/customerDashboard" ><button type="button" class="btn btn-primary" id="login" onclick="login();" >Login</button></a>
-                      <button type="reset"  class="btn btn-default">Cancel</button>
-                    </div>
-                  </div>
-                </form>
+                      </form>
               </div>
             </section>
           </div>
@@ -207,27 +194,33 @@ $(function() {
       </div>
     </div>
   </div>
-
-
-  <li><a class="head" href="/about">About</a></li>
-  <li><a class="head" href="/contact">Contact us</a></li>
+<li role="presentation" class="dropdown head">
+    <a class="dropdown-toggle head" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+      Dashboards <span class="caret head"></span>
+    </a> 
+  <ul class="dropdown-menu head" role="menu">
+    <li><a class="head" href="/customerDashboard">Customer</a></li>
+    <li><a class="head" href="/retailerDashboard">Retailer</a></li>
+  </ul>
+</li>
+<li><a class="head" href="/contact">Contact us</a></li>
 </ul>
 </div>
 <!-- /.container -->
 </div>
 </div>
-    <!-- Header closed --> 
+<!-- Header closed --> 
 
     <div class="container-fluid" style="background:white;border:2px solid black;">
-      
+
       <div class="col-md-3">
-        
+
         <ul class="nav" id="side-menu">
 
           <li>
            <a class="bullets" href="#" data-tab="id1"><span class="glyphicon glyphicon-align-left glyphicon-dashboard"></span>  Dashboard</a>
          </li>
-         
+
          <li>
            <a class="bullets" href="#" data-tab="id2"><span class="glyphicon glyphicon-align-left glyphicon-shopping-cart"></span>  Retail Stores</a>
          </li>
@@ -268,13 +261,13 @@ $(function() {
             <div class="modal-footer">
              <button type="button" class="btn btn-primary">Logout</button>
              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-             
+
            </div>
          </div>
        </div>
      </div>
    </div>
-   
+
 		 	
 	<div class="col-md-9" id="id1" style="border: 0px solid green;height:700px;display:none;">
 			

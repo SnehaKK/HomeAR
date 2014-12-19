@@ -15,21 +15,80 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   
   <!-- Bootstrap Core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet">
 
   <!-- Custom CSS -->
-  <link href="css/simple-sidebar.css" rel="stylesheet">
-  
-  
-  <script>
+  <link href="{{ url_for('static',filename='css/simple-sidebar.css') }}" rel="stylesheet">
 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+  <!-- Immy Search Box -->
+  <link rel='stylesheet' type='text/css' href="{{ url_for('static',filename='css/immybox.css') }}">
+  <script src="{{ url_for('static',filename='js/jquery.immybox.min.js') }}"></script>
+   <!-- // <script type="text/javascript"> 
+  // $(function() {
+  //       // var fileListdata =  ;
+  //         // alert({{ fileList | safe }});
+  //         $('#input1').immybox({
+  //           choices: {{ fileList | safe}}
+  //         });
+  //       });
+  // </script> -->
+  <script type="text/javascript">
+  $(function () {
+
+    $('#input1').immybox({
+            choices: {{ fileList | safe}}
+          });
+
+    $('#container').highcharts({
+      chart: {
+        plotBackgroundColor: null,
+            plotBorderWidth: 1,//null,
+            plotShadow: false
+          },
+          title: {
+            text: 'Browser market shares at a specific website, 2014'
+          },
+          tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+          },
+          plotOptions: {
+            pie: {
+              allowPointSelect: true,
+              cursor: 'pointer',
+              dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                style: {
+                  color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                }
+              }
+            }
+          },
+          series: [{
+            type: 'pie',
+            name: 'Browser share',
+            data: {{ data |tojson| safe}}
+          }]
+        });
+  });
   </script>
 
   <style>
   
   .navbar .navbar-brand{
-   
+
    color:#FFFFFF;
    font-weight:bold;	
    font-size: 1.5em;
@@ -49,7 +108,7 @@
 
 
 .second .col-xs-9 .tiles .col-xs-3:hover {
-  
+
   margin-left: 50px;
   max-width:50%;
   -webkit-transform:scale(2);
@@ -135,17 +194,11 @@
       </div>
       <div class="navbar-collapse collapse" id="navbar-main">
         <ul class="nav navbar-nav navbar-right">
-
-
           <li><a class="head" href="/">Home</a></li>
-
-          <li><a class="head" href="#" data-toggle="modal" data-target="#myModal2">Register/Login </a></li>
-          
+          <li><a class="head" href="#" data-toggle="modal" data-target="#myModal2">Register/Login </a></li>      
           <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="popup">
               <div class="modal-dialog">
-
-
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
@@ -156,47 +209,40 @@
                       <div class="container">
                        <form>
                         <div class="row"> 
-                         <div class="col-lg-3">
-                           <h3 class="register"> Register </h3>
-                           <div class="form-group">
-                            <select class="form-control">
-                              <option value="one">--Select a user type--</option>
-                              <option value="two" id="retailer">Retailer</option>
-                              <option value="three" id="customer">Customer</option>
-                            </select>   
-                          </div>
-                          <div class="form-group">
-                            Username<input type="text" class="form-control" placeholder="Your name" id="username">
-                          </div>
-                          <div class="form-group">
-                            Email<input type="email" class="form-control" placeholder="abc@example.com" id="useremail">
-                          </div>
-                          <div class="form-group">
-                           Password<input type="password" class="form-control" placeholder="Enter Password" id="pswd">
+                          <div class="col-lg-3">
+                            <h3 class="register"> Register</h3>
+                            <div class="form-group">
+                              <select class="form-control">
+                                <option value="one">--Select a user type--</option>
+                                <option value="two" id="retailer">Retailer</option>
+                                <option value="three" id="customer">Customer</option>
+                              </select>   
+                            </div>
 
-                         </div>
-                         <div class="form-group">
-                          Re-Password<input type="password" class="form-control" placeholder="Enter the same Password *" id="pswd1">
+                            <div class="form-group">Username<input type="text" class="form-control" placeholder="Your name" id="username">
+                            </div>
+                            <div class="form-group">Email<input type="email" class="form-control" placeholder="abc@example.com" id="useremail">
+                            </div>
+                            <div class="form-group">Password<input type="password" class="form-control" placeholder="Enter Password" id="pswd">
+                            </div>
+                            <div class="form-group">Re-Password<input type="password" class="form-control" placeholder="Enter the same Password *" id="pswd1">
+                            </div>
+                            <a href="/customerDashboard"><button type="button" class="btn btn-primary" id="signUp" >Register</button></a>
+                            <button type="reset" class="btn btn-default">Clear</button>
+                          </div>
 
+                          <div class="col-lg-3 col-lg-offset-1">
+                            <h4 class="login"> Login </h4>
+
+                            <div class="form-group">Username<input type="text" class="form-control" placeholder="Your name" id="username1">
+                            </div>
+                            <div class="form-group">Password<input type="password" class="form-control" placeholder="Enter Password" id="password1">
+                            </div>
+                            <a href = "/customerDashboard" ><button type="button" class="btn btn-primary" id="login" onclick="login();" >Login</button></a>
+                            <button type="reset"  class="btn btn-default">Cancel</button>
+                          </div>
                         </div>
-
-                        <a href="/customerDashboard"><button type="button" class="btn btn-primary" id="signUp" >Register</button></a>
-                        <button type="reset" class="btn btn-default">Clear</button>
-                      </div>                            
-                      <div class="col-lg-3 col-lg-offset-1">
-                       <h4 class="login"> Login </h4>
-
-                       <div class="form-group">
-                        Username<input type="text" class="form-control" placeholder="Your name" id="username1">
-                      </div>
-                      <div class="form-group">
-                        Password<input type="password" class="form-control" placeholder="Enter Password" id="password1">
-                      </div>
-                      <a href = "/customerDashboard" ><button type="button" class="btn btn-primary" id="login" onclick="login();" >Login</button></a>
-                      <button type="reset"  class="btn btn-default">Cancel</button>
-                    </div>
-                  </div>
-                </form>
+                      </form>
               </div>
             </section>
           </div>
@@ -207,9 +253,16 @@
     </div>
   </div>
 
-
-  <li><a class="head" href="/about">About</a></li>
-  <li><a class="head" href="/contact">Contact us</a></li>
+<li role="presentation" class="dropdown head">
+    <a class="dropdown-toggle head" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+      Dashboards <span class="caret head"></span>
+    </a> 
+  <ul class="dropdown-menu head" role="menu">
+    <li><a class="head" href="/customerDashboard">Customer</a></li>
+    <li><a class="head" href="/retailerDashboard">Retailer</a></li>
+  </ul>
+</li>
+<li><a class="head" href="/contact">Contact us</a></li>
 </ul>
 </div>
 <!-- /.container -->
@@ -236,8 +289,8 @@
      <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
        <div class="popup">
         <div class="modal-dialog" >
-         
-          
+
+
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -246,7 +299,7 @@
               <section id="window">
                 <div class="container">
                   <div class="row"> 
-                   
+
                    <div class="col-xs-3 ">
                     <h1> Product Details</h1>
                     <label>Name</label><input type="text" class="form-control" placeholder="Enter the name of the product" />
@@ -259,7 +312,7 @@
               </div>
               
               <div class="modal-footer">
-               
+
               </div>
             </div>
           </div>
@@ -319,9 +372,23 @@
   <img class="col-xs-12 col-xs-offset-3" src="images/feedbackCustomers.jpg" style="height:50%;width:50%;">
 </div>
 
-<div class="col-xs-9" id="id1" style="border:0px solid black;border:2px solid black;">
+<div class="col-xs-9" id="id1" style="border:0px solid black;border:0px solid black;">
   <p class="col-xs-9" style="margin-top:10px;font-size:30px;font-weight:bold;">Hello Retailers!!</p>
+  <div class="row">
+    <form id="generateGraph" action="/generategraph" method="get" class="navbar-form navbar-left" role="search" accept-charset="utf-8">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search" id="input1" name="input1">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
 
+    <br><br>
+    <hr>
+    <!-- Highchart goes here -->
+    <div class="row">
+      <div class="" id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+    </div>
+  </div>
 
 </div>
 
@@ -485,7 +552,7 @@
     </div>
     <div class="button">
       <div class="col-md-12 text-center">
-       
+
         <button type="submit" class="btn btn-xl">Send Message</button>
       </div>
     </div>
