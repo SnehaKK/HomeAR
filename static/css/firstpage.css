@@ -63,9 +63,7 @@
         padding: 50px 0;
     }
 }
-.popup .modal-dialog{
-	min-width:50%;
-}
+
 .container-fluid .contact{
 	text-transform: uppercase;
 	font-size:40px;

@@ -1,0 +1,17 @@
+{
+  "name": "immybox",
+  "version": "0.2.4",
+  "private": false,
+  "license": "MIT",
+  "homepage": "https://github.com/immense/immybox",
+  "_release": "0.2.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.2.4",
+    "commit": "b3021b130c7d6326657dbb5f4af38792ba0e46c2"
+  },
+  "_source": "git://github.com/immense/immybox.git",
+  "_target": "~0.2.4",
+  "_originalSource": "immybox",
+  "_direct": true
+}

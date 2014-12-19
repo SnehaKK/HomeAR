@@ -1,252 +1,464 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="ISO-8859-1">
-  <title>Insert title here</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
 
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="{{ url_for('static',filename='firstpage.css') }} ">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/firstpage.css') }} ">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    
+ <!-- Bootstrap Core CSS -->
+ <link href="css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Bootstrap Core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+<style>
+.navbar .navbar-brand{
+	
+	color:#FFFFFF;
+	font-weight:bold;	
+	 font-size: 1.5em;
+	 -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+}
+.col-md-3 .nav a.bullets{
+border: 1px solid grey;
+}
 
-  <!-- Custom CSS -->
-  <link href="css/simple-sidebar.css" rel="stylesheet">
+.col-md-3 .nav a.bullets{
+display:block;
+border-color: 0px solid black;
+font-size:18px;
+box-sizing:border-box;
+padding: 20px;
+}
 
+.col-md-3 .nav a.subLists{
+display:block;
+border: 1px solid gray;
+font-size:18px;
+box-sizing:border-box;
+padding: 20px;
+}
 
-  <style>
+.lists{
+border: 0px solid black;
+}
 
-  .col-xs-3 .nav li{
-    display:block;
-    border-bottom:0px solid black;
-    box-sizing:border-box;
-  }
+.col-md-3 .nav{
+	
+	margin-top:60px;
+	border:0px solid red;
+}
 
-  .col-xs-3 ul.nav a.bullets{
-    border: 1px solid grey;
-  }
+</style>
+<script>
+$(function() {
+  document.getElementById("product_frame1").src = "{{ url_for('static', filename='images/walmart1.jpg') }}";
+      document.getElementById("product_frame2").src = "{{ url_for('static', filename='images/walmart2.jpg') }}";
+      document.getElementById("product_frame3").src = "{{ url_for('static', filename='images/walmart3.jpg') }}";
+      document.getElementById("product_frame11").src = "{{ url_for('static', filename='images/ikea1.jpg') }}";
+      document.getElementById("product_frame21").src = "{{ url_for('static', filename='images/ikea2.jpg') }}";
+      document.getElementById("product_frame31").src = "{{ url_for('static', filename='images/ikea3.jpg') }}";
 
-  .col-xs-3 .nav{
-    padding-top:100px;
-    padding-bottom:150px;
-    border: 0px solid black;
-  }
+});
+	function displayPage(id)
+	 {
+		
+		 if (id == 1) 
+		 {
+			 
+			document.getElementById("product_frame1").src = "{{ url_for('static', filename='images/walmart1.jpg') }}";
+			document.getElementById("product_frame2").src = "{{ url_for('static', filename='images/walmart2.jpg') }}";
+			document.getElementById("product_frame3").src = "{{ url_for('static', filename='images/walmart3.jpg') }}";
+			 
+		 } else  if (id == 2) 
+		 {
+			document.getElementById("product_frame1").src = "{{ url_for('static', filename='images/walmart2.jpg') }}";
+			document.getElementById("product_frame2").src = "{{ url_for('static', filename='images/walmart3.jpg') }}";
+			document.getElementById("product_frame3").src = "{{ url_for('static', filename='images/walmart1.jpg') }}";
+		 }
+		
+		else  if (id == 3) 
+		 {
+			document.getElementById("product_frame1").src = "{{ url_for('static', filename='images/walmart3.jpg') }}";
+			document.getElementById("product_frame2").src = "{{ url_for('static', filename='images/walmart1.jpg') }}";
+			document.getElementById("product_frame3").src = "{{ url_for('static', filename='images/walmart2.jpg') }}";
+		 }	
+		 
+	
+	 }
+	 
+	 function displayPage1(id)
+	 {
+		
+		 if (id == 1) 
+		 {
+			 
+			document.getElementById("product_frame11").src = "{{ url_for('static', filename='images/ikea1.jpg') }}";
+			document.getElementById("product_frame21").src = "{{ url_for('static', filename='images/ikea2.jpg') }}";
+			document.getElementById("product_frame31").src = "{{ url_for('static', filename='images/ikea3.jpg') }}";
+			 
+		 } else  if (id == 2) 
+		 {
+			document.getElementById("product_frame11").src = "{{ url_for('static', filename='images/ikea2.jpg') }}";
+			document.getElementById("product_frame21").src = "{{ url_for('static', filename='images/ikea3.jpg') }}";
+			document.getElementById("product_frame31").src = "{{ url_for('static', filename='images/ikea1.jpg') }}";
+		 }
+		
+		else  if (id == 3) 
+		 {
+			document.getElementById("product_frame11").src = "{{ url_for('static', filename='images/ikea3.jpg') }}";
+			document.getElementById("product_frame21").src = "{{ url_for('static', filename='images/ikea1.jpg') }}";
+			document.getElementById("product_frame31").src = "{{ url_for('static', filename='images/ikea2.jpg') }}";
+		 }
+	 }
+	 </script>
 
-  .nav a.bullets{
-    display:block;
-    border-color: 0px solid black;
-    font-size:18px;
-    box-sizing:border-box;
-    padding: 20px;
-  }
-
-  .nav a.subLists{
-    display:block;
-    border: 1px solid grey;
-    font-size:18px;
-    box-sizing:border-box;
-    padding: 20px;
-  }
-
-  .lists{
-    border: 0px solid black;
-  }
-
-
-  .second .col-xs-3{
-    border: 0px solid blue;
-    background-color:white;
-  }
-
-  .second .col-xs-9{
-    border: 0px solid red;
-    padding-top:100px;
-    padding-bottom:240px;
-    background-color:white;
-  }
-
-
-
-  </style>
-
-</head>
 <body>
 
-  <!-- Header starts --> 
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid" >
-      <!-- Brand and toggle get grouped for better mobile display -->
+<!-- Header starts --> 
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
       <div class="navbar-header">
-        <h1 href="/" class="head navbar-brand">STARtech </h1>
+        <a href="/" class="navbar-brand">STARTech</a>
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
       </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse">
+      <div class="navbar-collapse collapse" id="navbar-main">
         <ul class="nav navbar-nav navbar-right">
+
+
           <li><a class="head" href="/">Home</a></li>
 
           <li><a class="head" href="#" data-toggle="modal" data-target="#myModal2">Register/Login </a></li>
+          
           <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="popup">
-              <div class="modal-dialog" >
+              <div class="modal-dialog">
 
 
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                    </button>
                   </div>
                   <div class="modal-body">
-
-                    <div class="container">
-                      <div class="row"> 
-                        <form>
-                          <div class="col-xs-3 ">
-                            <h1> Register</h1>
-
-                            Type
+                    <section id="window">
+                      <div class="container">
+                       <form>
+                        <div class="row"> 
+                         <div class="col-lg-3">
+                           <h3 class="register"> Register </h3>
+                           <div class="form-group">
                             <select class="form-control">
                               <option value="one">--Select a user type--</option>
-                              <option value="two">Retailer</option>
-                              <option value="three">Customer</option>
-                            </select>    
-                            <br>
-                            Username<input type="text" class="form-control" id="username" name="username" onchange="validFunction()" />
-                            <br>Email<input type="email" class="form-control" id="email" name="email" onchange="validFunction()" />
-                            <br>Password<input type="password" class="form-control" id="password" name="password" onchange="validFunction()" />
-                            <br>Re-Password<input type="password" class="form-control" id="re-password" name="re-password" onchange="validFunction()" />
-                            <a href = "#" ><button type="button" class="btn btn-primary" id="signUp" >Register</button></a>
-                            <button type="reset" class="btn btn-default">Clear</button>
-
+                              <option value="two" id="retailer">Retailer</option>
+                              <option value="three" id="customer">Customer</option>
+                            </select>   
                           </div>
-                          <div class="col-xs-3 col-xs-offset-1">
-                            <h1> Login</h1>
-                            Username<input type="text" class="form-control" id="username" name="username" onchange="validFunction()" />
-
-                            <br>Password<input type="password" class="form-control" id="password" name="password" onchange="validFunction()" />
-
-                            <a href = "#" ><button type="button" class="btn btn-primary" id="signUp" >Login</button></a>
-                            <button type="reset"  class="btn btn-default">Cancel</button>
+                          <div class="form-group">
+                            Username<input type="text" class="form-control" placeholder="Your name" id="username">
                           </div>
-                        </form>
-                      </div>   
+                          <div class="form-group">
+                            Email<input type="email" class="form-control" placeholder="abc@example.com" id="useremail">
+                          </div>
+                          <div class="form-group">
+                           Password<input type="password" class="form-control" placeholder="Enter Password" id="pswd">
+
+                         </div>
+                         <div class="form-group">
+                          Re-Password<input type="password" class="form-control" placeholder="Enter the same Password *" id="pswd1">
+
+                        </div>
+
+                        <a href="/customerDashboard"><button type="button" class="btn btn-primary" id="signUp" >Register</button></a>
+                        <button type="reset" class="btn btn-default">Clear</button>
+                      </div>                            
+                      <div class="col-lg-3 col-lg-offset-1">
+                       <h4 class="login"> Login </h4>
+
+                       <div class="form-group">
+                        Username<input type="text" class="form-control" placeholder="Your name" id="username1">
+                      </div>
+                      <div class="form-group">
+                        Password<input type="password" class="form-control" placeholder="Enter Password" id="password1">
+                      </div>
+                      <a href = "/customerDashboard" ><button type="button" class="btn btn-primary" id="login" onclick="login();" >Login</button></a>
+                      <button type="reset"  class="btn btn-default">Cancel</button>
                     </div>
                   </div>
-
-                  <div class="modal-footer">
-
-                  </div>
-                </div>
+                </form>
               </div>
-            </div>
+            </section>
           </div>
-
-          <li><a class="head" href="#">About</a></li>
-          <li><a class="head" href="/contact">Contact us</a></li>
-
-
-        </ul>
+          <div class="modal-footer">
+          </div>
+        </div>
       </div>
-      <!-- /.navbar-collapse -->
     </div>
-    <!-- /.container -->
-  </nav>
-  <!-- Header closed --> 
-
-
-  <div class="second">
-    <!--Sidebar-->
-    <div class="col-xs-3">
-      <ul class="nav">
-        <li>
-          <a class="bullets" href="#"><span class="glyphicon glyphicon-align-left glyphicon-dashboard"></span>  Dashboard</a>
-        </li>
-
-        <li>
-          <a class="bullets" href="#"><span class="glyphicon glyphicon-align-left glyphicon-shopping-cart"></span>  Retail Stores</a>
-        </li>
-
-        <li>
-          <a class="bullets" href="#" data-toggle="collapse" data-target="#demo"><span class="glyphicon glyphicon-user" ></span>  Profile <span class="glyphicon glyphicon-chevron-down"></span></a>
-        </li>
-
-        <ul id="demo" class="collapse">
-          <li>
-            <a class="subLists" href="#"><span class="glyphicon glyphicon-align-left glyphicon-edit"></span>  Edit Profile</a>
-          </li>
-          <li>
-            <a class="subLists" href="#"><span class="glyphicon glyphicon-align-left glyphicon-eye-open"></span>  View Profile</a>
-          </li>
-        </ul>
-      </ul>
-    </div>
-
-    <!-- Sidebar Ends -->
-
-    <!-- Content Section -->
-    <div class="col-xs-9">
-      <ul class="breadcrumb">
-        <li><b>WALLMART</b></li>
-      </ul>
-
-      <ul class="breadcrumb">
-        <li><b>COSTCO</b></li>
-      </ul>
-    </div>
-
-    <!-- Content Section Ends -->
   </div>
 
-  <!--Footer starts--> 
-  <footer>
-    <div class="container-fluid" style="background:black;">
 
-      <div class="col-xs-5 col-xs-offset-5">
-        <h4 class="contact"> CONTACT US </h4>
-      </div>
+  <li><a class="head" href="/about">About</a></li>
+  <li><a class="head" href="/contact">Contact us</a></li>
+</ul>
+</div>
+<!-- /.container -->
+</div>
+</div>
+    <!-- Header closed --> 
 
-      <form name="sentMessage" id="contactForm" >
-        <div class="row">
-          <div class="col-md-4 col-md-offset-2">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Your Name *" id="name1"> 
+    <div class="container-fluid" style="background:white;border:2px solid black;">
+      
+      <div class="col-md-3">
+        
+        <ul class="nav" id="side-menu">
 
+          <li>
+           <a class="bullets" href="#" data-tab="id1"><span class="glyphicon glyphicon-align-left glyphicon-dashboard"></span>  Dashboard</a>
+         </li>
+         
+         <li>
+           <a class="bullets" href="#" data-tab="id2"><span class="glyphicon glyphicon-align-left glyphicon-shopping-cart"></span>  Retail Stores</a>
+         </li>
+         <li>
+           <a class="bullets" href="/search" data-toggle="collapse" data-target="#demo"><span class="glyphicon glyphicon-user" ></span>  Search Products <span class="glyphicon"></span></a>
+         </li>
+         <li>
+           <a class="bullets" href="#" data-tab="id2"><span class="glyphicon glyphicon-upload"></span>Upload Floor Maps</a>
+         </li>
+         <li>
+           <a class="bullets" href="#" data-toggle="collapse" data-target="#demo"><span class="glyphicon glyphicon-user" ></span>  Profile <span class="glyphicon glyphicon-chevron-down"></span></a>
+         </li>
+         <li>	
+           <ul id="demo" class="collapse">
+             <li>
+               <a class="subLists" href="#"><span class="glyphicon glyphicon-align-left glyphicon-edit"></span>  Edit Profile</a>
+             </li>
+             <li>
+               <a class="subLists" href="#"><span class="glyphicon glyphicon-align-left glyphicon-eye-open"></span>  View Profile</a>
+             </li>
+             <li>
+               <a class="subLists" href="/" data-toggle="modal"
+               data-target="#basicModal"><span class="glyphicon glyphicon-align-left glyphicon-log-out"></span>  Logout</a>
+             </li>
+           </ul>
+         </li>
+       </ul>
+       <div class="modal fade" id="basicModal" tabindex="-1">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span>&times;</span><span class="sr-only">Close</span></button>
+              <h3 class="modal-title" id="myModalLabel" style="color:green;font-weight:bold;"> LOGOUT USER</h3>
             </div>
-            <div class="form-group">
-              <input type="email" class="form-control" placeholder="Your Email *" id="email1">
-
+            <div class="modal-body">
+              <h4>Are you sure you want to logout?</h4>
             </div>
-            <div class="form-group">
-              <input type="number" class="form-control" placeholder="Your Phone *" id="phone">
+            <div class="modal-footer">
+             <button type="button" class="btn btn-primary">Logout</button>
+             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+             
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+   
+		 	
+	<div class="col-md-9" id="id1" style="border: 0px solid green;height:700px;display:none;">
+			
+<p class="col-xs-12" style="margin-top:80px;font-size:30px;font-weight:bold;">Hello Customers!!</p>
+<p class="col-xs-12 col-xs-offset-1" style="margin-top:10px;font-size:20px;color:blue;font-weight:bold;">Ready to enjoy our product tour??</p>
+<p class="col-xs-12 col-xs-offset-1" style="margin-top:10px;font-size:15px;color:purple;font-weight:bold;">Here you go.....Check out the Retail Stores and give your opinion!! :)</p>
+<img class="col-xs-12 col-xs-offset-3" src="{{ url_for('static', filename='feedbackCustomers.jpg') }}" style="height:50%;width:50%;">
+</div> 
+			
+<div class="col-md-9" id="id2" style="border: 0px solid green;height:800px;">
+<div class="col-md-12">	
+<ul class="breadcrumb" style="margin-top:60px;border:0px solid black;">
+<li><b>WALMART</b></li>
+</ul>
+</div>
+<div class="col-md-12" style="border:0px solid red;height:270px;">
+	<div class="col-xs-3 col-xs-offset-1" style="border:0px solid black;">
+	
+           <img id="product_frame1" src="about:blank"  width="75%" height="75%" ></div>
+           <div class="col-xs-3 col-xs-offset-1" style="border:0px solid black;">
+	
+           <img id="product_frame2" src="about:blank"  width="75%" height="75%" > </div>
+           <div class="col-xs-3 col-xs-offset-1" style="border:0px solid black;">
+	
+           <img id="product_frame3" src="about:blank"   width="75%" height="75%" >
+                            
+</div>
+<div class="col-xs-6 col-xs-offset-5">
+	<ul class="pagination">
+  <li><a class="cancel-action">&laquo;</a></li>
+  <li><a href="#" onclick="return displayPage(1)" >1</a></li>
+  <li><a href="#" onclick="return displayPage(2)">2</a></li>
+  <li><a href="#" onclick="return displayPage(3)">3</a></li>
+  <li><a href="#">&raquo;</a></li>
+</ul>
+</div>
+</div>
+<div class="col-md-12">
+<ul class="breadcrumb" style="margin-top:10px;border:0px solid black;">
+<li><b>IKEA</b></li>
+</ul>
+</div>
+<div class="col-md-12" style="border:0px solid red;height:270px;">
+	<div class="col-xs-3 col-xs-offset-1" style="border:0px solid black;">
+		  <img id="product_frame11" src="about:blank"  width="75%" height="75%" ></div>
+           <div class="col-xs-3 col-xs-offset-1" style="border:0px solid black;">
+	
+           <img id="product_frame21" src="about:blank"  width="75%" height="75%" > </div>
+           <div class="col-xs-3 col-xs-offset-1" style="border:0px solid black;">
+	
+           <img id="product_frame31" src="about:blank"   width="75%" height="75%" >
+      </div> 
+      <div class="col-xs-6 col-xs-offset-5">
+	<ul class="pagination">
+		 <li><a class="cancel-action">&laquo;</a></li>
+  <li><a href="#" onclick="return displayPage1(1)" >1</a></li>
+  <li><a href="#" onclick="return displayPage1(2)">2</a></li>
+  <li><a href="#" onclick="return displayPage1(3)">3</a></li>
+  <li><a href="#">&raquo;</a></li>
+</ul> 
+</div>
+</div>   
+	</div>			
+		
+<div class="col-md-9" id="id3" style="border: 0px solid green;height:700px;display:none;">
+			
+<p class="col-xs-12 text-center" style="margin-top:80px;font-size:30px;font-weight:bold;">EDIT PROFILE</p>
+<form name="sentMessage" id="contactForm"  style="display:none;">
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset-4">
+                                <div class="form-group">Username
+                                    <input type="text" class="form-control"  id="name1"> 
+                                    
+                                </div>
+                                <div class="form-group">Email
+                                    <input type="email" class="form-control" id="email1">
+                                  
+                                </div>
+                                <div class="form-group">Password
+                                    <input type="password" class="form-control" id="pswd1">
+                                  
+                                </div>
+                                <div class="form-group">Re-Password
+                                    <input type="password" class="form-control" id="repswd1">
+                                  
+                                </div>
+                                
+                            </div>
+                           
+                           </div>
+                            <div class="button">
+                            <div class="col-md-12 text-center">
+                            	<a href = "#" ><button type="submit" class="btn btn-primary" id="saveEdited" >Save Changes</button></a>
+                             
+                                <button type="reset" class="btn btn-default" style="">Cancel</button>
+                            </div>
+                            </div>
+                        
+                    </form>
+     </div> 
+     <div class="col-md-9" id="id4" style="border: 0px solid green;height:700px;display:none;">
+			
+<p class="col-xs-12 text-center" style="margin-top:80px;font-size:30px;font-weight:bold;">VIEW PROFILE</p>
+<form name="sentMessage" id="contactForm1"  style="display:none;">
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset-4">
+                            	<div class="form-group">Type
+                                    <input type="text" class="form-control" id="type1">
+                                  
+                                </div>
+                                <div class="form-group">Username
+                                    <input type="text" class="form-control"  id="name2"> 
+                                    
+                                </div>
+                                <div class="form-group">Email
+                                    <input type="email" class="form-control" id="email2">
+                                  
+                                </div>
+                                                                
+                            </div>
+                           
+                           </div>
+                            <div class="button">
+                            <div class="col-md-12 text-center">
+                            	<a href = "#" ><button type="submit" class="btn btn-primary" >CLOSE</button></a>
+                             
+                             </div>
+                            </div>
+                        
+                    </form>
+     </div> 
+	
+	
+		</div>
 
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="form-group">
-              <textarea class="form-control" placeholder="Your Message *" id="message"></textarea>
 
-            </div>
-          </div>
-        </div>
-        <div class="button">
-          <div class="col-md-12 text-center">
-
-            <button type="submit" class="btn btn-xl">Send Message</button>
-          </div>
-        </div>
-
-      </form>
-
-      <p style="text-align:center;margin-top:150px;color:#fed136;">Copy rights- STARtech inc 2014</p>
-    </div>
-  </footer>
-  <!-- Footer closed -->
+<!--Footer starts--> 
+<footer>
+	<div class="container-fluid" style="background:black;">
+		
+		 <div class="col-lg-12 text-center">
+		 	<h4 class="contact"> CONTACT US </h4>
+		 </div>
+		 
+                    <form name="sentMessage" id="contactForm2" >
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset-2">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your Name *" id="name3"> 
+                                    
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Your Email *" id="email3">
+                                  
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" class="form-control" placeholder="Your Phone *" id="phone">
+                                   
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Your Message *" id="message"></textarea>
+                                 
+                                </div>
+                            </div>
+                           </div>
+                            <div class="button">
+                            <div class="col-md-12 text-center">
+                             
+                                <button type="submit" class="btn btn-xl">Send Message</button>
+                            </div>
+                            </div>
+                        
+                    </form>
+               
+       
+       <p style="text-align:center;margin-top:150px;color:#fed136;">Copy rights- STARtech inc 2014</p>
+       
+</footer>
+<!-- Footer closed -->
 
 
 </body>
 </html>
+ 
+ 

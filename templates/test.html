@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Test high charts</title>
+	
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Immy Search Box -->
+    <link rel='stylesheet' type='text/css' href="{{ url_for('static',filename='css/immybox.css') }}">
+    <script src="{{ url_for('static',filename='js/jquery.immybox.min.js') }}"></script>
+    <script type="text/javascript">
+    $(function() {
+        // var fileListdata =  ;
+          alert({{ fileList | safe }});
+          $('#input1').immybox({
+            choices: {{ fileList | safe}}
+        });
+    });
+    </script>
+</head>
+<body>
+	<p>This is to test high charts!! File Uploaded Successfully! </p>
+    <hr>
+    <form id="generateGraph" action="/generategraph" method="get" class="navbar-form navbar-left" role="search" accept-charset="utf-8">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search" id="input1" name="input1">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+
+    <br><br>
+    <hr>
+    <!-- Highchart goes here -->
+    <div class="row">
+        <div class="" id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+    </div>
+</body>
+<script type="text/javascript">
+$(function () {
+	
+	$('#container').highcharts({
+		chart: {
+			plotBackgroundColor: null,
+            plotBorderWidth: 1,//null,
+            plotShadow: false
+        },
+        title: {
+        	text: 'Browser market shares at a specific website, 2014'
+        },
+        tooltip: {
+        	pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+        	pie: {
+        		allowPointSelect: true,
+        		cursor: 'pointer',
+        		dataLabels: {
+        			enabled: true,
+        			format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+        			style: {
+        				color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+        			}
+        		}
+        	}
+        },
+        series: [{
+        	type: 'pie',
+        	name: 'Browser share',
+        	data: {{ data |tojson| safe}}
+        }]
+    });
+});
+</script>
+</html>

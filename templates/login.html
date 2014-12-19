@@ -1,0 +1,79 @@
+<!doctype html> 
+<html>
+<head> 
+ <meta charset="utf-8"> 
+ <title>User Login Web page</title>
+</head>
+
+<script src="https://www.modernizr.com/downloads/modernizr-latest.js"></script>
+
+<script type="text/javascript">
+
+   //function to store user name and password
+   function store() {
+   	
+
+    alert("your browser  supports local storage");
+    var inputUsername = document.getElementById("username");
+    var inputPassword = document.getElementById("password");
+
+    
+
+    localStorage.setItem("username", inputUsername.value);
+    localStorage.setItem("password", inputPassword.value);
+    document.getElementById('welcomeMessage').innerHTML = "Welcome " + localStorage.getItem('username') + "!";
+    window.open("http://localhost:8080/Project_297/logout.html");
+    alert(document.getElementById('welcomeMessage').innerHTML);
+  }
+//function to sign in
+function login() {
+
+  var inputUsername = document.getElementById("username1");
+  var inputPassword = document.getElementById("password1");
+
+  var username = inputUsername.value;
+  var password = inputPassword.value;
+  if ((username == localStorage.getItem('username')) && (password == localStorage.getItem('password'))) {
+   document.getElementById('welcomeMessage1').innerHTML = "Welcome " + localStorage.getItem('username') + "!";
+   window.open("http://localhost:8080/Project_297/hi.html");
+   alert(document.getElementById('welcomeMessage1').innerHTML);
+ } else {
+   document.getElementById('welcomeMessage1').innerHTML = "Invalid Log-in!";
+   alert(document.getElementById('welcomeMessage1').innerHTML);
+ }
+}
+
+
+
+</script>
+
+<body>
+	
+  <div class="popup">
+    <h2>Register</h2>
+    <p>Please enter your details here</p>
+    <form >
+      <label for="email">User Name</label>
+      <input type="text" id="username" placeholder="Select A User Name" required value="" /><br />
+      <label for="pass">Password</label>
+      <input type="password" id="password" placeholder="Select A Password" required value="" /><br />
+      <button id="welcomeMessage" onclick="store();" >Registerabcd</button>
+
+    </form>
+  </div>
+  <br />
+  <div class="popup">
+    <h2>Welcome Guest!</h2>
+    <p>Please enter your login and password here</p>
+    <form >
+      <label for="email">User Name </label>
+      <input type="text" id="username1" placeholder="Your Password" required value="" /><br />
+      <label for="password">Password</label>
+      <input type="password" id="password1" placeholder="Your Password" required value="" /><br />
+      <button id="welcomeMessage1" onclick="login();">Login</button>
+    </form>
+
+  </div>
+
+</body>
+</html>
