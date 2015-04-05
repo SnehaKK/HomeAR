@@ -123,8 +123,8 @@ def get_graph():
 
 @app.route('/searchProduct',methods =['GET','POST'])
 def search_products():
-	if request.method == 'GET':
-		print "checking search keyword " + request.args['searchKeyword']
+	if request.method == "GET":
+		print "checking search keyword "  + request.args['searchKeyword']
 		keyword = request.args['searchKeyword']
 		
 		client = pymongo.MongoClient(MONGODB_URI)
@@ -143,8 +143,9 @@ def search_products():
 		
 		client.close()
 		return render_template("search.html", status = "Search Successful!", item2 = listProd, itemlist = listProd)
+
 	if request.method == 'POST':
-		return render_template('search.html')
+		return render_template('search.html' , status = "Rendering Page Successfully!", item2 = NULL, itemlist = NULL)
 
 # @app.route('/modifyCount', methods = ['GET','POST'])
 @app.route('/likeItem', methods = ['GET'])
@@ -170,7 +171,7 @@ def like_item():
 @app.route('/search',methods =['GET','POST'])
 def search():
 	if request.method == 'GET':
-		print request
+		print "request is: " + request
 		return render_template('search.html')
 	if request.method == 'POST':
 		print request

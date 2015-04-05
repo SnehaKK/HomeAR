@@ -171,17 +171,21 @@
 						<div class="row" style="padding:10px">
 							<!-- <div class="col-md-11"> -->
 							<label > <h5>Product: {{item.ProdId}},</h5></label>
-							<!-- <label > -->
 							<h3>Product Name: {{item.ProdName}}</h3>
-							<h5>Product Desc: {{item.ProdDesc}}</h5>
-							<h5>Prod Count: </h5>
-							<label class="col-md-2" id="{{item._id}}">
-								{{item.ProdCount}}
-							</label>
-							<h5>Product _id: {{item._id}}</h5>
-							<button type="checkbox" class="btn btn-default" aria-label="Like" onclick="likeItem('{{item._id}}')">
-								<span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Like
-							</button>
+							<div class="row">
+								<img src="{{item.ProdImg}}" class="col-md-4 img-thumbnail">
+								<div class="row col-md-8" style="padding: 20px">
+									<h5>Product Desc: {{item.ProdDesc}}</h5>
+									<button type="checkbox" class="btn btn-default" aria-label="Like" onclick="likeItem('{{item._id}}')">
+									<span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Like
+									</button>
+								</div>
+							</div>
+							
+							<br/>
+							<h5 >Product Likes: </h5><label id="{{item._id}}">{{item.ProdCount}}</label>
+							<br/>
+							<h5>Product _id: {{item._id}}</h5>	
 						</div>
 						<hr>
 						{% endfor %}
