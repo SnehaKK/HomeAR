@@ -58,7 +58,7 @@
             plotShadow: false
           },
           title: {
-            text: 'Browser market shares at a specific website, 2014'
+            text: 'Market Share per Product Category, 2014 - 2015'
           },
           tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -78,7 +78,7 @@
           },
           series: [{
             type: 'pie',
-            name: 'Browser share',
+            name: 'Market share',
             data: {{ data |tojson| safe}}
           }]
         });
