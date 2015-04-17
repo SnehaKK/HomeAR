@@ -10,15 +10,16 @@
 
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  
   <link rel="stylesheet" href="{{ url_for('static',filename='css/firstpage.css') }} ">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   
   <!-- Bootstrap Core CSS -->
-  <link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet">
+  <!-- <link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet"> -->
 
   <!-- Custom CSS -->
-  <link href="{{ url_for('static',filename='css/simple-sidebar.css') }}" rel="stylesheet">
+  <!-- <link href="{{ url_for('static',filename='css/simple-sidebar.css') }}" rel="stylesheet"> -->
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
@@ -44,46 +45,6 @@
   //         });
   //       });
   // </script> -->
-  <script type="text/javascript">
-  $(function () {
-
-    $('#input1').immybox({
-      choices: {{ fileList | safe}}
-    });
-
-    $('#container').highcharts({
-      chart: {
-        plotBackgroundColor: null,
-            plotBorderWidth: 1,//null,
-            plotShadow: false
-          },
-          title: {
-            text: 'Market Share per Product Category, 2014 - 2015'
-          },
-          tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-          },
-          plotOptions: {
-            pie: {
-              allowPointSelect: true,
-              cursor: 'pointer',
-              dataLabels: {
-                enabled: true,
-                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-                style: {
-                  color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-                }
-              }
-            }
-          },
-          series: [{
-            type: 'pie',
-            name: 'Market share',
-            data: {{ data |tojson| safe}}
-          }]
-        });
-  });
-</script>
 
 <style>
 
@@ -106,7 +67,6 @@
   
 }
 
-
 .second .col-xs-9 .tiles .col-xs-3:hover {
 
   margin-left: 50px;
@@ -114,12 +74,6 @@
   -webkit-transform:scale(2);
   -moz-transform:scale(2);
 }
-
-</style>
-
-
-
-<style>
 
 .col-xs-3 .nav li{
   display:block;
@@ -368,18 +322,18 @@
   <p class="col-xs-12" style="margin-top:10px;font-size:30px;font-weight:bold;">Hello Customers!!</p>
   <p class="col-xs-12 col-xs-offset-1" style="margin-top:10px;font-size:20px;color:blue;font-weight:bold;">Ready to enjoy our product tour??</p>
   <p class="col-xs-12 col-xs-offset-1" style="margin-top:10px;font-size:15px;color:purple;font-weight:bold;">Here you go.....Check out the Retail Stores and give your opinion!! :)</p>
-  <img class="col-xs-12 col-xs-offset-3" src="images/feedbackCustomers.jpg" style="height:50%;width:50%;">
+  <img class="col-xs-12 col-xs-offset-3" src="{{url_for('static', filename='images/feedbackCustomers.jpg') }}" style="height:50%;width:50%;">
 </div>
 
 <div class="col-xs-9" id="id1" style="border:0px solid black;border:0px solid black;">
   <p class="col-xs-9" style="margin-top:10px;font-size:30px;font-weight:bold;">Hello Retailers!!</p>
   <div class="row">
-    <form id="generateGraph" action="/generategraph" method="get" class="navbar-form navbar-left" role="search" accept-charset="utf-8">
+<!--     <form id="generateGraph" action="/retailertest" method="get" class="navbar-form navbar-left" role="search" accept-charset="utf-8">
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Search" id="input1" name="input1">
       </div>
       <button type="submit" class="btn btn-default">Submit</button>
-    </form>
+    </form> -->
 
     <br><br>
     <hr>
@@ -388,11 +342,10 @@
       <div class="" id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
     </div>
   </div>
-
 </div>
 
 
-<div class="col-xs-9" id="id3"  style="border:0px solid red;background:url(images/bckgrndEdit.jpeg);height:500px;display:none;">
+<div class="col-xs-9" id="id3"  style="border:0px solid red;height:500px;display:none;">
   <div class="col-xs-12 col-xs-offset-4" style="border:0px solid red;margin-bottom:20px;">
     <h1><b>EDIT PROFILE</b></h1>
   </div>
@@ -412,18 +365,23 @@
 </div>
 
 
-<div class="col-xs-9" id="id4"  style="border:0px solid red;background:url(images/bckgrndEdit.jpeg);height:500px;display:none;">
+<div class="col-xs-9" id="id4"  style="border:0px solid red;height:500px;display:none;">
   <div class="col-xs-12 col-xs-offset-4" style="border:0px solid red;margin-bottom:20px;">
     <h1><b>YOUR PROFILE</b></h1>
   </div>
   <div class="col-xs-12 col-xs-offset-4" style="border:0px solid red;">
-
    <form>
-     <div class="col-xs-4">
-      Type<input type="text" class="form-control" id="type" name="username" onchange="validFunction()" /><br>
-      Username<input type="text" class="form-control" id="username" name="username" onchange="validFunction()" /><br>
-      Email<input type="email" class="form-control" id="email" name="email" onchange="validFunction()" /><br>
-      <br><a href = "#" ><button type="button" class="btn btn-primary" id="closeProfile" style="width:218px;">CLOSE</button></a>	
+    <div class="col-xs-4">
+      Type<input type="text" class="form-control" id="type" name="username" onchange="validFunction()" />
+      <br>
+      Username<input type="text" class="form-control" id="username" name="username" onchange="validFunction()" />
+      <br>
+      Email<input type="email" class="form-control" id="email" name="email" onchange="validFunction()" />
+      <br>
+      <br>
+      <a href = "#" ><button type="button" class="btn btn-primary" id="closeProfile" style="width:218px;">
+        CLOSE</button>
+      </a>	
     </div>
   </form>
 </div>

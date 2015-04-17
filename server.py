@@ -137,8 +137,8 @@ def search_products():
 		listProd = []
 		# print ('prodId: %d,Prod Name: %s , Prod Desc: %s.' % (doc['prodId'], doc['ProdName'], doc['ProdDesc'], doc['ProdCount']))
 		for doc in cursor: 
-			print doc['ProdId']
-			print ('ProdId: %d,Prod Name: %s , Prod Desc: %s, ProdCount: %d' % (doc['ProdId'], doc['ProdName'], doc['ProdDesc'], doc['ProdCount']))
+			# print doc['ProdId']
+			# print ('ProdId: %d,Prod Name: %s , Prod Desc: %s, ProdCount: %d' % (doc['ProdId'], doc['ProdName'], doc['ProdDesc'], doc['ProdCount']))
 			listProd.append(doc)
 		
 		client.close()
@@ -170,11 +170,11 @@ def like_item():
 
 @app.route('/search',methods =['GET','POST'])
 def search():
-	if request.method == 'GET':
-		print "request is: " + request
-		return render_template('search.html')
+	# if request.method == 'GET':
+	# 	print "request is: " + request
+	# 	return render_template('search.html')
 	if request.method == 'POST':
-		print request
+		return None
 	return render_template("search.html")
 
 
@@ -186,6 +186,10 @@ def dashboard():
 @app.route('/retailerDashboard', methods =['GET','POST'])
 def retailer_dashboard():
 	return render_template('retailerDashboard.html', data = read_file('test.csv'), fileList = generate_file_data(get_list_of_files()))
+
+@app.route('/retailertest', methods =['GET'])
+def retailer_test():
+	return render_template('retailerDashboard_test.html')
 
 @app.route('/about')
 def about():

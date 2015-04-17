@@ -8,7 +8,7 @@
 
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/firstpage.css') }} ">
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
@@ -16,11 +16,58 @@
 	<script type="text/javascript" src="{{ url_for('static',filename='js/jquery.i18n.properties.js') }}"></script>
 
 	<link rel="localization" hreflang="de" href="lang/de.json" type="application/vnd.oftn.l10n+json"/>
-	<!-- <link rel="stylesheet" href="css/style.css"> -->
-	<script type="text/javascript" src="{{ url_for('static',filename='js/i18n.js') }}"></script>
-	<!-- // <script type="text/javascript" src="{{ url_for('static',filename='js/script.js') }}"></script> -->
-	<script type="text/javascript">
+	<!-- <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}"> -->
+	
 
+	<!-- Bootstrap Core CSS -->
+	<!-- <link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet"> -->
+
+
+	<style>
+	.navbar .navbar-brand{
+
+		color:#FFFFFF;
+		font-weight:bold;	
+		font-size: 1.5em;
+		-webkit-transition: all .3s;
+		-moz-transition: all .3s;
+		transition: all .3s;
+	}
+	.col-md-3 .nav a.bullets{
+		border: 1px solid grey;
+	}
+
+	.col-md-3 .nav a.bullets{
+		display:block;
+		border-color: 0px solid black;
+		font-size:18px;
+		box-sizing:border-box;
+		padding: 20px;
+	}
+
+	.col-md-3 .nav a.subLists{
+		display:block;
+		border: 0px solid gray;
+		font-size:18px;
+		box-sizing:border-box;
+		padding: 20px;
+	}
+
+	.lists{
+		border: 0px solid black;
+	}
+
+	.col-md-3 .nav{
+
+		margin-top:60px;
+		border:0px solid red;
+	}
+
+	</style>
+
+	<script type="text/javascript" src="{{ url_for('static',filename='js/i18n.js') }}"></script>
+
+	<script type="text/javascript">
 	function likeItem(itemId) {
 		var ajaxRequest;  // The variable that makes Ajax possible!
 		// alert(item);
@@ -82,76 +129,146 @@
 			<div class="navbar-collapse collapse" id="navbar-main">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a class="head" href="/">Home</a></li>
-
 					<li><a class="head" href="#" data-toggle="modal" data-target="#myModal2">Register/Login </a></li>
-
 					<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 						<div class="popup">
-							<div class="modal-dialog" >
-
-
+							<div class="modal-dialog">
 								<div class="modal-content">
 									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+										<button type="button" class="close" data-dismiss="modal">
+											<span aria-hidden="true">&times;</span>
+											<span class="sr-only">Close</span>
+										</button>
 									</div>
 									<div class="modal-body">
 										<section id="window">
 											<div class="container">
-												<div class="row"> 
-													<form>
-														<div class="col-xs-3 ">
-															<h1> Register</h1>
+												<form>
+													<div class="row"> 
+														<div class="col-lg-3">
+															<h3 class="register"> Register</h3>
+															<div class="form-group">
+																<select class="form-control">
+																	<option value="one">--Select a user type--</option>
+																	<option value="two" id="retailer">Retailer</option>
+																	<option value="three" id="customer">Customer</option>
+																</select>   
+															</div>
 
-															Type
-															<select class="form-control">
-																<option value="one">--Select a user type--</option>
-																<option value="two">Retailer</option>
-																<option value="three">Customer</option>
-															</select>    
-															<br>
-															Username<input type="text" class="form-control" id="username" name="username" onchange="validFunction()" />
-															<br>Email<input type="email" class="form-control" id="email" name="email" onchange="validFunction()" />
-															<br>Password<input type="password" class="form-control" id="password" name="password" onchange="validFunction()" />
-															<br>Re-Password<input type="password" class="form-control" id="re-password" name="re-password" onchange="validFunction()" />
-															<a href = "/customerDashboard" ><button type="button" class="btn btn-primary" id="signUp" >Register</button></a>
+															<div class="form-group">Username<input type="text" class="form-control" placeholder="Your name" id="username">
+															</div>
+															<div class="form-group">Email<input type="email" class="form-control" placeholder="abc@example.com" id="useremail">
+															</div>
+															<div class="form-group">Password<input type="password" class="form-control" placeholder="Enter Password" id="pswd">
+															</div>
+															<div class="form-group">Re-Password<input type="password" class="form-control" placeholder="Enter the same Password *" id="pswd1">
+															</div>
+															<a href="/customerDashboard"><button type="button" class="btn btn-primary" id="signUp" >Register</button></a>
 															<button type="reset" class="btn btn-default">Clear</button>
-
 														</div>
-														<div class="col-xs-3 col-xs-offset-1">
-															<h1> Login</h1>
-															Username<input type="text" class="form-control" id="username" name="username" onchange="validFunction()" />
 
-															<br>Password<input type="password" class="form-control" id="password" name="password" onchange="validFunction()" />
+														<div class="col-lg-3 col-lg-offset-1">
+															<h4 class="login"> Login </h4>
 
-															<a href = "/customerDashboard" ><button type="button" class="btn btn-primary" id="login" >Login</button></a>
+															<div class="form-group">Username<input type="text" class="form-control" placeholder="Your name" id="username1">
+															</div>
+															<div class="form-group">Password<input type="password" class="form-control" placeholder="Enter Password" id="password1">
+															</div>
+															<a href = "/customerDashboard" ><button type="button" class="btn btn-primary" id="login" onclick="login();" >Login</button></a>
 															<button type="reset"  class="btn btn-default">Cancel</button>
 														</div>
-													</form>
-												</div>
+													</div>
+												</form>
 											</div>
 										</section>
 									</div>
-
 									<div class="modal-footer">
-
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<li><a class="head" href="/about">About</a></li>
-					<li><a class="head" href="/contact">Contact us</a></li>
+
+					<li role="presentation" class="dropdown head">
+						<a class="dropdown-toggle head" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+							Dashboards <span class="caret head"></span>
+						</a> 
+						<ul class="dropdown-menu head" role="menu">
+							<li><a class="head" href="/customerDashboard">Customer</a></li>
+							<li><a class="head" href="/retailerDashboard">Retailer</a></li>
+						</ul>
+					</li>
+					<li><a class="head" href="/contact">Contact us</a>
+					</li>
 				</ul>
 			</div>
 			<!-- /.container -->
 		</div>
 	</div>
+	<!-- Header closed --> 
 
-<!-- Left Pane Section -->
-   
+	<!-- Left Pane Section -->
+	<div class="col-md-3">
+		<ul class="nav" id="side-menu">
+			<li>
+				<a class="bullets" href="#" data-tab="id1"><span class="glyphicon glyphicon-align-left glyphicon-dashboard"></span>  Dashboard</a>
+			</li>
 
-	<!-- Main Body Section -->
-	<div style="border: 0px solid green;height:700px;padding:50px">
+			<li>
+				<a class="bullets" href="#" data-tab="id2"><span class="glyphicon glyphicon-align-left glyphicon-shopping-cart"></span>  Retail Stores</a>
+			</li>
+			<li>
+				<a class="bullets" href="/search" data-toggle="collapse" data-target="#demo"><span class="glyphicon glyphicon-user" ></span>  Search Products <span class="glyphicon"></span></a>
+			</li>
+			<li>
+				<a class="bullets" href="#" data-tab="id2"><span class="glyphicon glyphicon-upload"></span>Upload Floor Maps</a>
+			</li>
+			<li>
+				<a class="bullets" href="#" data-toggle="collapse" data-target="#demo"><span class="glyphicon glyphicon-user" ></span>  Profile <span class="glyphicon glyphicon-chevron-down"></span></a>
+			</li>
+			<li>	
+				<ul id="demo" class="collapse">
+					<li>
+						<a class="subLists" href="#"><span class="glyphicon glyphicon-align-left glyphicon-edit"></span>  Edit Profile</a>
+					</li>
+					<li>
+						<a class="subLists" href="#"><span class="glyphicon glyphicon-align-left glyphicon-eye-open"></span>  View Profile</a>
+					</li>
+					<li>
+						<a class="subLists" href="/" data-toggle="modal"
+						data-target="#basicModal"><span class="glyphicon glyphicon-align-left glyphicon-log-out"></span>  Logout</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<div class="modal fade" id="basicModal" tabindex="-1">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							<span>&times;</span>
+							<span class="sr-only">Close</span>
+						</button>
+						<h3 class="modal-title" id="myModalLabel" style="color:green;font-weight:bold;"> LOGOUT USER
+						</h3>
+					</div>
+					<div class="modal-body">
+						<h4>Are you sure you want to logout?</h4>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary">Logout</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Left Pane Section ends-->
+	<div class="container-fluid" style="background:white;border:0px solid black;">
+		<div class="col-md-9" id="id2" style="border: 0px solid green;height:800px;">
+			<div class="col-md-12">
+				<!-- Main Body Section -->
+				<div style="border: 0px solid green;height:700px;padding:50px">
 		<!-- <div class="panel-heading">
 			<h3 >Search Products from MongoDB</h3>
 			<h4 id="headertext">This is an Internationalization Test!</h4>
@@ -159,33 +276,53 @@
 		<div class="panel-body">
 			<form id="prodDetails" action="/searchProduct" method="get" class="navbar-form navbar-left" role="search" accept-charset="utf-8"> 
 				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Search" name="searchKeyword">
+					<!-- <input type="text" class="form-control" placeholder="Search" name="searchKeyword"> -->
 					<!-- onchange="searchProduct()" -->
+					<select class="form-control" name="searchKeyword">
+						<option>Select Product Category</option>
+						<optgroup label="Living Room">
+							<option>Sofas</option>
+							<option>Chairs</option>
+							<option>Tables</option>
+							<option>Love Seats</option>
+							<option>T V Consoles</option>
+						</optgroup>
+						<optgroup label="Bed Room">
+							<option>Beds</option>
+							<option>Night Stands</option>
+							<option>Dressers and Chests</option>
+							<option>Bed Benches</option>
+						</optgroup>
+					</select>
 				</div>
 				<button type="submit" class="btn btn-default">Submit</button>
 			</form>
 			<div class="container-fluid">
 				{% for item in itemlist %}
 				<div class="row">
-					<div class="col-md-12">
-						<div class="row" style="padding:10px">
-							<!-- <div class="col-md-11"> -->
-							<label > <h5>Product: {{item.ProdId}},</h5></label>
-							<h3>Product Name: {{item.ProdName}}</h3>
+					<div class="col-md-12"> <br>
+						<div class="row" style="padding:30px">
+							
+							
 							<div class="row">
-								<img src="{{item.ProdImg}}" class="col-md-4 img-thumbnail">
-								<div class="row col-md-8" style="padding: 20px">
-									<h5>Product Desc: {{item.ProdDesc}}</h5>
+								<div class="col-md-3" >
+								<img src="{{item.ProdImg}}" class="img-thumbnail">
+								</div>
+								<div class="col-md-7" >
+									<h5>Product: {{item.ProdId}}</h5>
+									<h3>Product Name: {{item.ProdName}}</h3>
+									<h5 style="text-align:justify;text-justify:inter-word;"><b>Product Desc:</b> {{item.ProdDesc}}</h5>
+									<br/>
 									<button type="checkbox" class="btn btn-default" aria-label="Like" onclick="likeItem('{{item._id}}')">
-									<span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Like
+										<span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Like (<label id="{{item._id}}">{{item.ProdCount}}</label>)
 									</button>
 								</div>
 							</div>
 							
 							<br/>
-							<h5 >Product Likes: </h5><label id="{{item._id}}">{{item.ProdCount}}</label>
+							<!-- <h5 >Product Likes: </h5><label id="{{item._id}}">{{item.ProdCount}}</label> -->
 							<br/>
-							<h5>Product _id: {{item._id}}</h5>	
+							<!-- <h5>Product _id: {{item._id}}</h5>	 -->
 						</div>
 						<hr>
 						{% endfor %}
@@ -194,6 +331,11 @@
 			</div>
 		</div>
 	</div>
+</div>
+</div>
+</div>
+<footer>
 	<p style="text-align:center;margin-top:150px;color:#fed136;">Copy rights- HomeAR inc 2014</p>
+</footer>
 </body>
 </html>
