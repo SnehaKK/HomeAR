@@ -129,25 +129,30 @@ def get_graph():
 @app.route('/searchProduct',methods =['GET','POST'])
 def search_products():
 	if request.method == "GET":
-		print "checking search keyword "  + request.args['searchKeyword']
-		keyword = request.args['searchKeyword']
-		
-		client = pymongo.MongoClient(MONGODB_URI)
-		db = client.get_default_database()
-		prod_details = db['prod_details']
-		cursor = prod_details.find({'ProdName': keyword })
-		# { '$in': [ '/ keyword /' ] }
-		#.sort('prodId', 1)
-		
-		listProd = []
-		# print ('prodId: %d,Prod Name: %s , Prod Desc: %s.' % (doc['prodId'], doc['ProdName'], doc['ProdDesc'], doc['ProdCount']))
-		for doc in cursor: 
-			print doc['ProdId']
-			# print ('ProdId: %d,Prod Name: %s , Prod Desc: %s, ProdCount: %d' % (doc['ProdId'], doc['ProdName'], doc['ProdDesc'], doc['ProdCount']))
-			listProd.append(doc)
-		
-		client.close()
-		return render_template("search.html", status = "Search Successful!", item2 = listProd, itemlist = listProd)
+		try:
+			print "checking search keyword "  + request.args['searchKeyword']
+			keyword = request.args['searchKeyword']
+			
+			client = pymongo.MongoClient(MONGODB_URI)
+			db = client.get_default_database()
+			prod_details = db['prod_details']
+			cursor = prod_details.find({'ProdName': keyword })
+			# { '$in': [ '/ keyword /' ] }
+			#.sort('prodId', 1)
+			
+			listProd = []
+			# print ('prodId: %d,Prod Name: %s , Prod Desc: %s.' % (doc['prodId'], doc['ProdName'], doc['ProdDesc'], doc['ProdCount']))
+			for doc in cursor: 
+				print doc['ProdId']
+				# print ('ProdId: %d,Prod Name: %s , Prod Desc: %s, ProdCount: %d' % (doc['ProdId'], doc['ProdName'], doc['ProdDesc'], doc['ProdCount']))
+				listProd.append(doc)
+			
+			client.close()
+			return render_template("search.html", status = "Search Successful!", item2 = listProd, itemlist = listProd)
+		except:
+			e = sys.exc_info()[0]
+			print "exception: " + e
+
 
 	if request.method == 'POST':
 		return render_template('search.html' , status = "Rendering Page Successfully!", item2 = NULL, itemlist = NULL)
