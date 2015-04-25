@@ -147,7 +147,7 @@ def search_products():
 				print doc['ProdId']
 				# print ('ProdId: %d,Prod Name: %s , Prod Desc: %s, ProdCount: %d' % (doc['ProdId'], doc['ProdName'], doc['ProdDesc'], doc['ProdCount']))
 				listProd.append(doc)
-			print "-----"	
+			print "---------"	
 			print listProd
 			client.close()
 			return render_template("search.html", status = "Search Successful!", item2 = listProd, itemlist = listProd)
