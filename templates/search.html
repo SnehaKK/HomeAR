@@ -8,7 +8,7 @@
 
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="{{ url_for('static',filename='css/firstpage.css') }} ">
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/firstpage.css') }}">
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
@@ -284,7 +284,7 @@
 								<div class="form-group">
 									<!-- <input type="text" class="form-control" placeholder="Search" name="searchKeyword"> -->
 									<!-- onchange="searchProduct()" -->
-									<select class="form-control" name="searchKeyword">
+									<select class="form-control" id="searchKeyword" name="searchKeyword">
 										<option>Select Product Category</option>
 										<optgroup label="Living Room">
 											<option>Sofas</option>

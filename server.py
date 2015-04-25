@@ -1,9 +1,9 @@
 import os, json
-from flask import Flask, render_template, request, make_response
+from flask import Flask, render_template, request, make_response, json, jsonify
 from werkzeug import secure_filename
 import csv
 import sys
-import pymongo
+import pymongo, re
 from bson.objectid import ObjectId
 from os import walk
 import logging
@@ -11,13 +11,14 @@ import logging
 
 app = Flask(__name__)
 MONGODB_URI = "mongodb://sneha:test123@ds063150.mongolab.com:63150/testmongolabs"
+MONGODB_URI_HomeAR = "mongodb://sneha:test123@ds061370.mongolab.com:61370/homear"
 
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
 app.logger.setLevel(logging.ERROR)
 
 @app.route('/')
 def index():
-	return render_template('index.html')
+	return render_template('index_new.html')
     # return 'Hello World!'
 
 app.config['UPLOAD_FOLDER'] = 'uploads/'
@@ -146,7 +147,8 @@ def search_products():
 				print doc['ProdId']
 				# print ('ProdId: %d,Prod Name: %s , Prod Desc: %s, ProdCount: %d' % (doc['ProdId'], doc['ProdName'], doc['ProdDesc'], doc['ProdCount']))
 				listProd.append(doc)
-			
+			print "-----"	
+			print listProd
 			client.close()
 			return render_template("search.html", status = "Search Successful!", item2 = listProd, itemlist = listProd)
 		except:
@@ -178,13 +180,11 @@ def like_item():
 		client.close()
 	return str(itemCount)	
 
-@app.route('/search',methods =['GET','POST'])
+@app.route('/search',methods =['GET'])
 def search():
 	# if request.method == 'GET':
 	# 	print "request is: " + request
 	# 	return render_template('search.html')
-	if request.method == 'POST':
-		return None
 	return render_template("search.html")
 
 
@@ -199,7 +199,7 @@ def retailer_dashboard():
 
 @app.route('/retailertest', methods =['GET'])
 def retailer_test():
-	return render_template('retailerDashboard_test.html')
+	return render_template('retailerDashboard.html')
 
 @app.route('/about')
 def about():
@@ -209,9 +209,92 @@ def about():
 def services():
 	return render_template('services.html')
 
-@app.route('/login')
+@app.route('/login', methods =['POST'])
 def login():
-	return render_template('login.html')
+	message = ""
+	if request.method == 'POST':
+		if not request.form:
+			print "No form Data Arguments!"
+			return "No form Data Arguments!"
+			# return render_template('LoginPage.html')
+
+		uemail = request.form["Email"]
+		upass = request.form["Password"]
+		
+		client = pymongo.MongoClient(MONGODB_URI_HomeAR)
+
+		db = client.get_default_database()
+		user_details = db['universal_user_details']
+		user = user_details.find({"l_email" : uemail.lower() })
+		if user.count() == 0:
+			message = "Error:Invalid Email-id. Please try again!"
+		else:
+			for u in user:
+				if u['userpassword'] == upass:
+					# Checks if TextureUrl field exists in doc prod
+					if 'is_retailer' in u: 
+						if u['is_retailer'] == "yes":
+							message = "Retailer Login Successful!"
+						else:
+							message = "Customer Login Successful!"
+					break
+				else:
+					message = message = "Error:Incorrect Password. Please try again!"
+
+		client.close()
+		print message
+		return json.dumps(message)
+		# return render_template('LoginPage.html', message= message)
+	return "Error:Login Unsucessful!"
+
+@app.route('/register', methods =['POST'])
+def register():
+	if request.method == 'POST':
+		if not request.form:
+			print "Error:No Arguments section!"
+			return "Error:No Arguments found!"
+			# return render_template('RegisterPage.html')
+
+		useremail = request.form["Email"]
+		username = request.form["Uname"]
+		userpassword = request.form["Password"]
+		is_retailer = "no"
+		if 'IsRetailer' in request.form:
+			is_retailer = request.form["IsRetailer"]
+		else:
+			is_retailer = "no"
+		# lastname = request.args["LastName"]
+		# address = request.args["address"]
+		# pincode = request.args["pincode"]
+
+		print useremail, userpassword, username
+
+		client = pymongo.MongoClient(MONGODB_URI_HomeAR)
+		db = client.get_default_database()
+		user_details = db['universal_user_details']
+		
+		# user = user_details.find({"id" : uemail.lower() })
+		#TODO: If  
+		# if not user:
+		# 	message = "User details donot match!"
+
+		# 	#insert into the database.
+		user_details.insert({'useremail': useremail, 
+				'userpassword': userpassword,
+				'l_email':useremail.lower(),
+				'username':username,
+				'is_retailer':is_retailer
+				}) 
+			# 	'lastname': "lastname",
+			# 	'address':"address",
+			# 	'pincode':"pincode" 
+
+		client.close()
+		return json.dumps("Data inserted successfully!")
+		# return render_template('HomeARLanding.html')
+	return "Error:Registration Failed! :("
+
+
 
 @app.route('/contact')
 def contact():

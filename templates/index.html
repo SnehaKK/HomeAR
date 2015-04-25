@@ -37,68 +37,6 @@ h4.login {
 </style>
 <script type="text/javascript">
 
-
-
-   //function to store user name and password
-   
-   function store() {
-   	
-
-    alert("your browser  supports local storage");
-    var retailer = document.getElementById("retailer");
-    var customer = document.getElementById("customer");
-
-
-    var inputUsername = document.getElementById("username");
-    var inputPassword = document.getElementById("pswd");
-
-    var b= retailer.value;
-    var a= customer.value;
-    alert(b);
-    
-    alert(localStorage.getItem('Customer'));
-
-    localStorage.setItem("username", inputUsername.value);
-    localStorage.setItem("password", inputPassword.value);
-    if (a == localStorage.getItem('Customer')) {
-      alert("hi");
-      document.getElementById('signUp').innerHTML = "Welcome " + localStorage.getItem('username') + "!";
-      window.open("/customerDashboard");
-      alert(document.getElementById('signUp').innerHTML);
-    }
-    
-    else if(b == localStorage.getItem('Retailer')){
-    	
-      document.getElementById('signUp').innerHTML = "Welcome " + localStorage.getItem('username') + "!";
-      window.open("/retailerDashboard");
-      alert(document.getElementById('signUp').innerHTML);
-    }
-
-    else {
-     alert("do nothing");
-   }
-
- }
-
- function login() {
-
-  var inputUsername = document.getElementById("username1");
-  var inputPassword = document.getElementById("password1");
-
-  var username = inputUsername.value;
-  var password = inputPassword.value;
-  if ((username == localStorage.getItem('username')) && (password == localStorage.getItem('password'))) {
-   document.getElementById('login').innerHTML = "Welcome " + localStorage.getItem('username') + "!";
-   window.open("/customerDashboard");
-   alert(document.getElementById('login').innerHTML);
- } else {
-   document.getElementById('login').innerHTML = "Invalid Log-in!";
-   alert(document.getElementById('login').innerHTML);
- }
-}
-
-
-
 </script>
 <body>
   <!-- Header starts --> 
