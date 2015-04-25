@@ -6,6 +6,7 @@ import sys
 import pymongo
 from bson.objectid import ObjectId
 from os import walk
+import logging
 
 app = Flask(__name__)
 MONGODB_URI = "mongodb://sneha:test123@ds063150.mongolab.com:63150/testmongolabs"
