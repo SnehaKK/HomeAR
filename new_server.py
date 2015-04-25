@@ -10,6 +10,9 @@ from os import walk
 app = Flask(__name__)
 MONGODB_URI = "mongodb://sneha:test123@ds063150.mongolab.com:63150/testmongolabs"
 
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
+
 @app.route('/')
 def index():
 	return render_template('index.html')
