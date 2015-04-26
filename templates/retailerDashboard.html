@@ -14,9 +14,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   <script src="https://code.highcharts.com/highcharts.js"></script>
-  <!-- Immy Search Box -->
-  <link rel='stylesheet' type='text/css' href="{{ url_for('static',filename='css/immybox.css') }}">
-  <script src="{{ url_for('static',filename='js/jquery.immybox.min.js') }}"></script>
+
+  <script type="text/javascript" src="{{ url_for('static',filename='js/loginRegistrationScripts.js') }} "></script>
    <!-- // <script type="text/javascript"> 
   // $(function() {
   //       // var fileListdata =  ;
@@ -100,7 +99,7 @@ background-color:black;
 					 	<ul class="dropdown-menu head" role="menu">
 					 		<li><a class="head" href="#" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-align-left glyphicon-edit"></span> Edit Profile</a></li>
 							<li><a class="head" href="#" data-toggle="modal" data-target="#view"><span class="glyphicon glyphicon-align-left glyphicon-eye-open"></span>  View Profile</a></li>
-							<li><a class="head" href="/" data-toggle="modal" data-target="#basicModal"><span class="glyphicon glyphicon-align-left glyphicon-log-out"></span>  Logout
+							<li><a class="head" href="#" data-toggle="modal" data-target="#basicModal"><span class="glyphicon glyphicon-align-left glyphicon-log-out"></span>  Logout
 							    </a>
 						    </li>
 						</ul>
@@ -132,7 +131,7 @@ background-color:black;
           <h4>Are you sure you want to logout?</h4>
         </div>
         <div class="modal-footer">
-          <a href="/index"><button type="button" class="btn btn-primary">Logout</button></a>
+         <a href="/home" > <button type="button" class="btn btn-primary" data-dismiss="modal" onClick="logout()">Logout</button></a>
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
         </div>
       </div>
@@ -261,7 +260,6 @@ background-color:black;
 <script src="http://code.highcharts.com/modules/exporting.js"></script>
 			
 <script type="text/javascript">
-
 var data = null;
 var res = location.search.split('=');
 
@@ -286,7 +284,7 @@ $(document).ready(function(){
 					        defaultSeriesType: 'column'
 					    },
 					    title: {
-					        text: 'Column Chart'
+					        text: 'Sales Based Analysis'
 					    },
 					    xAxis: {
 					        categories: []
@@ -379,6 +377,10 @@ $(document).ready(function(){
 			}
 	
 });
+
+function logout(){
+	window.location.href = "/";
+}
 
 </script>
 </html>

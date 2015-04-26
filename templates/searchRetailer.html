@@ -3,14 +3,14 @@
 <head>
 	<title>MongoDB Connection</title>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="bootstrap-select.js"></script>
+	<script src="bootstrap-select.js"></script>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
- 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  	 <link rel="stylesheet" href="{{ url_for('static',filename='css/firstpage.css') }} ">
-  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/firstpage.css') }} ">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="{{ url_for('static',filename='js/loginRegistrationScripts.js') }} "></script>
 
 	<style>
 	.navbar .navbar-brand{
@@ -22,18 +22,18 @@
 		-moz-transition: all .3s;
 		transition: all .3s;
 	}
-.dropdown-menu {
-background-color:black;	
-}
- .dropdown-menu > li>  a.head {
+	.dropdown-menu {
+		background-color:black;	
+	}
+	.dropdown-menu > li>  a.head {
 		
-	color:#FFFFFF;
-   font-weight:bold;
-	font-size: 1.2em;
-}
- .dropdown-menu > li>  a.head:hover , a.head.active {
-    color: #990000;
-    background-color: #fed136;	
+		color:#FFFFFF;
+		font-weight:bold;
+		font-size: 1.2em;
+	}
+	.dropdown-menu > li>  a.head:hover , a.head.active {
+		color: #990000;
+		background-color: #fed136;	
 	}
 
 	</style>
@@ -101,612 +101,224 @@ background-color:black;
 			</div>
 			<div class="navbar-collapse collapse" id="navbar-main">
 				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a class="head" href="/retailerDashboard"  data-toggle="collapse" data-target="#demo"><span class="glyphicon glyphicon-stats" ></span> Visualize <span class="glyphicon"></span>
+						</a>
+					</li>
+					
+					<li>
+						<a class="head" href="/searchRetailer"  data-toggle="collapse" data-target="#demo"><span class="glyphicon glyphicon-search" ></span>  Search Products <span class="glyphicon"></span>
+						</a>
+					</li>
 					<li role="presentation" class="dropdown head">
-					 <a class="dropdown-toggle head" href="#" data-toggle="dropdown" aria-expanded="false">
-					 	<span class="glyphicon glyphicon-user" ></span>  Profile <span
+						<a class="dropdown-toggle head" href="#" data-toggle="dropdown" aria-expanded="false">
+							<span class="glyphicon glyphicon-user" ></span>  Profile <span
 							class="caret head"></span>
-					 	
-					 </a>
-					 	<ul class="dropdown-menu head" role="menu">
-					 		<li><a class="head" href="#" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-align-left glyphicon-edit"></span> Edit Profile</a></li>
+
+						</a>
+						<ul class="dropdown-menu head" role="menu">
+							<li><a class="head" href="#" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-align-left glyphicon-edit"></span> Edit Profile</a></li>
 							<li><a class="head" href="#" data-toggle="modal" data-target="#view"><span class="glyphicon glyphicon-align-left glyphicon-eye-open"></span>  View Profile</a></li>
 							<li><a class="head" href="/" data-toggle="modal" data-target="#basicModal"><span class="glyphicon glyphicon-align-left glyphicon-log-out"></span>  Logout
-							    </a>
-						    </li>
-						</ul>
-						
-					</li>
-					<li><a class="head" href="/aboutUs"><span class="glyphicon  glyphicon-envelope"></span> About us</a></li>
-					
-				</ul>
-			</div>
-			<!-- /.container -->
-		</div>
-	</div>
-	<!-- Header closed --> 
-			<div class="modal fade" id="basicModal" tabindex="-1">
-				<div class="modal-dialog modal-sm">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal">
-								<span>&times;</span>
-								<span class="sr-only">Close</span>
-							</button>
-							<h3 class="modal-title" id="myModalLabel" style="color:green;font-weight:bold;"> LOGOUT USER
-							</h3>
-						</div>
-						<div class="modal-body">
-							<h4>Are you sure you want to logout?</h4>
-						</div>
-						<div class="modal-footer">
-						 <a href="http://homear.herokuapp.com"><button type="button" class="btn btn-primary">Logout</button></a>
-							<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-						</div>
-					</div>
-				</div>
-			</div>
-<div class="modal fade" id="view" tabindex="-1">
-    <div class="modal-dialog modal-sm">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">
-            <span>&times;</span>
-            <span class="sr-only">Close</span>
-          </button>
-          <h3 class="modal-title" id="myModalLabel" style="color:green;font-weight:bold;"> View Profile</h3>
-        </div>
-        <div class="modal-body">
-          <div class="form-group">Username:
-          <span class="form-control" id="username"></span>
-       </div>
-      <div class="form-group">Email:
-        <span class="form-control" id="email"></span>
-      </div>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-  
-  <div class="modal fade" id="edit" tabindex="-1">
-    <div class="modal-dialog modal-sm">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">
-            <span>&times;</span>
-            <span class="sr-only">Close</span>
-          </button>
-          <h3 class="modal-title" id="myModalLabel" style="color:green;font-weight:bold;">Edit Profile</h3>
-        </div>
-        <div class="modal-body">
-          <div class="form-group">Username:
-        <input type="text" class="form-control" id="username">
-      </div>
-      <div class="form-group">Email:
-        <input type="text" class="form-control"  id="email"> 
-
-      </div>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-<!-- Left Pane Section ends -->
-
-		<!-- Main Body Section starts -->
-		<!-- Main Body Section starts -->
-		<div class="container-fluid">
-			
-				<div class="col-md-12">
-					<div style="border: 0px;padding:50px">
-						<div class="panel-body">
-
-							<form id="prodDetails" action="/searchRetailer" method="GET" class="navbar-form navbar-left" role="search" accept-charset="utf-8"> 
-								<div class="form-group">
-									<!-- <input type="text" class="form-control" placeholder="Search" name="searchKeyword"> -->
-									<!-- onchange="searchProduct()" -->
-									<select class="form-control" id="searchKeyword" name="searchKeyword">
-										<option>Select Product Category</option>
-										<optgroup label="Living Room">
-											<option>Sofas</option>
-											<option>Chairs</option>
-											<option>Tables</option>
-											<option>T V Stands</option>
-										</optgroup>
-										<optgroup label="Bed Room">
-											<option>Beds</option>
-											<option>Lamps</option>
-											<option>Vases</option>
-									 	</optgroup>
-									 	<optgroup label="Patio Furniture">
-											<option>Patio Benches</option>
-											<option>Patio Chairs</option>
-										</optgroup>
-									</select>
-								</div>
-								<button type="submit" class="btn btn-default">Submit</button>
-							</form>
-							<div class="container-fluid">
-							{% if count %}
-                             <br/><br/><h5><b> {{ count }} </b> items found. </h5>
-                             {% endif %}
-								{% for item in itemlist %}
-								<div class="row">
-									<div class="col-md-12"> <br>
-										<div class="row" style="padding:30px">
-											<div class="row">
-												<div class="col-md-3" >
-													<img src="{{item.prodImgUrl}}" class="img-thumbnail">
-												</div>
-												<div class="col-md-7" >
-													<h5>Product: {{item.prodId}}</h5>
-													<h3>Product Name: {{item.prodName}}</h3>
-													<h5 style="text-align:justify;text-justify:inter-word;"><b>Product Desc:</b> {{item.prodDesc}}</h5>
-													<br/>
-													<button type="checkbox" class="btn btn-default" aria-label="Like" onclick="likeItem('{{item._id}}')">
-														<span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Like (<label id="{{item._id}}">{{item.prodLikes}}</label>)
-													</button>
-												</div>
-											</div>
-
-											<br/>
-											<!-- <h5 >Product Likes: </h5><label id="{{item._id}}">{{item.ProdCount}}</label> -->
-											<br/>
-											<!-- <h5>Product _id: {{item._id}}</h5>	 -->
-										</div>
-										<br/>
-									</div>
-								</div>
-								{% endfor %}
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Main Body Section ends -->
-	<!-- Footer of the page -->
-	<footer>
-		<div class="container-fluid" style="background:black;">
-
-			<div class="col-lg-12 text-center">
-				<h4 class="contact"> CONTACT US </h4>
-			</div>
-
-  <form name="sentMessage" id="contactForm2" >
-    <div class="row">
-      <div class="col-md-4 col-md-offset-2">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Your Name *" id="name3"> 
-
-        </div>
-        <div class="form-group">
-          <input type="email" class="form-control" placeholder="Your Email *" id="email3">
-
-						</div>
-						<div class="form-group">
-							<input type="number" class="form-control" placeholder="Your Phone *" id="phone">
-
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="form-group">
-							<textarea class="form-control" placeholder="Your Message *" id="message"></textarea>
-
-						</div>
-					</div>
-				</div>
-				<div class="button">
-					<div class="col-md-12 text-center">
-
-						<button type="submit" class="btn btn-xl">Send Message</button>
-					</div>
-				</div>
-
-			</form>
-
-
-			<p style="text-align:center;margin-top:150px;color:#fed136;">Copy rights- HomeAR inc 2015</p>
-
-		</footer>
-</body>
-</html>
-<html lang="en">
-<head>
-	<title>MongoDB Connection</title>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="{{ url_for('static',filename='css/firstpage.css') }}">
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-
-	<script type="text/javascript" src="{{ url_for('static',filename='js/jquery-1.10.2.js') }}"></script>
-	<script type="text/javascript" src="{{ url_for('static',filename='js/jquery.i18n.properties.js') }}"></script>
-
-	<link rel="localization" hreflang="de" href="lang/de.json" type="application/vnd.oftn.l10n+json"/>
-	<!-- <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}"> -->
-	
-
-	<!-- Bootstrap Core CSS -->
-	<!-- <link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet"> -->
-
-
-	<style>
-	.navbar .navbar-brand{
-
-		color:#FFFFFF;
-		font-weight:bold;	
-		font-size: 1.5em;
-		-webkit-transition: all .3s;
-		-moz-transition: all .3s;
-		transition: all .3s;
-	}
-	.col-md-3 .nav a.bullets{
-		border: 1px solid grey;
-	}
-
-	.col-md-3 .nav a.bullets{
-		display:block;
-		border-color: 0px solid black;
-		font-size:18px;
-		box-sizing:border-box;
-		padding: 20px;
-	}
-
-	.col-md-3 .nav a.subLists{
-		display:block;
-		border: 0px solid gray;
-		font-size:18px;
-		box-sizing:border-box;
-		padding: 20px;
-	}
-
-	.lists{
-		border: 0px solid black;
-	}
-
-	.col-md-3 .nav{
-
-		margin-top:60px;
-		border:0px solid red;
-	}
-
-	</style>
-
-	<script type="text/javascript" src="{{ url_for('static',filename='js/i18n.js') }}"></script>
-
-	<script type="text/javascript">
-	function likeItem(itemId) {
-		var ajaxRequest;  // The variable that makes Ajax possible!
-		// alert(item);
-
-		try{
-		   // Opera 8.0+, Firefox, Safari
-		   ajaxRequest = new XMLHttpRequest();
-		}
-		catch (e){
-			// Internet Explorer Browsers
-			try{
-				ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
-			}
-			catch (e) {
-				try{
-					ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
-				}
-				catch (e) {
-					alert("Your browser broke!");
-					return false;
-				}
-			}
-		}
-
-		// Create a function that will receive data 
-		// sent from the server and will update
-		// div section in the same page.
-		ajaxRequest.onreadystatechange = function(){
-			if(ajaxRequest.readyState == 4){
-				var ajaxDisplay = document.getElementById(itemId);
-				ajaxDisplay.innerHTML = ajaxRequest.responseText;
-			}
-		}
-
-		// var queryString = "?ProdId=" + itemId ;
-		// queryString += "&ProdName=" + itemName + "&ProdCount=" + itemCount;
-		ajaxRequest.open("GET", "/likeItem?id=" + 
-			itemId, true);
-		ajaxRequest.send(null);
-	}
-
-	</script>
-</head>
-
-<!-- style="padding:50px 25px 50px 25px" -->
-<body>
-
-	<!-- Header starts --> 
-	<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a href="/" class="navbar-brand">HomeAR</a>
-				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-			</div>
-			<div class="navbar-collapse collapse" id="navbar-main">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a class="head" href="/">Home</a></li>
-					<li><a class="head" href="#" data-toggle="modal" data-target="#myModal2">Register/Login </a></li>
-					<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-						<div class="popup">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal">
-											<span aria-hidden="true">&times;</span>
-											<span class="sr-only">Close</span>
-										</button>
-									</div>
-									<div class="modal-body">
-										<section id="window">
-											<div class="container">
-												<form>
-													<div class="row"> 
-														<div class="col-lg-3">
-															<h3 class="register"> Register</h3>
-															<div class="form-group">
-																<select class="form-control">
-																	<option value="one">--Select a user type--</option>
-																	<option value="two" id="retailer">Retailer</option>
-																	<option value="three" id="customer">Customer</option>
-																</select>   
-															</div>
-
-															<div class="form-group">Username<input type="text" class="form-control" placeholder="Your name" id="username">
-															</div>
-															<div class="form-group">Email<input type="email" class="form-control" placeholder="abc@example.com" id="useremail">
-															</div>
-															<div class="form-group">Password<input type="password" class="form-control" placeholder="Enter Password" id="pswd">
-															</div>
-															<div class="form-group">Re-Password<input type="password" class="form-control" placeholder="Enter the same Password *" id="pswd1">
-															</div>
-															<a href="/customerDashboard"><button type="button" class="btn btn-primary" id="signUp" >Register</button></a>
-															<button type="reset" class="btn btn-default">Clear</button>
-														</div>
-
-														<div class="col-lg-3 col-lg-offset-1">
-															<h4 class="login"> Login </h4>
-
-															<div class="form-group">Username<input type="text" class="form-control" placeholder="Your name" id="username1">
-															</div>
-															<div class="form-group">Password<input type="password" class="form-control" placeholder="Enter Password" id="password1">
-															</div>
-															<a href = "/customerDashboard" ><button type="button" class="btn btn-primary" id="login" onclick="login();" >Login</button></a>
-															<button type="reset"  class="btn btn-default">Cancel</button>
-														</div>
-													</div>
-												</form>
-											</div>
-										</section>
-									</div>
-									<div class="modal-footer">
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<li role="presentation" class="dropdown head">
-						<a class="dropdown-toggle head" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-							Dashboards <span class="caret head"></span>
-						</a> 
-						<ul class="dropdown-menu head" role="menu">
-							<li><a class="head" href="/customerDashboard">Customer</a></li>
-							<li><a class="head" href="/retailerDashboard">Retailer</a></li>
-						</ul>
-					</li>
-					<li><a class="head" href="/contact">Contact us</a>
-					</li>
-				</ul>
-			</div>
-			<!-- /.container -->
-		</div>
-	</div>
-	<!-- Header closed --> 
-
-	<!-- Central Body of the page -->
-	<div class="col-md-12">
-		<!-- Left Pane Section -->
-		<div class="col-md-3">
-			<ul class="nav" id="side-menu">
-				<li>
-					<a class="bullets" href="#" data-tab="id1"><span class="glyphicon glyphicon-align-left glyphicon-dashboard"></span>  Dashboard</a>
-				</li>
-
-				<li>
-					<a class="bullets" href="#" data-tab="id2"><span class="glyphicon glyphicon-align-left glyphicon-shopping-cart"></span>  Retail Stores</a>
-				</li>
-				<li>
-					<a class="bullets" href="/search" data-toggle="collapse" data-target="#demo"><span class="glyphicon glyphicon-user" ></span>  Search Products <span class="glyphicon"></span></a>
-				</li>
-				<li>
-					<a class="bullets" href="#" data-tab="id2"><span class="glyphicon glyphicon-upload"></span>Upload Floor Maps</a>
-				</li>
-				<li>
-					<a class="bullets" href="#" data-toggle="collapse" data-target="#demo">
-						<span class="glyphicon glyphicon-user" ></span>  Profile 
-						<span class="glyphicon glyphicon-chevron-down"></span>
-					</a>
-				</li>
-				<li>	
-					<ul id="demo" class="collapse">
-						<li>
-							<a class="subLists" href="#">
-								<span class="glyphicon glyphicon-align-left glyphicon-edit"></span>  Edit Profile
 							</a>
-						</li>
-						<li>
-							<a class="subLists" href="#">
-								<span class="glyphicon glyphicon-align-left glyphicon-eye-open"></span>  View Profile
-							</a>
-						</li>
-						<li>
-							<a class="subLists" href="/" data-toggle="modal"
-							data-target="#basicModal"><span class="glyphicon glyphicon-align-left glyphicon-log-out"></span>  Logout </a>
 						</li>
 					</ul>
+
 				</li>
+				<li><a class="head" href="/aboutUs"><span class="glyphicon  glyphicon-envelope"></span> About us</a></li>
+
 			</ul>
-			<div class="modal fade" id="basicModal" tabindex="-1">
-				<div class="modal-dialog modal-sm">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal">
-								<span>&times;</span>
-								<span class="sr-only">Close</span>
-							</button>
-							<h3 class="modal-title" id="myModalLabel" style="color:green;font-weight:bold;"> LOGOUT USER
-							</h3>
-						</div>
-						<div class="modal-body">
-							<h4>Are you sure you want to logout?</h4>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-primary">Logout</button>
-							<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-						</div>
-					</div>
-				</div>
+		</div>
+		<!-- /.container -->
+	</div>
+</div>
+<!-- Header closed --> 
+<div class="modal fade" id="basicModal" tabindex="-1">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span>&times;</span>
+					<span class="sr-only">Close</span>
+				</button>
+				<h3 class="modal-title" id="myModalLabel" style="color:green;font-weight:bold;"> LOGOUT USER
+				</h3>
+			</div>
+			<div class="modal-body">
+				<h4>Are you sure you want to logout?</h4>
+			</div>
+			<div class="modal-footer">
+				<a href="/home"> <button type="button" class="btn btn-primary" data-dismiss="modal" onClick="logout()">Logout</button></a>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 			</div>
 		</div>
-		<!-- Left Pane Section ends -->
+	</div>
+</div>
+<div class="modal fade" id="view" tabindex="-1">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span>&times;</span>
+					<span class="sr-only">Close</span>
+				</button>
+				<h3 class="modal-title" id="myModalLabel" style="color:green;font-weight:bold;"> View Profile</h3>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">Username:
+					<span class="form-control" id="username"></span>
+				</div>
+				<div class="form-group">Email:
+					<span class="form-control" id="email"></span>
+				</div>
+			</div>
 
-		<!-- Main Body Section starts -->
-		<div class="container-fluid" style="background:white;border:0px solid black;">
-			<div class="col-md-9" id="id2" style="border: 0px solid green;height:800px;">
-				<div class="col-md-12">
-					<div style="border: 0px solid green;height:700px;padding:50px">
-						<div class="panel-body">
-							<form id="prodDetails" action="/searchRetailer" method="GET" class="navbar-form navbar-left" role="search" accept-charset="utf-8"> 
-								<div class="form-group">
-									<!-- <input type="text" class="form-control" placeholder="Search" name="searchKeyword"> -->
-									<!-- onchange="searchProduct()" -->
-									<select class="form-control" id="searchKeyword" name="searchKeyword">
-										<option>Select Product Category</option>
-										<optgroup label="Living Room">
-											<option>Sofas</option>
-											<option>Chairs</option>
-											<option>Tables</option>
-											<option>Love Seats</option>
-											<option>T V Consoles</option>
-										</optgroup>
-										<optgroup label="Bed Room">
-											<option>Beds</option>
-											<option>Night Stands</option>
-											<option>Dressers and Chests</option>
-											<option>Bed Benches</option>
-										</optgroup>
-									</select>
-								</div>
-								<button type="submit" class="btn btn-default">Submit</button>
-							</form>
-							<div class="container-fluid">
-								{% for item in itemlist %}
-								<div class="row">
-									<div class="col-md-12"> <br>
-										<div class="row" style="padding:30px">
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="edit" tabindex="-1">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span>&times;</span>
+					<span class="sr-only">Close</span>
+				</button>
+				<h3 class="modal-title" id="myModalLabel" style="color:green;font-weight:bold;">Edit Profile</h3>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">Username:
+					<input type="text" class="form-control" id="username">
+				</div>
+				<div class="form-group">Email:
+					<input type="text" class="form-control"  id="email"> 
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
 
 
-											<div class="row">
-												<div class="col-md-3" >
-													<img src="{{item.prodImgUrl}}" class="img-thumbnail">
-												</div>
-												<div class="col-md-7" >
-													<h5>Product: {{item.prodId}}</h5>
-													<h3>Product Name: {{item.prodName}}</h3>
-													<h5 style="text-align:justify;text-justify:inter-word;"><b>Product Desc:</b> {{item.prodDesc}}</h5>
-													<br/>
-													<button type="checkbox" class="btn btn-default" aria-label="Like" onclick="likeItem('{{item._id}}')">
-														<span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Like (<label id="{{item._id}}">{{item.prodLikes}}</label>)
-													</button>
-												</div>
-											</div>
 
-											<br/>
-											<!-- <h5 >Product Likes: </h5><label id="{{item._id}}">{{item.ProdCount}}</label> -->
-											<br/>
-											<!-- <h5>Product _id: {{item._id}}</h5>	 -->
-										</div>
-										<br/>
-									</div>
-								</div>
-								{% endfor %}
+<!-- Main Body Section starts -->
+<div class="container-fluid">
+
+	<div class="col-md-12" style="padding:70px;background-color:white;">
+		<div class="panel-body">
+			<div class="col-xs-12 col-xs-offset-4">
+				<form id="prodDetails" action="/searchRetailer" method="GET" class="navbar-form navbar-left" role="search" accept-charset="utf-8"> 
+
+					<div class="form-group">
+						<!-- <input type="text" class="form-control" placeholder="Search" name="searchKeyword"> -->
+						<!-- onchange="searchProduct()" -->
+						<select class="form-control" id="searchKeyword" name="searchKeyword">
+							<option>Select Product Category</option>
+							<optgroup label="Living Room">
+								<option>Sofas</option>
+								<option>Chairs</option>
+								<option>Tables</option>
+								<option>T V Stands</option>
+							</optgroup>
+							<optgroup label="Bed Room">
+								<option>Beds</option>
+								<option>Lamps</option>
+								<option>Vases</option>
+							</optgroup>
+							<optgroup label="Patio Furniture">
+								<option>Patio Benches</option>
+								<option>Patio Chairs</option>
+							</optgroup>
+						</select>
+					</div>
+					<button type="submit" class="btn btn-default">Submit</button>
+
+				</form>
+				{% if count %}
+				<br/><br/><h5><b> {{ count }} </b> items found. </h5>
+				{% endif %}
+			</div>
+			<div class="container-fluid">
+				{% for item in itemlist %}
+				<div class="row">
+					<div class="col-md-12"> <br>
+						<!-- <div class="row" style="padding:30px"> -->
+						<div class="row">
+							<div class="col-md-3" >
+								<img src="{{item.prodImgUrl}}" class="img-thumbnail">
+							</div>
+							<div class="col-md-7" >
+								<!-- <h5>Product: {{item.prodId}}</h5> -->
+								<h3>Product Name: {{item.prodName}}</h3>
+								<h5 style="text-align:justify;text-justify:inter-word;"><b>Product Desc:</b> {{item.prodDesc}}</h5>
+								<br/>
+								<button type="checkbox" class="btn btn-default" aria-label="Like" onclick="likeItem('{{item._id}}')">
+									<span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Like (<label id="{{item._id}}">{{item.prodLikes}}</label>)
+								</button>
 							</div>
 						</div>
+
+						<br/>
+						<!-- <h5 >Product Likes: </h5><label id="{{item._id}}">{{item.ProdCount}}</label> -->
+						<br/>
+						<!-- <h5>Product _id: {{item._id}}</h5>	 -->
 					</div>
+					<br/>
 				</div>
+				<!-- </div> -->
+				{% endfor %}
 			</div>
 		</div>
-		<!-- Main Body Section ends -->
 	</div>
-	<!-- Central Body of the page -->
-	<footer>
-		<div class="container-fluid" style="background:black;">
+</div>
+</div>
+</div>
+<!-- Main Body Section ends -->
+<!-- Footer of the page -->
+<footer>
+	<div class="container-fluid" style="background:black;">
 
-			<div class="col-lg-12 text-center">
-				<h4 class="contact"> CONTACT US </h4>
+		<div class="col-lg-12 text-center">
+			<h4 class="contact"> CONTACT US </h4>
+		</div>
+
+		<form name="sentMessage" id="contactForm2" >
+			<div class="row">
+				<div class="col-md-4 col-md-offset-2">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Your Name *" id="name3"> 
+
+					</div>
+					<div class="form-group">
+						<input type="email" class="form-control" placeholder="Your Email *" id="email3">
+
+					</div>
+					<div class="form-group">
+						<input type="number" class="form-control" placeholder="Your Phone *" id="phone">
+
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<textarea class="form-control" placeholder="Your Message *" id="message"></textarea>
+
+					</div>
+				</div>
+			</div>
+			<div class="button">
+				<div class="col-md-12 text-center">
+
+					<button type="submit" class="btn btn-xl">Send Message</button>
+				</div>
 			</div>
 
-			<form name="sentMessage" id="contactForm" >
-				<div class="row">
-					<div class="col-md-4 col-md-offset-2">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Your Name *" id="name1"> 
-
-						</div>
-						<div class="form-group">
-							<input type="email" class="form-control" placeholder="Your Email *" id="email1">
-
-						</div>
-						<div class="form-group">
-							<input type="number" class="form-control" placeholder="Your Phone *" id="phone">
-
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="form-group">
-							<textarea class="form-control" placeholder="Your Message *" id="message"></textarea>
-
-						</div>
-					</div>
-				</div>
-				<div class="button">
-					<div class="col-md-12 text-center">
-
-						<button type="submit" class="btn btn-xl">Send Message</button>
-					</div>
-				</div>
-
-			</form>
+		</form>
 
 
-			<p style="text-align:center;margin-top:150px;color:#fed136;">Copy rights- HomeAR inc 2014</p>
+		<p style="text-align:center;margin-top:150px;color:#fed136;">Copy rights- HomeAR inc 2015</p>
 
-		</footer>
+	</footer>
 </body>
 </html>

@@ -39,6 +39,7 @@ def add_cors(resp):
 Web Related APIS
 
 """
+@app.route('/home')
 @app.route('/')
 def index():
 	return render_template('index.html')
@@ -174,7 +175,7 @@ def search_products():
 			# print listProd
 
 			client.close()
-			return render_template("search.html", status = "Search Successful!", item2 = listProd, itemlist = listProd, count = len(listProd))
+			return render_template("search.html", status = "Search Successful!", item2 = listProd, itemlist = listProd, count = max(len(listProd),0))
 		else:
 			return render_template('search.html') #, status = "Rendering Page Successfully!", item2 = NULL, itemlist = NULL )
 	except:
@@ -199,13 +200,13 @@ def search_option_for_retailers():
 			listProd = []
 			# print ('prodId: %d,Prod Name: %s , Prod Desc: %s.' % (doc['prodId'], doc['ProdName'], doc['ProdDesc'], doc['ProdCount']))
 			for doc in cursor:
-				print doc['prodName']
+				# print doc['prodName']
 				#print ('ProdId: %d,Prod Name: %s , Prod Desc: %s, ProdCount: %d' % (doc['ProdId'], doc['ProdName'], doc['ProdDesc'], doc['ProdCount']))
 				listProd.append(doc)
 			print "---------"	
-			print listProd
+			# print listProd
 			client.close()
-			return render_template("searchRetailer.html", status = "Search Successful!", item2 = listProd, itemlist = listProd)
+			return render_template("searchRetailer.html", status = "Search Successful!", item2 = listProd, itemlist = listProd, count = len(listProd))
 		else:
 			return render_template('searchRetailer.html') #, status = "Rendering Page Successfully!", item2 = NULL, itemlist = NULL )
 	except:
@@ -240,7 +241,9 @@ def dashboard():
 
 @app.route('/retailerDashboard', methods =['GET','POST'])
 def retailer_dashboard():
-	return render_template('retailerDashboard.html', data = read_file('test.csv'), fileList = generate_file_data(get_list_of_files()))
+	if request.method == 'GET':
+		return render_template("retailerDashboard.html")
+	# return render_template('retailerDashboard.html', data = read_file('test.csv'), fileList = generate_file_data(get_list_of_files()))
 
 @app.route('/aboutUs')
 def about():
@@ -249,6 +252,32 @@ def about():
 @app.route('/services')
 def services():
 	return render_template('services.html')
+
+@app.route('/viewUserDetails', methods =['GET'])
+def getUserData():
+	message = ""
+	if request.method == 'GET':
+		if not request.args:
+			print "No Arguments to get the user data!"
+			return "No Arguments"
+		else:
+			if 'userEmail' in request.args:
+				client = pymongo.MongoClient(MONGODB_URI)
+
+				db = client.get_default_database()
+				user_details =db['user_details']
+				user = user_details.find({"l_email" : uemail.lower() })
+				if user.count() == 0:
+					message = "No User"
+				else:
+					for u in user:
+						message = u['username']
+						break
+				client.close()
+				
+				print message
+				return message
+						
 
 
 """
@@ -430,8 +459,8 @@ def getProdDetailsbyCategory():
 				# Checks if TextureUrl field exists in doc prod
 				if 'prodTextureUrl' in prod: 
 					listProdDetailItem.append(prod['prodTextureUrl'])
-				else:
-					listProdDetailItem.append("http://50.116.3.141:5500/static/textures/stuhl.jpg")
+				# else:
+				# 	listProdDetailItem.append("http://50.116.3.141:5500/static/textures/stuhl.jpg")
 				# TODO: Add texture URL
 				listCategoryProducts.append(listProdDetailItem)
 

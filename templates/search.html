@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>MongoDB Connection</title>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="bootstrap-select.js"></script>
+	<title>Search for Products from MongoDB Server!</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
  	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  	 <link rel="stylesheet" href="{{ url_for('static',filename='css/firstpage.css') }} ">
-  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-
+  	 <link rel="stylesheet" href="{{ url_for('static',filename='css/firstpage.css') }} ">
+  	 <script type="text/javascript" src="{{ url_for('static',filename='js/loginRegistrationScripts.js') }} "></script>
 
 	<style>
 	.navbar .navbar-brand{
@@ -82,6 +79,10 @@ background-color:black;
 		ajaxRequest.send(null);
 	}
 
+	function logout(){
+		alert("hre");
+	window.location.href = "/";
+}
 	</script>
 </head>
 
@@ -139,7 +140,7 @@ background-color:black;
 							<h4>Are you sure you want to logout?</h4>
 						</div>
 						<div class="modal-footer">
-						 <a href="http://homear.herokuapp.com"><button type="button" class="btn btn-primary">Logout</button></a>
+						 <a href="/home" > <button type="button" class="btn btn-primary" data-dismiss="modal" onClick="logout()">Logout</button></a>
 							<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 						</div>
 					</div>
@@ -193,25 +194,14 @@ background-color:black;
   </div>
 
 
-
-
-
-
-
-
-
-
-<!-- Left Pane Section ends -->
-
-		<!-- Main Body Section starts -->
-		<!-- Main Body Section starts -->
+<!-- Main Body Section starts -->
 		<div class="container-fluid">
 			
-				<div class="col-md-12">
-					<div style="border: 0px;padding:50px">
+				<div class="col-md-12" style="padding:70px;background-color:white;">
 						<div class="panel-body">
-
+							<div class="col-xs-12 col-xs-offset-4">
 							<form id="prodDetails" action="/search" method="GET" class="navbar-form navbar-left" role="search" accept-charset="utf-8"> 
+								
 								<div class="form-group">
 									<!-- <input type="text" class="form-control" placeholder="Search" name="searchKeyword"> -->
 									<!-- onchange="searchProduct()" -->
@@ -235,21 +225,23 @@ background-color:black;
 									</select>
 								</div>
 								<button type="submit" class="btn btn-default">Submit</button>
+								
 							</form>
-							<div class="container-fluid">
 							{% if count %}
                              <br/><br/><h5><b> {{ count }} </b> items found. </h5>
                              {% endif %}
+                         </div>
+							<div class="container-fluid">
 								{% for item in itemlist %}
 								<div class="row">
 									<div class="col-md-12"> <br>
-										<div class="row" style="padding:30px">
+										<!-- <div class="row" style="padding:30px"> -->
 											<div class="row">
 												<div class="col-md-3" >
 													<img src="{{item.prodImgUrl}}" class="img-thumbnail">
 												</div>
 												<div class="col-md-7" >
-													<h5>Product: {{item.prodId}}</h5>
+													<!-- <h5>Product: {{item.prodId}}</h5> -->
 													<h3>Product Name: {{item.prodName}}</h3>
 													<h5 style="text-align:justify;text-justify:inter-word;"><b>Product Desc:</b> {{item.prodDesc}}</h5>
 													<br/>
@@ -266,7 +258,7 @@ background-color:black;
 										</div>
 										<br/>
 									</div>
-								</div>
+								<!-- </div> -->
 								{% endfor %}
 							</div>
 						</div>
@@ -275,6 +267,7 @@ background-color:black;
 			</div>
 		</div>
 		<!-- Main Body Section ends -->
+
 	<!-- Footer of the page -->
 	<footer>
 		<div class="container-fluid" style="background:black;">

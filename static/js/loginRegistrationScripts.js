@@ -75,7 +75,7 @@ function signup() {
 	        var index_picked = document.getElementById("select").selectedIndex;
 	      	var type_picked = document.getElementById("select").options[index_picked].value;
 
-	      	alert("type_picked: " + type_picked);
+	      	//alert("type_picked: " + type_picked);
 
 	      	registerCall(type_picked);	          
 }
@@ -119,6 +119,7 @@ function registerCall(type_picked) {
 	      			window.location.href= "/search";
 	      	else 
 	      		window.location.href="";
+	      	localStorage.setItem("userEmail", document.getElementById("Email").value );
 	    }
 	    else
 	    	document.getElementById("errorBox").innerHTML= ajaxRequest.responseText;
@@ -191,6 +192,8 @@ function login_user() {
 	    		//Customer Logged In
 	    		window.location.href = "/search";
 	    	}
+
+	    	localStorage.setItem("userEmail", document.getElementById("Email_Id").value );
 	    }
 	    else
 	    	document.getElementById("pswd_validation").innerHTML= textResponse;
@@ -205,4 +208,8 @@ function login_user() {
 	ajaxRequest.send(dataString);
 
 	return true;
+}
+
+function logout(){
+	window.location.href = "/";
 }

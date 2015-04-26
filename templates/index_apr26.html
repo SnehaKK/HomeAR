@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Services and Features provided by HomeAR">
+  <meta name="author" content="">
+  <title> Cover Page | Landing Page of HomeAR</title>
+
+  <link type="text/css" href="{{ url_for('static',filename='css/style.css') }}" />
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/firstpage.css') }} ">
+
+  <script src="http://www.modernizr.com/downloads/modernizr-latest.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+  <script src="{{ url_for('static',filename='js/loginRegistrationScripts.js') }}"></script>
+  <!-- LoginRegistrationScripts.js -->
+
+</head>
+
+<body>
+  <!-- Header starts --> 
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a href="/" class="navbar-brand">HomeAR</a>
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="navbar-collapse collapse" id="navbar-main">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="head" href="/">Home</a></li>
+          <li><a class="head" href="#" data-toggle="modal" data-target="#myModal2">Register/Login </a></li>
+          <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+           <div class="popup">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <section id="window">
+                    <div class="container">
+                     <form>
+                      <div class="row"> 
+														<div class="col-sm-3">
+															<h3 class="register">Register</h3>
+															<div class="form-group">
+																<select class="form-control" id="select">
+																	<option value="one">--Select a user type--</option>
+																	<option value="yes" id="retailer">Retailer</option>
+																	<option value="no" id="customer">Customer</option>
+																</select>
+															</div>
+															<div id="errorBox"></div>
+															<div class="form-group"> Email<input type="email" class="form-control" placeholder="abc@example.com" id="Email">
+															</div>
+															<div id="errorBox1"></div>
+															<div class="form-group"> Username<input type="text" class="form-control" placeholder="Your name" id="Uname">
+															</div>
+															<div id="errorBox2"></div>
+															<div class="form-group"> Password<input type="password" class="form-control" placeholder="Enter Password" id="Password">
+															</div>
+															<div id="errorBox3"></div>
+															<div class="form-group"> Re-Password<input type="password" class="form-control" placeholder="Enter the same Password *" id="Confirm_Password">
+															</div>
+															<input type="button" class="btn btn-primary"  value= "Register" onclick="signup()">
+															<input type="reset" class="btn btn-default" value="Cancel" onClick="window.location.reload()">
+                        </div>
+
+														<div class="col-sm-3 col-sm-offset-1">
+															<h4 class="login">Login</h4>
+															<div id="email_validation"></div>
+															<div class="form-group">
+																<div class="form-group">
+																Email<input type="email" class="form-control"
+																	placeholder="abc@example.com" id="Email_Id">
+															</div>
+															<div id="pswd_validation"></div>
+															<div class="form-group">
+																Password<input type="password" class="form-control"
+																	placeholder="Enter Password" id="Password_Valid">
+															</div>
+															<input type="button" class="btn btn-primary" value="Login" onclick="login_user()" id="loginid" >
+															<button type="reset" class="btn btn-default">Cancel</button>
+														</div>
+													</div>
+												</form>
+											</div>
+										</section>
+									</div>
+									<div class="modal-footer">
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+					<li><a class="head" href="/aboutUs">About us</a>
+					</li>			
+				</ul>
+			</div>
+			<!-- /.container -->
+		</div>
+	</div>
+	<!-- Header closed -->
+
+<!-- Carousel starts-->  
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" >
+
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+
+  <div class="carousel-inner">
+
+    <div class="item active" >
+      <img src="{{ url_for('static', filename='images/image1.jpg') }}">
+      
+    </div>
+    
+    <div class="item">
+      <img src="{{ url_for('static', filename='images/image2.jpg') }}">
+
+    </div>
+
+    <div class="item">
+      <img src="{{ url_for('static', filename='images/image3.jpg') }}">
+
+    </div>
+
+  </div> 
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic"  data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic"  data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div><!-- Carousel -->
+<!--Carousel closed --> 
+
+
+
+<!--Image thumbnail starts --> 
+<section id="feature" >
+ <div class="container">
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <h2 class="section-heading">Services</h2>
+
+    </div>
+  </div>
+
+
+
+  <div class="row">
+
+   <div class="col-md-4" data-wow-duration="1000ms" data-wow-delay="600ms" >
+
+    <center>
+    <a href="#" class="img-circle" title="Augmented Reality" data-container="body" data-toggle="popover"  data-trigger="hover" data-placement="top" data-content="HomeAR mobile application is implemented using Metaio SDK for delivering Augmented Reality experience to all the users. It enhances the user's purchasing decisions by providing them with better visualization of products using AR feature of the application.">
+     <img src="{{ url_for('static', filename='images/augmented.jpg') }}"  class="img-circle" style="height:200px;width:200px; border: 2px solid black;"></a>
+     </center>
+
+    <h3 class="service text-center"> Augmented Reality </h3>
+  </div>
+  <div class="col-md-4" data-wow-duration="1000ms" data-wow-delay="600ms">
+
+    <center>
+    <a href="#" class="img-circle" title="Android Mobile Application" data-container="body" data-toggle="popover"  data-trigger="hover" data-placement="top" data-content="Mobile application HomeAR is developed on the android platform, and all the functionalities have been implemented following the standards of Android app development.">
+    <img src="{{ url_for('static', filename='images/android.jpg') }}"  class="img-circle" style="height:200px;width:200px; border: 2px solid black;">
+    </a>
+    </center>
+    <h3 class="service text-center">Mobile Application</h3>
+  </div>
+  <div class="col-md-4" data-wow-duration="1000ms" data-wow-delay="600ms">
+
+    <center>
+     <a href="#" class="img-circle" title="Products" data-container="body" data-toggle="popover"  data-trigger="hover" data-placement="top" data-content="HomeAR provides catalog of nine categories of items. These products define the ones that can be purchased later, after proper analysis of its appearance and compatibility with other furniture at Home.">
+    <img src="{{ url_for('static', filename='images/product.jpg') }}"  class="img-circle" style="height:200px;width:200px; border: 2px solid black;">
+    </a>
+    </center>
+    <h3 class="service text-center"> Products</h3>
+  </div>
+</div></div></section>
+<!-- Image thumbnail closed --> <br>
+
+<!--Footer starts--> 
+<footer>
+	<div class="container-fluid" style="background:black;">
+		
+   <div class="col-lg-12 text-center">
+    <h4 class="contact"> CONTACT US </h4>
+  </div>
+
+  <form name="sentMessage" id="contactForm" >
+    <div class="row">
+      <div class="col-md-4 col-md-offset-2">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Your Name *" id="name1"> 
+
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" placeholder="Your Email *" id="email1">
+
+        </div>
+        <div class="form-group">
+          <input type="number" class="form-control" placeholder="Your Phone *" id="phone">
+
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <textarea class="form-control" placeholder="Your Message *" id="message"></textarea>
+
+        </div>
+      </div>
+    </div>
+    <div class="button">
+      <div class="col-md-12 text-center">
+
+        <button type="submit" class="btn btn-xl">Send Message</button>
+      </div>
+    </div>
+
+  </form>
+
+
+  <p style="text-align:center;margin-top:150px;color:#fed136;">Copy rights- HomeAR inc 2015</p>
+
+</footer>
+<!-- Footer closed -->
+
+
+</body>
+<script>$(function () 
+      { $("[data-trigger='hover']").popover();
+      });
+   </script>
+
+</html>

@@ -6,113 +6,194 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Services and Features provided by HomeAR">
   <meta name="author" content="">
-  <title> Cover Page | Landing Page of HomeAR</title>
-
-  <link type="text/css" href="{{ url_for('static',filename='css/style.css') }}" />
-
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <title> Cover Page | First Page of HomeAR</title>
   <link rel="stylesheet" href="{{ url_for('static',filename='css/firstpage.css') }} ">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-  <script src="http://www.modernizr.com/downloads/modernizr-latest.js"></script>
+  <script type="text/javascript" src="{{ url_for('static',filename='js/loginRegistrationScripts.js') }} "></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"> 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
-  <script src="{{ url_for('static',filename='js/loginRegistrationScripts.js') }}"></script>
-  <!-- LoginRegistrationScripts.js -->
-
 </head>
+<style>
+.navbar .navbar-brand{
+  
+  color:#FFFFFF;
+  font-weight:bold; 
+  font-size: 1.5em;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  transition: all .3s;
+}
+h3.register{
+  padding:15px;
+  font-size:28px;
+}
+h4.login {
+  padding:25px;
+  font-size:28px;
+}
+.dropdown-menu {
+background-color:black; 
+}
+ .dropdown-menu > li>  a.board {
+    
+  color:#FFFFFF;
+   font-weight:bold;
+  font-size: 1.2em;
+}
+ .dropdown-menu > li>  a.board:hover , a.board.active {
+    color: #990000;
+    background-color: #fed136;
+ }
+  #errorBox{
+ color:#F00;
+ font-family: georgia;
+ font-size:20px;
+ }
+  #errorBox1{
+  color:#F00;
+ font-family: georgia;
+ font-size:20px;
+ }
+  #errorBox2{
+  color:#F00;
+ font-family: georgia;
+ font-size:20px;
+ }
+  #errorBox3{
+  color:#F00;
+ font-family: georgia;
+ font-size:20px;
+ }
+   #email_validation {
+   color:#F00;
+ font-family: georgia;
+ font-size:20px;
+ }
+ #pswd_validation{
+  color:#F00;
+ font-family: georgia;
+ font-size:20px;
+ }
+ .popup .modal-dialog {
+    min-width:60%;
+ }
+ #loginid {
+  text-align:center;
+  padding:10px;
+  
+ }
+
+</style>
 
 <body>
-  <!-- Header starts --> 
+ <!-- Header starts -->
   <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a href="/" class="navbar-brand">HomeAR</a>
-        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
+        <a href="/"
+          class="navbar-brand">HomeAR</a>
+        <button class="navbar-toggle" type="button" data-toggle="collapse"
+          data-target="#navbar-main">
+          <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+            class="icon-bar"></span>
         </button>
       </div>
       <div class="navbar-collapse collapse" id="navbar-main">
         <ul class="nav navbar-nav navbar-right">
-          <li><a class="head" href="/">Home</a></li>
-          <li><a class="head" href="#" data-toggle="modal" data-target="#myModal2">Register/Login </a></li>
-          <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-           <div class="popup">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                    <span class="sr-only">Close</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <section id="window">
-                    <div class="container">
-                     <form>
-                      <div class="row"> 
-														<div class="col-sm-3">
-															<h3 class="register">Register</h3>
-															<div class="form-group">
-																<select class="form-control" id="select">
-																	<option value="one">--Select a user type--</option>
-																	<option value="yes" id="retailer">Retailer</option>
-																	<option value="no" id="customer">Customer</option>
-																</select>
-															</div>
-															<div id="errorBox"></div>
-															<div class="form-group"> Email<input type="email" class="form-control" placeholder="abc@example.com" id="Email">
-															</div>
-															<div id="errorBox1"></div>
-															<div class="form-group"> Username<input type="text" class="form-control" placeholder="Your name" id="Uname">
-															</div>
-															<div id="errorBox2"></div>
-															<div class="form-group"> Password<input type="password" class="form-control" placeholder="Enter Password" id="Password">
-															</div>
-															<div id="errorBox3"></div>
-															<div class="form-group"> Re-Password<input type="password" class="form-control" placeholder="Enter the same Password *" id="Confirm_Password">
-															</div>
-															<input type="button" class="btn btn-primary"  value= "Register" onclick="signup()">
-															<input type="reset" class="btn btn-default" value="Cancel" onClick="window.location.reload()">
-                        </div>
+          <li><a class="head" href="#" data-toggle="modal" data-target="#myModal2">
+            <span class="glyphicon glyphicon-user"></span> Register/Login </a></li>
+          
+          <div class="modal fade" id="myModal2" tabindex="-1" role="dialog"
+            aria-labelledby="myModalLabel" aria-hidden="true">
+            
+            
+            <div class="popup">
+          
+              <div class="modal-dialog">
+              
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                      <span aria-hidden="true">&times;</span> <span class="sr-only">Close</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <section id="window">
+                      <div class="container">
+                        <form>
+                          <div class="row">
+                            <div class="col-sm-3">
+                              <h3 class="register">Register</h3>
+                              <div class="form-group">
+                                <select class="form-control" id="select">
+                                  <option value="one">--Select a user type--</option>
+                                  <option value="yes" id="retailer">Retailer</option>
+                                  <option value="no" id="customer">Customer</option>
+                                </select>
+                              </div>
+                              <div id="errorBox"></div>
+                              <div class="form-group">
+                                Email<input type="email" class="form-control"
+                                  placeholder="abc@example.com" id="Email">
+                              </div>
+                              <div id="errorBox1"></div>
+                              <div class="form-group">
+                                Username<input type="text" class="form-control"
+                                  placeholder="Your name" id="Uname">
+                              </div>
+                              <div id="errorBox2"></div>
+                              <div class="form-group">
+                                Password<input type="password" class="form-control"
+                                  placeholder="Enter Password" id="Password">
+                              </div>
+                              <div id="errorBox3"></div>
+                              <div class="form-group">
+                                Re-Password<input type="password" class="form-control"
+                                  placeholder="Enter the same Password *" id="Confirm_Password">
+                              </div>
+                              <input type="button" class="btn btn-primary"  value= "Register" onclick="signup()">
+                              <input type="reset" class="btn btn-default" value="Cancel" onClick="window.location.reload()">
+                            </div>
 
-														<div class="col-sm-3 col-sm-offset-1">
-															<h4 class="login">Login</h4>
-															<div id="email_validation"></div>
-															<div class="form-group">
-																<div class="form-group">
-																Email<input type="email" class="form-control"
-																	placeholder="abc@example.com" id="Email_Id">
-															</div>
-															<div id="pswd_validation"></div>
-															<div class="form-group">
-																Password<input type="password" class="form-control"
-																	placeholder="Enter Password" id="Password_Valid">
-															</div>
-															<input type="button" class="btn btn-primary" value="Login" onclick="login_user()" id="loginid" >
-															<button type="reset" class="btn btn-default">Cancel</button>
-														</div>
-													</div>
-												</form>
-											</div>
-										</section>
-									</div>
-									<div class="modal-footer">
-									</div>
-								</div>
-							</div>
-						</div>
-						
-					</div>
-					<li><a class="head" href="/aboutUs">About us</a>
-					</li>			
-				</ul>
-			</div>
-			<!-- /.container -->
-		</div>
-	</div>
-	<!-- Header closed -->
+                            <div class="col-sm-3 col-sm-offset-1">
+                              <h4 class="login">Login</h4>
+                              <div id="email_validation"></div>
+                              <div class="form-group">
+                                <div class="form-group">
+                                Email<input type="email" class="form-control"
+                                  placeholder="abc@example.com" id="Email_Id">
+                              </div>
+                              <div id="pswd_validation"></div>
+                              <div class="form-group">
+                                Password<input type="password" class="form-control"
+                                  placeholder="Enter Password" id="Password_Valid">
+                              </div>
+                              <input type="button" class="btn btn-primary active" value="Login" onclick="login_user()" id="loginid" >
+                              <button type="reset" class="btn btn-default">Cancel</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </section>
+                  </div>
+                  <div class="modal-footer"></div>
+                </div>
+              </div>
+              
+            </div>
+            
+          </div>  
+          
+          <li><a class="head" href="/aboutUs"><span class="glyphicon  glyphicon-envelope"></span> About us</a></li>
+          
+        </ul>
+      </div>
+      <!-- /.container -->
+    </div>
+  </div>
+  <!-- Header closed -->
+
 
 <!-- Carousel starts-->  
 
@@ -154,8 +235,6 @@
   </a>
 </div><!-- Carousel -->
 <!--Carousel closed --> 
-
-
 
 <!--Image thumbnail starts --> 
 <section id="feature" >
@@ -203,8 +282,8 @@
 
 <!--Footer starts--> 
 <footer>
-	<div class="container-fluid" style="background:black;">
-		
+  <div class="container-fluid" style="background:black;">
+    
    <div class="col-lg-12 text-center">
     <h4 class="contact"> CONTACT US </h4>
   </div>
