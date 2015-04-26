@@ -9,16 +9,35 @@ from os import walk
 import logging
 
 app = Flask(__name__)
-MONGODB_URI = "mongodb://sneha:test123@ds063150.mongolab.com:63150/testmongolabs"
-MONGODB_URI_HomeAR = "mongodb://sneha:test123@ds061370.mongolab.com:61370/homear"
+
+MONGODB_URI = "mongodb://sneha:test123@ds061370.mongolab.com:61370/homear"
 
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
 app.logger.setLevel(logging.ERROR)
 
 """
-==========================
+To Enable CategoryProducts
+"""
+
+@app.after_request
+def add_cors(resp):
+    """ Ensure all responses have the CORS headers. This ensures any failures are also accessible
+        by the client. """
+    resp.headers['Access-Control-Allow-Origin'] = request.headers.get('Origin','*')
+    resp.headers['Access-Control-Allow-Credentials'] = 'true'
+    resp.headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS, GET'
+    resp.headers['Access-Control-Allow-Headers'] = request.headers.get( 
+        'Access-Control-Request-Headers', 'Authorization' )
+    # set low for debugging
+    if app.debug:
+        resp.headers['Access-Control-Max-Age'] = '1'
+    return resp
+
+
+"""
+
 Web Related APIS
-==========================
+
 """
 @app.route('/')
 def index():
@@ -138,7 +157,7 @@ def search_products():
 		if 'searchKeyword' in request.args:
 			keyword = request.args['searchKeyword']
 			
-			client = pymongo.MongoClient(MONGODB_URI_HomeAR)
+			client = pymongo.MongoClient(MONGODB_URI)
 			db = client.get_default_database()
 			prod_details = db['product_details']
 			cursor = prod_details.find({'prodCategory': keyword })
@@ -170,7 +189,7 @@ def search_option_for_retailers():
 		if 'searchKeyword' in request.args:
 			keyword = request.args['searchKeyword']
 			
-			client = pymongo.MongoClient(MONGODB_URI_HomeAR)
+			client = pymongo.MongoClient(MONGODB_URI)
 			db = client.get_default_database()
 			prod_details = db['product_details']
 			cursor = prod_details.find({'prodCategory': keyword })
@@ -201,7 +220,7 @@ def like_item():
 	# print "checking search arg id- item id: " + str(request.args["_id"])
 	if request.method == 'GET':
 		itemId = request.args["id"]
-		client = pymongo.MongoClient(MONGODB_URI_HomeAR)
+		client = pymongo.MongoClient(MONGODB_URI)
 		db = client.get_default_database()
 		prod_details = db['product_details']
 		cursor = prod_details.find({"_id" : ObjectId(itemId) })
@@ -233,9 +252,7 @@ def services():
 
 
 """
-==========================
-Cross Functional APIS
-==========================
+Cross Functional APIS: For Web and Mobile Interfaces
 """
 @app.route('/login', methods =['POST'])
 def login():
@@ -249,7 +266,7 @@ def login():
 		uemail = request.form["Email"]
 		upass = request.form["Password"]
 		
-		client = pymongo.MongoClient(MONGODB_URI_HomeAR)
+		client = pymongo.MongoClient(MONGODB_URI)
 
 		db = client.get_default_database()
 		user_details = db['user_details']
@@ -297,7 +314,7 @@ def register():
 
 		print useremail, userpassword, username
 
-		client = pymongo.MongoClient(MONGODB_URI_HomeAR)
+		client = pymongo.MongoClient(MONGODB_URI)
 		db = client.get_default_database()
 		user_details = db['user_details']
 		
@@ -323,24 +340,19 @@ def register():
 	return "Error:Registration Failed! :("
 
 """
-==========================
 Mobile Related APIS
-==========================
 """
 
 categoryType = {
 	1 : "Sofas",
-    2 : "Tables",
-	3 : "Chairs",
-	4 : "T V Consoles",
-	5 : "Love Seats",
-	6 : "Beds",
-	7 : "Night Stands",
-	8 : "Dressers and Chests",
-	9 : "Bed Benches",
-	10 : "Floor Lamps",
-	11 : "Table Lamps",
-	12 : "Ceiling Fans",
+    2 : "Chairs",
+	3 : "Tables",
+	4 : "T V Stands",
+	5 : "Beds",
+	6 : "Lamps",
+	7 : "Vases",
+	8 : "Patio Benches",
+	9 : "Patio Chairs"
 }
 
 # @app.route('/category/<int:categoryId>',methods=['GET'])
@@ -359,7 +371,7 @@ def getProdbyCategory():
 		listCategoryProducts =[]
 		listCategorisedImageUrl = []
 
-		client = pymongo.MongoClient(MONGODB_URI_HomeAR)
+		client = pymongo.MongoClient(MONGODB_URI)
 		db = client.get_default_database()
 		prod_details = db['product_details']
 		products = prod_details.find({"prodCategory" : categoryType[category] })
@@ -397,7 +409,7 @@ def getProdDetailsbyCategory():
 
 		listCategoryProducts =[]
 
-		client = pymongo.MongoClient(MONGODB_URI_HomeAR)
+		client = pymongo.MongoClient(MONGODB_URI)
 		db = client.get_default_database()
 		prod_details = db['product_details']
 		products = prod_details.find({"prodCategory" : categoryType[category] })
