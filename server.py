@@ -15,9 +15,14 @@ MONGODB_URI_HomeAR = "mongodb://sneha:test123@ds061370.mongolab.com:61370/homear
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
 app.logger.setLevel(logging.ERROR)
 
+"""
+==========================
+Web Related APIS
+==========================
+"""
 @app.route('/')
 def index():
-	return render_template('index_new.html')
+	return render_template('index.html')
     # return 'Hello World!'
 
 app.config['UPLOAD_FOLDER'] = 'uploads/'
@@ -126,38 +131,67 @@ def get_graph():
 		print request
 		return render_template('retailerDashboard.html', data = read_file('test.csv'), fileList = generate_file_data(get_list_of_files()))
 
-@app.route('/searchProduct',methods =['GET','POST'])
+
+@app.route('/search',methods =['GET'])
 def search_products():
-	if request.method == "GET":
-		try:
-			print "checking search keyword "  + request.args['searchKeyword']
+	try:
+		if 'searchKeyword' in request.args:
 			keyword = request.args['searchKeyword']
 			
-			client = pymongo.MongoClient(MONGODB_URI)
+			client = pymongo.MongoClient(MONGODB_URI_HomeAR)
 			db = client.get_default_database()
-			prod_details = db['prod_details']
-			cursor = prod_details.find({'ProdName': keyword })
+			prod_details = db['product_details']
+			cursor = prod_details.find({'prodCategory': keyword })
 			# { '$in': [ '/ keyword /' ] }
 			#.sort('prodId', 1)
 			
 			listProd = []
 			# print ('prodId: %d,Prod Name: %s , Prod Desc: %s.' % (doc['prodId'], doc['ProdName'], doc['ProdDesc'], doc['ProdCount']))
 			for doc in cursor: 
-				print doc['ProdId']
-				# print ('ProdId: %d,Prod Name: %s , Prod Desc: %s, ProdCount: %d' % (doc['ProdId'], doc['ProdName'], doc['ProdDesc'], doc['ProdCount']))
+				print doc['prodName']
+				#print ('ProdId: %d,Prod Name: %s , Prod Desc: %s, ProdCount: %d' % (doc['ProdId'], doc['ProdName'], doc['ProdDesc'], doc['ProdCount']))
+				listProd.append(doc)
+			# print str(keyword)
+			# print listProd
+
+			client.close()
+			return render_template("search.html", status = "Search Successful!", item2 = listProd, itemlist = listProd, count = len(listProd))
+		else:
+			return render_template('search.html') #, status = "Rendering Page Successfully!", item2 = NULL, itemlist = NULL )
+	except:
+		e = sys.exc_info()[0]
+		print "exception: " + e
+	#if request.method == 'POST':
+	#	return render_template('search.html' , status = "Rendering Page Successfully!", item2 = NULL, itemlist = NULL)
+
+@app.route('/searchRetailer',methods =['GET'])
+def search_option_for_retailers():
+	try:
+		if 'searchKeyword' in request.args:
+			keyword = request.args['searchKeyword']
+			
+			client = pymongo.MongoClient(MONGODB_URI_HomeAR)
+			db = client.get_default_database()
+			prod_details = db['product_details']
+			cursor = prod_details.find({'prodCategory': keyword })
+			# { '$in': [ '/ keyword /' ] }
+			#.sort('prodId', 1)
+			
+			listProd = []
+			# print ('prodId: %d,Prod Name: %s , Prod Desc: %s.' % (doc['prodId'], doc['ProdName'], doc['ProdDesc'], doc['ProdCount']))
+			for doc in cursor:
+				print doc['prodName']
+				#print ('ProdId: %d,Prod Name: %s , Prod Desc: %s, ProdCount: %d' % (doc['ProdId'], doc['ProdName'], doc['ProdDesc'], doc['ProdCount']))
 				listProd.append(doc)
 			print "---------"	
 			print listProd
 			client.close()
-			return render_template("search.html", status = "Search Successful!", item2 = listProd, itemlist = listProd)
-		
-		except:
-			e = sys.exc_info()[0]
-			print "exception: " + e
-
-
-	#if request.method == 'POST':
-	#	return render_template('search.html' , status = "Rendering Page Successfully!", item2 = NULL, itemlist = NULL)
+			return render_template("searchRetailer.html", status = "Search Successful!", item2 = listProd, itemlist = listProd)
+		else:
+			return render_template('searchRetailer.html') #, status = "Rendering Page Successfully!", item2 = NULL, itemlist = NULL )
+	except:
+		e = sys.exc_info()[0]
+		print "exception: " + e
 
 # @app.route('/modifyCount', methods = ['GET','POST'])
 @app.route('/likeItem', methods = ['GET'])
@@ -167,26 +201,18 @@ def like_item():
 	# print "checking search arg id- item id: " + str(request.args["_id"])
 	if request.method == 'GET':
 		itemId = request.args["id"]
-		client = pymongo.MongoClient(MONGODB_URI)
+		client = pymongo.MongoClient(MONGODB_URI_HomeAR)
 		db = client.get_default_database()
-		prod_details = db['prod_details']
+		prod_details = db['product_details']
 		cursor = prod_details.find({"_id" : ObjectId(itemId) })
 		for doc in cursor:
-			print doc['ProdCount']
-			itemCount = doc['ProdCount'] + 1
+			print doc['prodLikes']
+			itemCount = doc['prodLikes'] + 1
 
-		prod_details.update( {"_id" : ObjectId(itemId) },{ "$set": {'ProdCount' : itemCount }}	)
+		prod_details.update( {"_id" : ObjectId(itemId) },{ "$set": {'prodLikes' : itemCount }}	)
 
 		client.close()
-	return str(itemCount)	
-
-@app.route('/search',methods =['GET'])
-def search():
-	# if request.method == 'GET':
-	# 	print "request is: " + request
-	# 	return render_template('search.html')
-	return render_template("search.html")
-
+	return str(itemCount)
 
 @app.route('/customerDashboard', methods =['GET','POST'])
 def dashboard():
@@ -197,18 +223,20 @@ def dashboard():
 def retailer_dashboard():
 	return render_template('retailerDashboard.html', data = read_file('test.csv'), fileList = generate_file_data(get_list_of_files()))
 
-@app.route('/retailertest', methods =['GET'])
-def retailer_test():
-	return render_template('retailerDashboard.html')
-
-@app.route('/about')
+@app.route('/aboutUs')
 def about():
-	return render_template('contactUs.html')
+	return render_template('aboutUs.html')
 
 @app.route('/services')
 def services():
 	return render_template('services.html')
 
+
+"""
+==========================
+Cross Functional APIS
+==========================
+"""
 @app.route('/login', methods =['POST'])
 def login():
 	message = ""
@@ -224,7 +252,7 @@ def login():
 		client = pymongo.MongoClient(MONGODB_URI_HomeAR)
 
 		db = client.get_default_database()
-		user_details = db['universal_user_details']
+		user_details = db['user_details']
 		user = user_details.find({"l_email" : uemail.lower() })
 		if user.count() == 0:
 			message = "Error:Invalid Email-id. Please try again!"
@@ -271,7 +299,7 @@ def register():
 
 		client = pymongo.MongoClient(MONGODB_URI_HomeAR)
 		db = client.get_default_database()
-		user_details = db['universal_user_details']
+		user_details = db['user_details']
 		
 		# user = user_details.find({"id" : uemail.lower() })
 		#TODO: If  
@@ -294,11 +322,114 @@ def register():
 		# return render_template('HomeARLanding.html')
 	return "Error:Registration Failed! :("
 
+"""
+==========================
+Mobile Related APIS
+==========================
+"""
+
+categoryType = {
+	1 : "Sofas",
+    2 : "Tables",
+	3 : "Chairs",
+	4 : "T V Consoles",
+	5 : "Love Seats",
+	6 : "Beds",
+	7 : "Night Stands",
+	8 : "Dressers and Chests",
+	9 : "Bed Benches",
+	10 : "Floor Lamps",
+	11 : "Table Lamps",
+	12 : "Ceiling Fans",
+}
+
+# @app.route('/category/<int:categoryId>',methods=['GET'])
+# def getProdbyCategory(categoryId):
+
+@app.route('/category',methods=['GET'])
+def getProdbyCategory():
+	message = None
+	if request.method == 'GET':
+		if not request.args:
+			return None
+
+		category = int(request.args['categoryId'])
+		print category
+
+		listCategoryProducts =[]
+		listCategorisedImageUrl = []
+
+		client = pymongo.MongoClient(MONGODB_URI_HomeAR)
+		db = client.get_default_database()
+		prod_details = db['product_details']
+		products = prod_details.find({"prodCategory" : categoryType[category] })
+
+		if not products:
+			#No Products in this category!
+			message = None
+		else:
+			print products
+			# message = json.dumps(products)
+			for prod in products:
+				print prod['prodName'] + prod['prodCategory'] + prod['prodImgUrl'] + prod['prod3DUrl']
+				listCategoryProducts.append(prod)
+				listCategorisedImageUrl.append(prod['prodImgUrl'])
+
+		client.close()
+
+		#print str(listCategorisedImageUrl)
+		return json.dumps(listCategorisedImageUrl)
+		# return render_template('CategoryProducts.html', message= listCategorisedImageUrl)
 
 
-@app.route('/contact')
-def contact():
-	return render_template('contactUs.html')
+# this is to get Product attributes by category
+# for the HomeAr page to consume the 3DUrl, ImageUrl and textureUrl.
+@app.route('/prodDetails',methods=['GET'])
+# @app.route('/prodDetails/<categoryId>',methods=['GET'])
+def getProdDetailsbyCategory():
+	message = None
+	if request.method == 'GET':
+		if not request.args:
+			return None
+
+		category = int(request.args['categoryId'])
+		print "\nSearching for Category Id: " + str(category)
+
+		listCategoryProducts =[]
+
+		client = pymongo.MongoClient(MONGODB_URI_HomeAR)
+		db = client.get_default_database()
+		prod_details = db['product_details']
+		products = prod_details.find({"prodCategory" : categoryType[category] })
+
+		if not products:
+			#No Products in this category!
+			message = None
+		else:
+			print products
+			# message = json.dumps(products)
+			for prod in products:
+				print "\n" + prod['prodName'] + "\t" + prod['prodCategory'] + "\t" + prod['prodImgUrl'] + "\t" + prod['prod3DUrl']
+				listProdDetailItem = []
+				listProdDetailItem.append(prod['prodName'])
+				listProdDetailItem.append(prod['prodImgUrl'])
+				listProdDetailItem.append(prod['prod3DUrl'])
+				
+				# Checks if TextureUrl field exists in doc prod
+				if 'prodTextureUrl' in prod: 
+					listProdDetailItem.append(prod['prodTextureUrl'])
+				else:
+					listProdDetailItem.append("http://50.116.3.141:5500/static/textures/stuhl.jpg")
+				# TODO: Add texture URL
+				listCategoryProducts.append(listProdDetailItem)
+
+		client.close()
+
+		#print str(listCategorisedImageUrl)
+		
+		return json.dumps(listCategoryProducts)
+		# return render_template('CategoryProducts.html', message= listCategorisedImageUrl)
+
 
 if __name__ == '__main__':
 	app.run(host="0.0.0.0",port=5000,debug=True)

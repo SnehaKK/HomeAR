@@ -1,0 +1,67 @@
+.navbar .navbar-brand{
+	color:#FFFFFF;
+	font-weight:bold;	
+  font-size: 1.5em;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  transition: all .3s;
+}
+h3.register{
+	padding:15px;
+	font-size:28px;
+}
+h4.login {
+	padding:25px;
+	font-size:28px;
+}
+.dropdown-menu {
+  background-color:black;	
+}
+.dropdown-menu > li>  a.board {
+  
+	color:#FFFFFF;
+ font-weight:bold;
+ font-size: 1.2em;
+
+}
+.dropdown-menu > li>  a.board:hover , a.board.active {
+  color: #990000;
+  background-color: #fed136;
+}
+#errorBox{
+ color:#F00;
+ font-family: georgia;
+ font-size:20px;
+}
+#errorBox1{
+  color:#F00;
+  font-family: georgia;
+  font-size:20px;
+}
+#errorBox2{
+  color:#F00;
+  font-family: georgia;
+  font-size:20px;
+}
+#errorBox3{
+  color:#F00;
+  font-family: georgia;
+  font-size:20px;
+}
+#email_validation {
+ color:#F00;
+ font-family: georgia;
+ font-size:20px;
+}
+#pswd_validation{
+  color:#F00;
+  font-family: georgia;
+  font-size:20px;
+}
+.popup .modal-dialog {
+  min-width:60%;
+}
+#loginid {
+  text-align:center;
+  padding:10px;
+}

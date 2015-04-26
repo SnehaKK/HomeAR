@@ -6,38 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Services and Features provided by HomeAR">
   <meta name="author" content="">
-  <title> Cover Page | First Page of HomeAR</title>
-  <link type="text/css" href="style.css" />
+  <title> Cover Page | Landing Page of HomeAR</title>
+
+  <link type="text/css" href="{{ url_for('static',filename='css/style.css') }}" />
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <link rel="stylesheet" href="{{ url_for('static',filename='css/firstpage.css') }} ">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
   <script src="http://www.modernizr.com/downloads/modernizr-latest.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
+  <script src="{{ url_for('static',filename='js/loginRegistrationScripts.js') }}"></script>
+  <!-- LoginRegistrationScripts.js -->
+
 </head>
-<style>
-.navbar .navbar-brand{
-	
-	color:#FFFFFF;
-	font-weight:bold;	
-  font-size: 1.5em;
-  -webkit-transition: all .3s;
-  -moz-transition: all .3s;
-  transition: all .3s;
-}
-h3.register{
-	padding:15px;
-	font-size:28px;
-}
-h4.login {
-	padding:25px;
-	font-size:28px;
-}
 
-</style>
-<script type="text/javascript">
-
-</script>
 <body>
   <!-- Header starts --> 
   <div class="navbar navbar-inverse navbar-fixed-top">
@@ -69,67 +52,77 @@ h4.login {
                     <div class="container">
                      <form>
                       <div class="row"> 
-                        <div class="col-lg-3">
-                          <h3 class="register"> Register</h3>
-                          <div class="form-group">
-                            <select class="form-control">
-                              <option value="one">--Select a user type--</option>
-                              <option value="two" id="retailer">Retailer</option>
-                              <option value="three" id="customer">Customer</option>
-                            </select>   
-                          </div>
-
-                          <div class="form-group">Username<input type="text" class="form-control" placeholder="Your name" id="username">
-                          </div>
-                          <div class="form-group">Email<input type="email" class="form-control" placeholder="abc@example.com" id="useremail">
-                          </div>
-                          <div class="form-group">Password<input type="password" class="form-control" placeholder="Enter Password" id="pswd">
-                          </div>
-                          <div class="form-group">Re-Password<input type="password" class="form-control" placeholder="Enter the same Password *" id="pswd1">
-                          </div>
-                          <a href="/customerDashboard"><button type="button" class="btn btn-primary" id="signUp" >Register</button></a>
-                          <button type="reset" class="btn btn-default">Clear</button>
+														<div class="col-sm-3">
+															<h3 class="register">Register</h3>
+															<div class="form-group">
+																<select class="form-control" id="select">
+																	<option value="one">--Select a user type--</option>
+																	<option value="yes" id="retailer">Retailer</option>
+																	<option value="no" id="customer">Customer</option>
+																</select>
+															</div>
+															<div id="errorBox"></div>
+															<div class="form-group"> Email<input type="email" class="form-control" placeholder="abc@example.com" id="Email">
+															</div>
+															<div id="errorBox1"></div>
+															<div class="form-group"> Username<input type="text" class="form-control" placeholder="Your name" id="Uname">
+															</div>
+															<div id="errorBox2"></div>
+															<div class="form-group"> Password<input type="password" class="form-control" placeholder="Enter Password" id="Password">
+															</div>
+															<div id="errorBox3"></div>
+															<div class="form-group"> Re-Password<input type="password" class="form-control" placeholder="Enter the same Password *" id="Confirm_Password">
+															</div>
+															<input type="button" class="btn btn-primary"  value= "Register" onclick="signup()">
+															<input type="reset" class="btn btn-default" value="Cancel" onClick="window.location.reload()">
                         </div>
 
-                        <div class="col-lg-3 col-lg-offset-1">
-                          <h4 class="login"> Login </h4>
-
-                          <div class="form-group">Username<input type="text" class="form-control" placeholder="Your name" id="username1">
-                          </div>
-                          <div class="form-group">Password<input type="password" class="form-control" placeholder="Enter Password" id="password1">
-                          </div>
-                          <a href = "/customerDashboard" ><button type="button" class="btn btn-primary" id="login" onclick="login();" >Login</button></a>
-                          <button type="reset"  class="btn btn-default">Cancel</button>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                </section>
-              </div>
-              <div class="modal-footer">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <li role="presentation" class="dropdown head">
-        <a class="dropdown-toggle head" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-          Dashboards <span class="caret head"></span>
-        </a> 
-        <ul class="dropdown-menu head" role="menu">
-          <li><a class="head" href="/customerDashboard">Customer</a></li>
-          <li><a class="head" href="/retailerDashboard">Retailer</a></li>
-        </ul>
-      </li>
-      <li><a class="head" href="/contact">Contact us</a>
-      </li>
-    </ul>
-  </div>
-  <!-- /.container -->
-</div>
-</div>
-<!-- Header closed --> 
+														<div class="col-sm-3 col-sm-offset-1">
+															<h4 class="login">Login</h4>
+															<div id="email_validation"></div>
+															<div class="form-group">
+																<div class="form-group">
+																Email<input type="email" class="form-control"
+																	placeholder="abc@example.com" id="Email_Id">
+															</div>
+															<div id="pswd_validation"></div>
+															<div class="form-group">
+																Password<input type="password" class="form-control"
+																	placeholder="Enter Password" id="Password_Valid">
+															</div>
+															<input type="button" class="btn btn-primary" value="Login" onclick="login_user()" id="loginid" >
+															<button type="reset" class="btn btn-default">Cancel</button>
+														</div>
+													</div>
+												</form>
+											</div>
+										</section>
+									</div>
+									<div class="modal-footer">
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>	
+					
+					<li role="presentation" class="dropdown head">
+					<a class="dropdown-toggle head" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+					 Dashboards <span class="caret head"></span>
+					 </a>
+						<ul class="dropdown-menu head" role="menu">
+							<li><a class="board" href="/customerDashboard" >Customer</a></li>
+							<li><a class="board" href="/retailerDashboard">Retailer</a></li>
+						</ul>
+					</li>
+					<li><a class="head" href="/aboutUs">About us</a>
+					</li>			
+				</ul>
+			</div>
+			<!-- /.container -->
+		</div>
+	</div>
+	<!-- Header closed -->
 
 <!-- Carousel starts-->  
 
@@ -147,17 +140,17 @@ h4.login {
   <div class="carousel-inner">
 
     <div class="item active" >
-      <img src="{{ url_for('static', filename='images/carousel1.jpg') }}">
+      <img src="{{ url_for('static', filename='images/image1.jpg') }}">
       
     </div>
     
     <div class="item">
-      <img src="{{ url_for('static', filename='images/carousel2.gif') }}">
+      <img src="{{ url_for('static', filename='images/image2.jpg') }}">
 
     </div>
 
     <div class="item">
-      <img src="{{ url_for('static', filename='images/carousel3.jpg') }}">
+      <img src="{{ url_for('static', filename='images/image3.jpg') }}">
 
     </div>
 

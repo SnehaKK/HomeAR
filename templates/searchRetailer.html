@@ -280,7 +280,7 @@
 				<div class="col-md-12">
 					<div style="border: 0px solid green;height:700px;padding:50px">
 						<div class="panel-body">
-							<form id="prodDetails" action="/search" method="GET" class="navbar-form navbar-left" role="search" accept-charset="utf-8"> 
+							<form id="prodDetails" action="/searchRetailer" method="GET" class="navbar-form navbar-left" role="search" accept-charset="utf-8"> 
 								<div class="form-group">
 									<!-- <input type="text" class="form-control" placeholder="Search" name="searchKeyword"> -->
 									<!-- onchange="searchProduct()" -->
@@ -303,15 +303,13 @@
 								</div>
 								<button type="submit" class="btn btn-default">Submit</button>
 							</form>
-
 							<div class="container-fluid">
-								{% if count %}
-								<br/><br/><h5><b> {{ count }} <b> items found. <h5>
-								{% endif %}
 								{% for item in itemlist %}
 								<div class="row">
 									<div class="col-md-12"> <br>
 										<div class="row" style="padding:30px">
+
+
 											<div class="row">
 												<div class="col-md-3" >
 													<img src="{{item.prodImgUrl}}" class="img-thumbnail">
