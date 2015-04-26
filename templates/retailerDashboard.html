@@ -11,27 +11,9 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <link rel="stylesheet" href="{{ url_for('static',filename='css/firstpage.css') }} ">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-  
-  <!-- Bootstrap Core CSS -->
-  <link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet">
-
-  <!-- Custom CSS -->
-  <link href="{{ url_for('static',filename='css/simple-sidebar.css') }}" rel="stylesheet">
-
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-
   <script src="https://code.highcharts.com/highcharts.js"></script>
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-
   <!-- Immy Search Box -->
   <link rel='stylesheet' type='text/css' href="{{ url_for('static',filename='css/immybox.css') }}">
   <script src="{{ url_for('static',filename='js/jquery.immybox.min.js') }}"></script>
@@ -44,49 +26,7 @@
   //         });
   //       });
   // </script> -->
-  <script type="text/javascript">
-  $(function () {
-
-    $('#input1').immybox({
-      choices: {{ fileList | safe}}
-    });
-
-    $('#container').highcharts({
-      chart: {
-        plotBackgroundColor: null,
-            plotBorderWidth: 1,//null,
-            plotShadow: false
-          },
-          title: {
-            text: 'Market Share per Product Category, 2014 - 2015'
-          },
-          tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-          },
-          plotOptions: {
-            pie: {
-              allowPointSelect: true,
-              cursor: 'pointer',
-              dataLabels: {
-                enabled: true,
-                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-                style: {
-                  color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-                }
-              }
-            }
-          },
-          series: [{
-            type: 'pie',
-            name: 'Market share',
-            data: {{ data |tojson| safe}}
-          }]
-        });
-  });
-</script>
-
-<style>
-
+  <style>
 .navbar .navbar-brand{
 
  color:#FFFFFF;
@@ -96,86 +36,33 @@
  -moz-transition: all .3s;
  transition: all .3s;
 }
-.second .col-xs-9 .tiles .col-xs-3 {
-  max-width:100%;
-  
-  float:left;
-  -webkit-transition: ease-in 2s;
-  -moz-transition: ease-in-out 2s;
-  -o-transition: ease-in-out 2s;
-  
+.dropdown-menu {
+background-color:black;	
 }
-
-
-.second .col-xs-9 .tiles .col-xs-3:hover {
-
-  margin-left: 50px;
-  max-width:50%;
-  -webkit-transform:scale(2);
-  -moz-transform:scale(2);
+ .dropdown-menu > li>  a.head {
+		
+	color:#FFFFFF;
+   font-weight:bold;
+	font-size: 1.2em;
 }
-
-</style>
-
-
-
-<style>
-
-.col-xs-3 .nav li{
-  display:block;
-  border-bottom:0px solid black;
-  box-sizing:border-box;
-}
-
-.col-xs-3 ul.nav a.bullets{
-  border: 1px solid grey;
-}
-
-.col-xs-3 .nav{
-  border: 0px solid black;
-}
-
-.nav a.bullets{
-  display:block;
-  border-color: 0px solid black;
-  font-size:18px;
-  box-sizing:border-box;
-  padding: 20px;
-}
-
-.nav a.subLists{
-  display:block;
-  border: 1px solid grey;
-  font-size:18px;
-  box-sizing:border-box;
-  padding: 20px;
-}
-.nav a.subLists1{
-  display:block;
-  border: 1px solid grey;
-  font-size:18px;
-  box-sizing:border-box;
-  padding: 20px;
-}
-
-.lists{
-  border: 0px solid black;
-}
-
-
-.second .col-xs-3{
-  border: 0px solid blue;
-  background-color:white;
-}
-
-
-.second{
-  padding-top:100px;
-  padding-bottom:240px;
-  background-color:white;
-  height:800px;
-}
-
+ .dropdown-menu > li>  a.head:hover , a.head.active {
+    color: #990000;
+    background-color: #fed136;
+ }
+        
+ .jumbotron {
+    text-align: center;
+      font-family: palatino linotype;
+      color: #000;
+  }
+   .jumbotron > h1{
+    text-align: center;
+    font-weight:bold;
+      font-family: palatino linotype;
+    font-size: 40px;    
+    color: #000;
+  }
+ 
 </style>
 
 </head>
@@ -194,74 +81,32 @@
       </div>
       <div class="navbar-collapse collapse" id="navbar-main">
         <ul class="nav navbar-nav navbar-right">
-          <li><a class="head" href="/">Home</a></li>
-          <li><a class="head" href="#" data-toggle="modal" data-target="#myModal2">Register/Login </a></li>      
-          <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="popup">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <section id="window">
-                      <div class="container">
-                       <form>
-                        <div class="row"> 
-                          <div class="col-lg-3">
-                            <h3 class="register"> Register</h3>
-                            <div class="form-group">
-                              <select class="form-control">
-                                <option value="one">--Select a user type--</option>
-                                <option value="two" id="retailer">Retailer</option>
-                                <option value="three" id="customer">Customer</option>
-                              </select>   
-                            </div>
-
-                            <div class="form-group">Username<input type="text" class="form-control" placeholder="Your name" id="username">
-                            </div>
-                            <div class="form-group">Email<input type="email" class="form-control" placeholder="abc@example.com" id="useremail">
-                            </div>
-                            <div class="form-group">Password<input type="password" class="form-control" placeholder="Enter Password" id="pswd">
-                            </div>
-                            <div class="form-group">Re-Password<input type="password" class="form-control" placeholder="Enter the same Password *" id="pswd1">
-                            </div>
-                            <a href="/customerDashboard"><button type="button" class="btn btn-primary" id="signUp" >Register</button></a>
-                            <button type="reset" class="btn btn-default">Clear</button>
-                          </div>
-
-                          <div class="col-lg-3 col-lg-offset-1">
-                            <h4 class="login"> Login </h4>
-
-                            <div class="form-group">Username<input type="text" class="form-control" placeholder="Your name" id="username1">
-                            </div>
-                            <div class="form-group">Password<input type="password" class="form-control" placeholder="Enter Password" id="password1">
-                            </div>
-                            <a href = "/customerDashboard" ><button type="button" class="btn btn-primary" id="login" onclick="login();" >Login</button></a>
-                            <button type="reset"  class="btn btn-default">Cancel</button>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                  </section>
-                </div>
-                <div class="modal-footer">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <li role="presentation" class="dropdown head">
-          <a class="dropdown-toggle head" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-            Dashboards <span class="caret head"></span>
-          </a> 
-          <ul class="dropdown-menu head" role="menu">
-            <li><a class="head" href="/customerDashboard">Customer</a></li>
-            <li><a class="head" href="/retailerDashboard">Retailer</a></li>
-          </ul>
-        </li>
-        <li><a class="head" href="/contact">Contact us</a></li>
+          <li>
+		  						<a class="head" href="/retailerDashboard"  data-toggle="collapse" data-target="#demo"><span class="glyphicon glyphicon-stats" ></span> Visualize <span class="glyphicon"></span>
+						</a>
+						</li>
+					
+					<li>
+						<a class="head" href="/searchRetailer"  data-toggle="collapse" data-target="#demo"><span class="glyphicon glyphicon-search" ></span>  Search Products <span class="glyphicon"></span>
+						</a>
+						</li>
+								
+					<li role="presentation" class="dropdown head">
+					 <a class="dropdown-toggle head" href="#" data-toggle="dropdown" aria-expanded="false">
+					 	<span class="glyphicon glyphicon-user" ></span>  Profile <span
+							class="caret head"></span>
+					 	
+					 </a>
+					 	<ul class="dropdown-menu head" role="menu">
+					 		<li><a class="head" href="#" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-align-left glyphicon-edit"></span> Edit Profile</a></li>
+							<li><a class="head" href="#" data-toggle="modal" data-target="#view"><span class="glyphicon glyphicon-align-left glyphicon-eye-open"></span>  View Profile</a></li>
+							<li><a class="head" href="/" data-toggle="modal" data-target="#basicModal"><span class="glyphicon glyphicon-align-left glyphicon-log-out"></span>  Logout
+							    </a>
+						    </li>
+						</ul>
+						
+					</li>
+					<li><a class="head" href="/aboutUs"><span class="glyphicon  glyphicon-envelope"></span> About us</a></li>
       </ul>
     </div>
     <!-- /.container -->
@@ -269,204 +114,132 @@
 </div>
 <!-- Header closed --> 
 
-<div class="second">
 
-  <!--Sidebar-->
-  <div class="col-xs-3">
-   <ul class="nav" id="navigation">
-     <li>
-       <a class="bullets" href="#" data-tab="id1"><span class="glyphicon glyphicon-align-left glyphicon-dashboard"></span>  Dashboard</a>
-     </li>
-     
-     <li>
-       <a class="bullets" href="#" data-tab="pos"><span class="glyphicon glyphicon-align-left glyphicon-tasks"></span> POS Analysis</a>
-     </li>
-     
-     <li>
-       <a class="bullets" href="#"  data-toggle="modal" data-target="#myModal3"><span class="glyphicon glyphicon-tag" ></span>  Products </a>
-     </li>
-     <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-       <div class="popup">
-        <div class="modal-dialog" >
-
-
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-              <section id="window">
-                <div class="container">
-                  <div class="row"> 
-
-                   <div class="col-xs-3 ">
-                    <h1> Product Details</h1>
-                    <label>Name</label><input type="text" class="form-control" placeholder="Enter the name of the product" />
-                    <label>URL</label><input type="text" class="form-control" placeholder="Enter URL" />
-                    
-                  </div>
-                  
-                  
-                </div></section>
-              </div>
-              
-              <div class="modal-footer">
-
-              </div>
-            </div>
-          </div>
-        </div></div>
-        
-        <li>
-         <a class="bullets" href="#" data-toggle="collapse" data-target="#demo"><span class="glyphicon glyphicon-user" ></span>  Profile <span class="glyphicon glyphicon-chevron-down"></span></a>
-       </li>
-       <li>	
-         <ul id="demo" class="collapse">
-           <li>
-             <a class="subLists" href="#"><span class="glyphicon glyphicon-align-left glyphicon-edit"></span>  Edit Profile</a>
-           </li>
-           <li>
-             <a class="subLists" href="#"><span class="glyphicon glyphicon-align-left glyphicon-eye-open"></span>  View Profile</a>
-           </li>
-           <li>
-             <a class="subLists" href="#" data-toggle="modal"
-             data-target="#basicModal"><span class="glyphicon glyphicon-align-left glyphicon-log-out"></span>  Logout</a>
-           </li>
-         </ul>
-       </li>
-     </ul>
-   </div>
 
    <!-- Modal -->
    <div class="modal fade" id="basicModal" tabindex="-1">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal"><span>&times;</span><span class="sr-only">Close</span></button>
-          <h3 class="modal-title" id="myModalLabel" style="color:green;font-weight:bold;"> LOGOUT USER</h3>
+          <button type="button" class="close" data-dismiss="modal">
+		  <span>&times;</span>
+		  <span class="sr-only">Close</span>
+		  </button>
+          <h3 class="modal-title" id="myModalLabel" style="color:green;font-weight:bold;"> LOGOUT USER
+		  </h3>
         </div>
         <div class="modal-body">
           <h4>Are you sure you want to logout?</h4>
         </div>
         <div class="modal-footer">
-         <button type="button" class="btn btn-primary">Logout</button>
-         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-         
-       </div>
-     </div>
-   </div>
- </div>
- <!-- Modal ends -->
- 
- <!-- Sidebar Ends -->
-
-
-
-
- <!-- Content Section -->
- <div class="col-xs-9" id="id1" style="border:0px solid black;display:none">
-  <p class="col-xs-12" style="margin-top:10px;font-size:30px;font-weight:bold;">Hello Customers!!</p>
-  <p class="col-xs-12 col-xs-offset-1" style="margin-top:10px;font-size:20px;color:blue;font-weight:bold;">Ready to enjoy our product tour??</p>
-  <p class="col-xs-12 col-xs-offset-1" style="margin-top:10px;font-size:15px;color:purple;font-weight:bold;">Here you go.....Check out the Retail Stores and give your opinion!! :)</p>
-  <img class="col-xs-12 col-xs-offset-3" src="images/feedbackCustomers.jpg" style="height:50%;width:50%;">
-</div>
-
-<div class="col-xs-9" id="id1" style="border:0px solid black;border:0px solid black;">
-  <p class="col-xs-9" style="margin-top:10px;font-size:30px;font-weight:bold;">Hello Retailers!!</p>
-  <div class="row">
-    <form id="generateGraph" action="/generategraph" method="get" class="navbar-form navbar-left" role="search" accept-charset="utf-8">
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search" id="input1" name="input1">
+          <a href="/index"><button type="button" class="btn btn-primary">Logout</button></a>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
       </div>
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form>
-
-    <br><br>
-    <hr>
-    <!-- Highchart goes here -->
-    <div class="row">
-      <div class="" id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
     </div>
   </div>
-
-</div>
-
-
-<div class="col-xs-9" id="id3"  style="border:0px solid red;background:url(images/bckgrndEdit.jpeg);height:500px;display:none;">
-  <div class="col-xs-12 col-xs-offset-4" style="border:0px solid red;margin-bottom:20px;">
-    <h1><b>EDIT PROFILE</b></h1>
-  </div>
-  <div class="col-xs-12 col-xs-offset-4" style="border:0px solid red;">
-
-   <form>
-     <div class="col-xs-4">
-      Username<input type="text" class="form-control" id="username" name="username" onchange="validFunction()" /><br>
-      Email<input type="email" class="form-control" id="email" name="email" onchange="validFunction()" /><br>
-      Password<input type="password" class="form-control" id="password" name="password" onchange="validFunction()" /><br>
-      Re-Password<input type="password" class="form-control" id="re-password" name="re-password" onchange="validFunction()" /><br>
-      <br><a href = "#" ><button type="button" class="btn btn-primary" id="saveEdited" >Save Changes</button></a>
-      <button type="reset" class="btn btn-default" style="width:44%;">Cancel</button>	
+  <div class="modal fade" id="view" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span>&times;</span>
+            <span class="sr-only">Close</span>
+          </button>
+          <h3 class="modal-title" id="myModalLabel" style="color:green;font-weight:bold;"> View Profile</h3>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">Username:
+          <span class="form-control" id="username"></span>
+       </div>
+      <div class="form-group">Email:
+        <span class="form-control" id="email"></span>
+      </div>
+        </div>
+        
+      </div>
     </div>
-  </form>
-</div>        
-</div>
-
-
-<div class="col-xs-9" id="id4"  style="border:0px solid red;background:url(images/bckgrndEdit.jpeg);height:500px;display:none;">
-  <div class="col-xs-12 col-xs-offset-4" style="border:0px solid red;margin-bottom:20px;">
-    <h1><b>YOUR PROFILE</b></h1>
   </div>
-  <div class="col-xs-12 col-xs-offset-4" style="border:0px solid red;">
+  
+  <div class="modal fade" id="edit" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span>&times;</span>
+            <span class="sr-only">Close</span>
+          </button>
+          <h3 class="modal-title" id="myModalLabel" style="color:green;font-weight:bold;">Edit Profile</h3>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">Username:
+        <input type="text" class="form-control" id="username">
 
-   <form>
-     <div class="col-xs-4">
-      Type<input type="text" class="form-control" id="type" name="username" onchange="validFunction()" /><br>
-      Username<input type="text" class="form-control" id="username" name="username" onchange="validFunction()" /><br>
-      Email<input type="email" class="form-control" id="email" name="email" onchange="validFunction()" /><br>
-      <br><a href = "#" ><button type="button" class="btn btn-primary" id="closeProfile" style="width:218px;">CLOSE</button></a>	
+      </div>
+      <div class="form-group">Email:
+        <input type="text" class="form-control"  id="email"> 
+
+      </div>
+        </div>
+        
+      </div>
     </div>
-  </form>
 </div>
-</div>
+<br>
+<div class ="jumbotron">
+<h1>Upload your file</h1><br>
+<form id="resources" method="post">
+	<div class="col-md-offset-5">
 
+	<input type="file" id="fileupload" name="fileupload" accept=".csv" style="font-size:20px;"> <br>
+
+	</div>
+</form>	
 
 <!-- Content Section Ends -->
 </div>
 
 
-<!--Footer starts--> 
-<footer>
-	<div class="container-fluid" style="background:black;">
-		
-   <div class="col-lg-12 text-center">
-    <h4 class="contact"> CONTACT US </h4>
-  </div>
-  
-  <form name="sentMessage" id="contactForm2" >
-    <div class="row">
-      <div class="col-md-4 col-md-offset-2">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Your Name *" id="name3"> 
-          
-        </div>
-        <div class="form-group">
-          <input type="email" class="form-control" placeholder="Your Email *" id="email3">
-          
-        </div>
-        <div class="form-group">
-          <input type="number" class="form-control" placeholder="Your Phone *" id="phone">
-          
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="form-group">
-          <textarea class="form-control" placeholder="Your Message *" id="message"></textarea>
-          
-        </div>
-      </div>
-    </div>
-    <div class="button">
-      <div class="col-md-12 text-center">
+<div id="container" style="min-width: 400px; min-height: 500px; max-height:900px; max-width: 1500px; margin: 0 auto"></div>
+	
+
+	<!--Footer starts-->
+	<footer>
+		<div class="container-fluid" style="background: black;">
+
+			<div class="col-lg-12 text-center">
+				<h4 class="contact">CONTACT US</h4>
+			</div>
+
+			<form name="sentMessage" id="contactForm2">
+				<div class="row">
+					<div class="col-md-4 col-md-offset-2">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Your Name *"
+								id="name3">
+
+						</div>
+						<div class="form-group">
+							<input type="email" class="form-control"
+								placeholder="Your Email *" id="email3">
+
+						</div>
+						<div class="form-group">
+							<input type="number" class="form-control"
+								placeholder="Your Phone *" id="phone">
+
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<textarea class="form-control" placeholder="Your Message *"
+								id="message"></textarea>
+
+						</div>
+					</div>
+				</div>
+				<div class="button">
+					<div class="col-md-12 text-center">
 
         <button type="submit" class="btn btn-xl">Send Message</button>
       </div>
@@ -475,11 +248,137 @@
   </form>
   
   
-  <p style="text-align:center;margin-top:150px;color:#fed136;">Copy rights- HomeAR inc 2014</p>
-  
+  <p style="text-align:center;margin-top:150px;color:#fed136;">Copy rights- HomeAR inc 2015</p>
+</div>
 </footer>
 <!-- Footer closed -->
 
 
 </body>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/highcharts-more.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+			
+<script type="text/javascript">
+
+var data = null;
+var res = location.search.split('=');
+
+$(document).ready(function(){
+
+	document.getElementById('fileupload').addEventListener('change', upload, false);
+
+	function browserSupportFileUpload()
+	{
+		var isCompatible = false;
+		if(window.File && window.FileReader  && window.FileList && window.Blob)
+		{
+			isCompatible = true;
+		}
+		return isCompatible;
+	}
+	function upload(event)
+	{
+			var options = {
+					    chart: {
+					        renderTo: 'container',
+					        defaultSeriesType: 'column'
+					    },
+					    title: {
+					        text: 'Column Chart'
+					    },
+					    xAxis: {
+					        categories: []
+					    },
+					    yAxis: {
+					        title: {
+					            text: 'Units'
+					        }
+					    },
+				        plotOptions: {
+				            series: {
+				                cursor: 'pointer',
+				                point: {
+				                    events: {
+				                        click: function() {
+				                            for (var i = 0; i < this.series.data.length; i++) {
+				                                this.series.data[i].update({ color: '#ECB631' }, true, false);
+				                            }
+				                            this.update({ color: '#f00' }, true, false)
+				                        }
+				                    }
+				                }
+				            }
+				        },
+					    
+					    series: []
+					};
+				if(!browserSupportFileUpload)
+				{
+					alert("File API not supported in this browser");
+				}
+				else
+				{
+					var file = event.target.files[0];
+					var reader = new FileReader();
+					reader.readAsText(file);
+					reader.onload = function(event)
+					{
+						var data = event.target.result;
+						if(data && $.csv.toArrays(data).length >0)
+						{
+							var lines = data.split('\n');
+
+						// Iterate over the lines and add categories or series
+						$.each(lines, function(lineNo, line) {
+							var items = line.split(',');
+							
+							// header line containes categories
+							if (lineNo == 0) {
+								$.each(items, function(itemNo, item) {
+									if (itemNo > 0) options.xAxis.categories.push(item);
+								});
+							}
+							
+							// the rest of the lines contain data with their name in the first 
+							// position
+							else {
+								var series = {
+									data: []
+								};
+								$.each(items, function(itemNo, item) {
+									if (itemNo == 0) {
+										series.name = item;
+									} else {
+										series.data.push(parseFloat(item));
+									}
+								});
+
+								
+								options.series.push(series);
+								
+							}
+							
+						});
+				
+				// Create the chart
+				var chart = new Highcharts.Chart(options);
+			}
+			else
+			{
+				alert("no data to import");
+			}
+
+			};
+			reader.onerror = function(){
+				alert("unable to read "+file.fileName);
+			}
+			}
+
+			}
+	
+});
+
+</script>
 </html>

@@ -104,17 +104,7 @@
 							</div>
 						</div>
 						
-					</div>	
-					
-					<li role="presentation" class="dropdown head">
-					<a class="dropdown-toggle head" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-					 Dashboards <span class="caret head"></span>
-					 </a>
-						<ul class="dropdown-menu head" role="menu">
-							<li><a class="board" href="/customerDashboard" >Customer</a></li>
-							<li><a class="board" href="/retailerDashboard">Retailer</a></li>
-						</ul>
-					</li>
+					</div>
 					<li><a class="head" href="/aboutUs">About us</a>
 					</li>			
 				</ul>
@@ -183,23 +173,33 @@
 
    <div class="col-md-4" data-wow-duration="1000ms" data-wow-delay="600ms" >
 
-    <center><img src="{{ url_for('static', filename='images/product.jpg') }}"  class="img-circle" style="height:200px;width:200px; border: 2px solid black;"></center>
+    <center>
+    <a href="#" class="img-circle" title="Augmented Reality" data-container="body" data-toggle="popover"  data-trigger="hover" data-placement="top" data-content="HomeAR mobile application is implemented using Metaio SDK for delivering Augmented Reality experience to all the users. It enhances the user's purchasing decisions by providing them with better visualization of products using AR feature of the application.">
+     <img src="{{ url_for('static', filename='images/augmented.jpg') }}"  class="img-circle" style="height:200px;width:200px; border: 2px solid black;"></a>
+     </center>
 
-    <h3 class="service text-center"> Products </h3>
+    <h3 class="service text-center"> Augmented Reality </h3>
   </div>
   <div class="col-md-4" data-wow-duration="1000ms" data-wow-delay="600ms">
 
-    <center><img src="{{ url_for('static', filename='images/star.jpg') }}"  class="img-circle" style="height:200px;width:200px; border: 2px solid black;"></center>
-    <h3 class="service text-center">Like</h3>
+    <center>
+    <a href="#" class="img-circle" title="Android Mobile Application" data-container="body" data-toggle="popover"  data-trigger="hover" data-placement="top" data-content="Mobile application HomeAR is developed on the android platform, and all the functionalities have been implemented following the standards of Android app development.">
+    <img src="{{ url_for('static', filename='images/android.jpg') }}"  class="img-circle" style="height:200px;width:200px; border: 2px solid black;">
+    </a>
+    </center>
+    <h3 class="service text-center">Mobile Application</h3>
   </div>
   <div class="col-md-4" data-wow-duration="1000ms" data-wow-delay="600ms">
 
-    <center><img src="{{ url_for('static', filename='images/visualize.jpg') }}"  class="img-circle" style="height:200px;width:200px; border: 2px solid black;"> </center>
-    <h3 class="service text-center"> Visualize</h3>
+    <center>
+     <a href="#" class="img-circle" title="Products" data-container="body" data-toggle="popover"  data-trigger="hover" data-placement="top" data-content="HomeAR provides catalog of nine categories of items. These products define the ones that can be purchased later, after proper analysis of its appearance and compatibility with other furniture at Home.">
+    <img src="{{ url_for('static', filename='images/product.jpg') }}"  class="img-circle" style="height:200px;width:200px; border: 2px solid black;">
+    </a>
+    </center>
+    <h3 class="service text-center"> Products</h3>
   </div>
 </div></div></section>
 <!-- Image thumbnail closed --> <br>
-
 
 <!--Footer starts--> 
 <footer>
@@ -242,13 +242,16 @@
   </form>
 
 
-  <p style="text-align:center;margin-top:150px;color:#fed136;">Copy rights- HomeAR inc 2014</p>
+  <p style="text-align:center;margin-top:150px;color:#fed136;">Copy rights- HomeAR inc 2015</p>
 
 </footer>
 <!-- Footer closed -->
 
 
 </body>
-
+<script>$(function () 
+      { $("[data-trigger='hover']").popover();
+      });
+   </script>
 
 </html>
