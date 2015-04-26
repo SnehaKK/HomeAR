@@ -89,8 +89,8 @@ background-color:black;
 <!-- style="padding:50px 25px 50px 25px" -->
 <body>
 
-	<!-- Header starts --> 
-	<div class="navbar navbar-inverse navbar-fixed-top">
+	<!-- Old Header starts --> 
+<!-- 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<a href="/" class="navbar-brand">HomeAR</a>
@@ -121,31 +121,67 @@ background-color:black;
 					
 				</ul>
 			</div>
-			<!-- /.container -->
+			
 		</div>
-	</div>
+	</div> --><!-- /.container -->
 	<!-- Header closed --> 
-			<div class="modal fade" id="basicModal" tabindex="-1">
-				<div class="modal-dialog modal-sm">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal">
-								<span>&times;</span>
-								<span class="sr-only">Close</span>
-							</button>
-							<h3 class="modal-title" id="myModalLabel" style="color:green;font-weight:bold;"> LOGOUT USER
-							</h3>
-						</div>
-						<div class="modal-body">
-							<h4>Are you sure you want to logout?</h4>
-						</div>
-						<div class="modal-footer">
-						 <a href="/home" > <button type="button" class="btn btn-primary" data-dismiss="modal" onClick="logout()">Logout</button></a>
-							<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-						</div>
-					</div>
-				</div>
-			</div>
+
+	  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a href="/" class="navbar-brand">HomeAR</a>
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="navbar-collapse collapse" id="navbar-main">
+      	<ul class="nav navbar-nav navbar-right">
+      		
+      		<li role="presentation" class="dropdown head">
+      			<a class="dropdown-toggle head" href="#" data-toggle="dropdown" aria-expanded="false">
+      				<span class="glyphicon glyphicon-user" ></span>  Profile <span
+      				class="caret head"></span>
+      				
+      			</a>
+      			<ul class="dropdown-menu head" role="menu">
+      				<li><a class="head" href="#" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-align-left glyphicon-edit"></span> Edit Profile</a></li>
+      				<li><a class="head" href="#" data-toggle="modal" data-target="#view"><span class="glyphicon glyphicon-align-left glyphicon-eye-open"></span>  View Profile</a></li>
+      				<li><a class="head" href="#" data-toggle="modal" data-target="#basicModal"><span class="glyphicon glyphicon-align-left glyphicon-log-out"></span>  Logout
+      				</a>
+      			</li>
+      		</ul>
+      		
+      	</li>
+      	<li><a class="head" href="/aboutUs"><span class="glyphicon  glyphicon-envelope"></span> About us</a></li>
+      </ul>
+    </div>
+    <!-- /.container -->
+  </div>
+</div>
+
+   <div class="modal fade" id="basicModal" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+		  <span>&times;</span>
+		  <span class="sr-only">Close</span>
+		  </button>
+          <h3 class="modal-title" id="myModalLabel" style="color:green;font-weight:bold;"> LOGOUT USER
+		  </h3>
+        </div>
+        <div class="modal-body">
+          <h4>Are you sure you want to logout?</h4>
+        </div>
+        <div class="modal-footer">
+         <a href="/home" > <button type="button" class="btn btn-primary" data-dismiss="modal" onClick="logout()">Logout</button></a>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
 <div class="modal fade" id="view" tabindex="-1">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
