@@ -8,7 +8,6 @@ from bson.objectid import ObjectId
 from os import walk
 import logging
 
-
 app = Flask(__name__)
 MONGODB_URI = "mongodb://sneha:test123@ds063150.mongolab.com:63150/testmongolabs"
 MONGODB_URI_HomeAR = "mongodb://sneha:test123@ds061370.mongolab.com:61370/homear"
@@ -151,13 +150,14 @@ def search_products():
 			print listProd
 			client.close()
 			return render_template("search.html", status = "Search Successful!", item2 = listProd, itemlist = listProd)
+		
 		except:
 			e = sys.exc_info()[0]
 			print "exception: " + e
 
 
-	if request.method == 'POST':
-		return render_template('search.html' , status = "Rendering Page Successfully!", item2 = NULL, itemlist = NULL)
+	#if request.method == 'POST':
+	#	return render_template('search.html' , status = "Rendering Page Successfully!", item2 = NULL, itemlist = NULL)
 
 # @app.route('/modifyCount', methods = ['GET','POST'])
 @app.route('/likeItem', methods = ['GET'])
