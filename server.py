@@ -268,7 +268,7 @@ def getUserData():
 				user_details =db['user_details']
 				user = user_details.find({"l_email" : uemail.lower() })
 				if user.count() == 0:
-					message = "No User"
+					message = "Error: No User"
 				else:
 					for u in user:
 						message = u['username']
@@ -277,7 +277,45 @@ def getUserData():
 				
 				print message
 				return message
-						
+
+@app.route('/update', methods =['POST'])
+def updateRecords():
+	message = ""
+	if request.method == 'POST':
+		if not request.form:
+			print "No form Data Arguments!"
+			return "No form Data Arguments!"
+			# return render_template('LoginPage.html')
+
+		uemail = request.form["Email"]
+		# upass = request.form["Password"]
+		
+		client = pymongo.MongoClient(MONGODB_URI)
+
+		db = client.get_default_database()
+		user_details = db['user_details']
+		user = user_details.find({"l_email" : uemail.lower() })
+		if user.count() == 0:
+			message = "Error:Invalid Email-id. Please try again!"
+		else:
+			for u in user:
+				if u['userpassword'] == upass:
+					# Checks if TextureUrl field exists in doc prod
+					if 'is_retailer' in u: 
+						if u['is_retailer'] == "yes":
+							message = "Retailer Login Successful!"
+						else:
+							message = "Customer Login Successful!"
+					break
+				else:
+					message = message = "Error:Incorrect Password. Please try again!"
+
+		client.close()
+		print message
+		return json.dumps(message)
+		# return render_template('LoginPage.html', message= message)
+	return "Error:Login Unsucessful!"
+					
 
 
 """

@@ -9,13 +9,14 @@
   <meta name="author" content="">
 
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <link rel="stylesheet" href="{{ url_for('static',filename='css/firstpage.css') }} ">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   <script src="https://code.highcharts.com/highcharts.js"></script>
 
   <script type="text/javascript" src="{{ url_for('static',filename='js/loginRegistrationScripts.js') }} "></script>
+  <script type="text/javascript" src="{{ url_for('static',filename='js/profileManipulationScripts.js') }} "></script>
    <!-- // <script type="text/javascript"> 
   // $(function() {
   //       // var fileListdata =  ;
@@ -84,17 +85,17 @@ background-color:black;
       			<a class="head" href="/retailerDashboard"  data-toggle="collapse" data-target="#demo"><span class="glyphicon glyphicon-stats" ></span> Visualize <span class="glyphicon"></span>
       			</a>
       		</li>
-      		
+
       		<li>
       			<a class="head" href="/searchRetailer"  data-toggle="collapse" data-target="#demo"><span class="glyphicon glyphicon-search" ></span>  Search Products <span class="glyphicon"></span>
       			</a>
       		</li>
-      		
+
       		<li role="presentation" class="dropdown head">
       			<a class="dropdown-toggle head" href="#" data-toggle="dropdown" aria-expanded="false">
       				<span class="glyphicon glyphicon-user" ></span>  Profile <span
       				class="caret head"></span>
-      				
+
       			</a>
       			<ul class="dropdown-menu head" role="menu">
       				<li><a class="head" href="#" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-align-left glyphicon-edit"></span> Edit Profile</a></li>
@@ -103,7 +104,7 @@ background-color:black;
       				</a>
       			</li>
       		</ul>
-      		
+
       	</li>
       	<li><a class="head" href="/aboutUs"><span class="glyphicon  glyphicon-envelope"></span> About us</a></li>
       </ul>
@@ -145,14 +146,14 @@ background-color:black;
             <span>&times;</span>
             <span class="sr-only">Close</span>
           </button>
-          <h3 class="modal-title" id="myModalLabel" style="color:green;font-weight:bold;"> View Profile</h3>
+          <h3 class="modal-title" id="myModalLabel" style="color:green;font-weight:bold;" onclick="viewProfile()"> View Profile</h3>
         </div>
         <div class="modal-body">
           <div class="form-group">Username:
-          <span class="form-control" id="username"></span>
+          <span class="form-control" id="vUsername"></span>
        </div>
       <div class="form-group">Email:
-        <span class="form-control" id="email"></span>
+        <span class="form-control" id="vEmail"></span>
       </div>
         </div>
         

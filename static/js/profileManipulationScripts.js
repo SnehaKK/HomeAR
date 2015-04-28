@@ -1,4 +1,4 @@
-function view_profile() {
+function viewProfile() {
 
 	var userEmail = localStorage.getItem("userEmail");
 
@@ -64,7 +64,7 @@ function view_profile() {
 	return true;
 }
 
-function edit_profile() {
+function editProfile() {
 
 	if((document.getElementById("Email_Id").value) == "") {
 		document.getElementById("email_validation").innerHTML="Enter email";
