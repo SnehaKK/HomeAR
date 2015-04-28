@@ -7,6 +7,7 @@ import pymongo, re
 from bson.objectid import ObjectId
 from os import walk
 import logging
+from forms import ContactForm
 
 app = Flask(__name__)
 
@@ -244,6 +245,10 @@ def retailer_dashboard():
 	if request.method == 'GET':
 		return render_template("retailerDashboard.html")
 	# return render_template('retailerDashboard.html', data = read_file('test.csv'), fileList = generate_file_data(get_list_of_files()))
+
+@app.route('/contactUs',methods =['POST'])
+def contact():
+	if request.method == 'POST':
 
 @app.route('/aboutUs')
 def about():
