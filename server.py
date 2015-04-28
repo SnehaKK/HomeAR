@@ -7,7 +7,7 @@ import pymongo, re
 from bson.objectid import ObjectId
 from os import walk
 import logging
-from forms import ContactForm
+# from forms import ContactForm
 
 app = Flask(__name__)
 
@@ -249,6 +249,7 @@ def retailer_dashboard():
 @app.route('/contactUs',methods =['POST'])
 def contact():
 	if request.method == 'POST':
+		return "message"
 
 @app.route('/aboutUs')
 def about():
