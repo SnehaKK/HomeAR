@@ -132,7 +132,7 @@ def search_option_for_retailers():
 		print form.validate()
 		if form.validate() == False:
 			flash('All fields are required.')
-			return render_template('search.html', form=form)
+			return render_template('searchRetailer.html', form=form)
 		else:
 			msg = Message(form.senderssubject.data, sender='HomeARteam@gmail.com',
 			 recipients=['kulsneha04@gmail.com'])
@@ -140,7 +140,7 @@ def search_option_for_retailers():
 				% (form.sendersname.data, form.sendersemail.data, form.sendersmessage.data)
 			mail.send(msg)
 			form = ContactForm()
-			return render_template('search.html', form=form, success=True)
+			return render_template('searchRetailer.html', form=form, success=True)
 	elif request.method =='GET':
 		try:
 			if 'searchKeyword' in request.args:
@@ -516,8 +516,8 @@ def getProdDetailsbyCategory():
 			print products
 			# message = json.dumps(products)
 			for prod in products:
-				print "\n" + prod['prodName'] + "\t" + prod['prodCategory'] \
-					+ "\t" + prod['prodImgUrl'] + "\t" + prod['prod3DUrl']
+				# print "\n" + prod['prodName'] + "\t" + prod['prodCategory'] \
+				# 	+ "\t" + prod['prodImgUrl'] + "\t" + prod['prod3DUrl']
 				listProdDetailItem = []
 				listProdDetailItem.append(prod['prodName'])
 				listProdDetailItem.append(prod['prodImgUrl'])
