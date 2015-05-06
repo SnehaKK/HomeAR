@@ -132,6 +132,9 @@ function registerCall(type_picked) {
 	ajaxRequest.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 	ajaxRequest.send(dataString);
 
+	//Set local Storage for Useremail
+	
+
 }
 
 function login_user() {
@@ -207,9 +210,16 @@ function login_user() {
 	//ajaxRequest.setRequestHeader("dataType","html");
 	ajaxRequest.send(dataString);
 
+	//Set localstorage for username
+
+
 	return true;
 }
 
 function logout(){
 	window.location.href = "/";
+
+	//Reset Local Storage for username
+
+
 }

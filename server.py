@@ -1,5 +1,5 @@
 import os, json
-from flask import Flask, render_template, request, make_response, json, jsonify
+from flask import Flask, render_template, request, make_response, json, jsonify, flash
 from werkzeug import secure_filename
 import csv
 import sys
@@ -7,17 +7,28 @@ import pymongo, re
 from bson.objectid import ObjectId
 from os import walk
 import logging
-# from forms import ContactForm
+from forms import ContactForm
+from flask.ext.mail import Message, Mail
 
+mail = Mail()
 app = Flask(__name__)
 
 MONGODB_URI = "mongodb://sneha:test123@ds061370.mongolab.com:61370/homear"
+app.secret_key = "th9s9sm\/d3l0pm3n3tk3\/" #DEVELOPMENT_KEY ="mail server development key"  
+
+app.config["MAIL_SERVER"] = "smtp.gmail.com"
+app.config["MAIL_PORT"] = 465
+app.config["MAIL_USE_SSL"] = True
+app.config["MAIL_USERNAME"] = 'homearteam@gmail.com'
+app.config["MAIL_PASSWORD"] = 'Mummy$HomearProject'
+ 
+mail.init_app(app)
 
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
 app.logger.setLevel(logging.ERROR)
 
 """
-To Enable CategoryProducts
+To Enable CORS (Cross Origin Resource Sharing)
 """
 
 @app.after_request
@@ -40,179 +51,123 @@ def add_cors(resp):
 Web Related APIS
 
 """
-@app.route('/home')
-@app.route('/')
+@app.route('/',methods =['GET','POST'])
 def index():
-	return render_template('index.html')
-    # return 'Hello World!'
-
-app.config['UPLOAD_FOLDER'] = 'uploads/'
-ALLOWED_EXTENSIONS = set(['csv']) #set(['csv','txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
-
-def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
-
-@app.route('/uploadFile', methods=['GET', 'POST'])
-def upload_file():
-	data = "['Firefox',45.0],['IE',26.8]"
-	# print "iam here"
-	if request.method == 'GET':
-		return render_template('fileUpload.html', fileList = generate_file_data(get_list_of_files()))
+	form = ContactForm()
 	if request.method == 'POST':
-		print request
-        file = request.files['csvUpload']
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            #Open and read the file saved.
-            # fileToBeRead = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-            # print fileToBeRead
-            # read_csvfile(fileToBeRead)
-            # This return is to redirect it to the page you want
-            return render_template('test.html', data = read_file(filename), fileList = generate_file_data(get_list_of_files()))
-            # return redirect(url_for('uploaded_file',filename=filename))
-	return render_template('fileUpload.html')
-
-def read_file(filename):
-	# print app.config['UPLOAD_FOLDER']
-	filereadpath = app.config['UPLOAD_FOLDER'] + filename
-	csvfile = open( filereadpath, 'rb') # opens the csv file
-	highChartData = []
-	try:
-	    reader = csv.reader(csvfile)  # creates the reader object
-	    rowcount =0
-	    for row in reader:   # iterates the rows of the file in orders
-	        print row    # prints each row
-	       	listVal = []
-	        #words = row.split(",")
-	        rowcount = rowcount +1
-	        prodId = row[0]
-	        prodName = row[1]
-	        prodDesc = row[2]
-	        prodCount = row[3]
-	        # del highChartData['ProdName']
-	        if(prodName != 'ProdName'):
-	        	listVal.append(prodName)
-	        	listVal.append(int(prodCount))
-	        	# print listVal
-	        	highChartData.append(listVal)
-	finally:
-	    csvfile.close()      # closing
-
-	# print json.dumps(highChartData)
-	return highChartData
-
-def get_list_of_files():
-	fileList = []
-
-	for (dirpath, dirnames, filenames) in walk(app.config['UPLOAD_FOLDER']):
-		print filenames
-		#TODO: Add Check to see whether the file is a csv or not
-		fileList.extend(filenames)
-		# fileList.extend(filenames)
-		break
-
-	for f in fileList:
-		if not (f.endswith('.csv')):
-			fileList.remove(f)
-
-	return fileList
-
-def generate_file_data(filelist):
-	print "im in generate file data"
-	print filelist
-	filedata = []
-	#Creating the proper format for the search button
-	for f in filelist:
-		filedict = {}
-		filedict['text'] = f
-		filedict['value'] = f
-
-		filedata.append(filedict)
-
-	return filedata
-
-
-@app.route('/graphFromData', methods = ['GET', 'POST'])
-def generate_graph():
-	if request.method == 'GET':
-		print request
-		return render_template('retailerDashboard.html', data = read_file('test.csv'), fileList = generate_file_data(get_list_of_files()))
-	# if request.method == 'POST':
-
-	return "Graph generated Successfully!"
-
-@app.route('/generategraph', methods = ['GET', 'POST'])
-def get_graph():
-	if request.method == 'GET':
-		print request
-		return render_template('retailerDashboard.html', data = read_file('test.csv'), fileList = generate_file_data(get_list_of_files()))
-	if request.method == 'POST':
-		print request
-		return render_template('retailerDashboard.html', data = read_file('test.csv'), fileList = generate_file_data(get_list_of_files()))
-
-
-@app.route('/search',methods =['GET'])
-def search_products():
-	try:
-		if 'searchKeyword' in request.args:
-			keyword = request.args['searchKeyword']
-			
-			client = pymongo.MongoClient(MONGODB_URI)
-			db = client.get_default_database()
-			prod_details = db['product_details']
-			cursor = prod_details.find({'prodCategory': keyword })
-			# { '$in': [ '/ keyword /' ] }
-			#.sort('prodId', 1)
-			
-			listProd = []
-			# print ('prodId: %d,Prod Name: %s , Prod Desc: %s.' % (doc['prodId'], doc['ProdName'], doc['ProdDesc'], doc['ProdCount']))
-			for doc in cursor: 
-				print doc['prodName']
-				#print ('ProdId: %d,Prod Name: %s , Prod Desc: %s, ProdCount: %d' % (doc['ProdId'], doc['ProdName'], doc['ProdDesc'], doc['ProdCount']))
-				listProd.append(doc)
-			# print str(keyword)
-			# print listProd
-
-			client.close()
-			return render_template("search.html", status = "Search Successful!", item2 = listProd, itemlist = listProd, count = max(len(listProd),0))
+		print "==== print:"
+		print form.validate()
+		if form.validate() == False:
+			flash('All fields are required.')
+			return render_template('index.html', form=form)
 		else:
-			return render_template('search.html') #, status = "Rendering Page Successfully!", item2 = NULL, itemlist = NULL )
-	except:
-		e = sys.exc_info()[0]
-		print "exception: " + e
+			msg = Message(form.senderssubject.data, sender='HomeARteam@gmail.com', recipients=['kulsneha04@gmail.com'])
+			msg.html = """ 
+			<b>From:</b> <i>%s</i> 
+			<br> <b>Email-id:</b> <i>%s</i>
+			<br> <b>Message:</b> <i>%s</i>
+			""" \
+			% (form.sendersname.data, form.sendersemail.data, form.sendersmessage.data)
+			mail.send(msg)
+			return render_template('index.html', form=form, success=True)
+	if request.method == 'GET':
+		return render_template('index.html',form=form)
+	return 'Hello World!'
+
+@app.route('/search',methods =['GET', 'POST'])
+def search_products():
+	form = ContactForm()
+	if request.method == 'POST':
+		print "==== print:"
+		print form.validate()
+		if form.validate() == False:
+			flash('All fields are required.')
+			return render_template('search.html', form=form)
+		else:
+			msg = Message(form.senderssubject.data, sender='HomeARteam@gmail.com',
+			 recipients=['kulsneha04@gmail.com'])
+			msg.html = """ <b>From:</b> <i>%s</i> <br> <b>Email-id:</b> <i>%s</i> <br> <b>Message:</b> <i>%s</i>""" \
+				% (form.sendersname.data, form.sendersemail.data, form.sendersmessage.data)
+			mail.send(msg)
+			form = ContactForm()
+			return render_template('search.html', form=form, success=True)
+
+	elif request.method =='GET':
+		try:
+			if 'searchKeyword' in request.args:
+				keyword = request.args['searchKeyword']
+				
+				client = pymongo.MongoClient(MONGODB_URI)
+				db = client.get_default_database()
+				prod_details = db['product_details']
+				cursor = prod_details.find({'prodCategory': keyword })
+				# { '$in': [ '/ keyword /' ] }
+				#.sort('prodId', 1)
+				
+				listProd = []
+				# print ('prodId: %d,Prod Name: %s , Prod Desc: %s.' % (doc['prodId'], doc['ProdName'], doc['ProdDesc'], doc['ProdCount']))
+				for doc in cursor: 
+					print doc['prodName']
+					#print ('ProdId: %d,Prod Name: %s , Prod Desc: %s, ProdCount: %d' % (doc['ProdId'], doc['ProdName'], doc['ProdDesc'], doc['ProdCount']))
+					listProd.append(doc)
+				# print str(keyword)
+				# print listProd
+
+				client.close()
+				return render_template("search.html", form=form, status = "Search Successful!", 
+					item2 = listProd, itemlist = listProd, count = max(len(listProd),0))
+			else:
+				return render_template('search.html', form=form) #, status = "Rendering Page Successfully!", item2 = NULL, itemlist = NULL )
+		except:
+			e = sys.exc_info()[0]
+			print "exception: " + e
 	#if request.method == 'POST':
 	#	return render_template('search.html' , status = "Rendering Page Successfully!", item2 = NULL, itemlist = NULL)
 
-@app.route('/searchRetailer',methods =['GET'])
+@app.route('/searchRetailer',methods =['GET','POST'])
 def search_option_for_retailers():
-	try:
-		if 'searchKeyword' in request.args:
-			keyword = request.args['searchKeyword']
-			
-			client = pymongo.MongoClient(MONGODB_URI)
-			db = client.get_default_database()
-			prod_details = db['product_details']
-			cursor = prod_details.find({'prodCategory': keyword })
-			# { '$in': [ '/ keyword /' ] }
-			#.sort('prodId', 1)
-			
-			listProd = []
-			# print ('prodId: %d,Prod Name: %s , Prod Desc: %s.' % (doc['prodId'], doc['ProdName'], doc['ProdDesc'], doc['ProdCount']))
-			for doc in cursor:
-				# print doc['prodName']
-				#print ('ProdId: %d,Prod Name: %s , Prod Desc: %s, ProdCount: %d' % (doc['ProdId'], doc['ProdName'], doc['ProdDesc'], doc['ProdCount']))
-				listProd.append(doc)
-			print "---------"	
-			# print listProd
-			client.close()
-			return render_template("searchRetailer.html", status = "Search Successful!", item2 = listProd, itemlist = listProd, count = len(listProd))
+	form = ContactForm()
+	if request.method == 'POST':
+		print "==== print:"
+		print form.validate()
+		if form.validate() == False:
+			flash('All fields are required.')
+			return render_template('search.html', form=form)
 		else:
-			return render_template('searchRetailer.html') #, status = "Rendering Page Successfully!", item2 = NULL, itemlist = NULL )
-	except:
-		e = sys.exc_info()[0]
-		print "exception: " + e
+			msg = Message(form.senderssubject.data, sender='HomeARteam@gmail.com',
+			 recipients=['kulsneha04@gmail.com'])
+			msg.html = """ <b>From:</b> <i>%s</i> <br> <b>Email-id:</b> <i>%s</i> <br> <b>Message:</b> <i>%s</i>""" \
+				% (form.sendersname.data, form.sendersemail.data, form.sendersmessage.data)
+			mail.send(msg)
+			form = ContactForm()
+			return render_template('search.html', form=form, success=True)
+	elif request.method =='GET':
+		try:
+			if 'searchKeyword' in request.args:
+				keyword = request.args['searchKeyword']
+				
+				client = pymongo.MongoClient(MONGODB_URI)
+				db = client.get_default_database()
+				prod_details = db['product_details']
+				cursor = prod_details.find({'prodCategory': keyword })
+				# { '$in': [ '/ keyword /' ] }
+				#.sort('prodId', 1)
+				
+				listProd = []
+				# print ('prodId: %d,Prod Name: %s , Prod Desc: %s.' % (doc['prodId'], doc['ProdName'], doc['ProdDesc'], doc['ProdCount']))
+				for doc in cursor:
+					# print doc['prodName']
+					#print ('ProdId: %d,Prod Name: %s , Prod Desc: %s, ProdCount: %d' % (doc['ProdId'], doc['ProdName'], doc['ProdDesc'], doc['ProdCount']))
+					listProd.append(doc)
+				print "---------"	
+				# print listProd
+				client.close()
+				return render_template("searchRetailer.html", status = "Search Successful!", form=form, item2 = listProd, itemlist = listProd, count = len(listProd))
+			else:
+				return render_template('searchRetailer.html', form=form) #, status = "Rendering Page Successfully!", item2 = NULL, itemlist = NULL )
+		except:
+			e = sys.exc_info()[0]
+			print "exception: " + e
 
 # @app.route('/modifyCount', methods = ['GET','POST'])
 @app.route('/likeItem', methods = ['GET'])
@@ -237,22 +192,88 @@ def like_item():
 
 @app.route('/customerDashboard', methods =['GET','POST'])
 def dashboard():
+	form = ContactForm()
+	if request.method == 'GET':
+		return render_template("customerDashboard.html", form = form)
+	if request.method == 'POST':
+		print "==== print:"
+		print form.validate()
+		if form.validate() == False:
+			flash('All fields are required.')
+			return render_template('customerDashboard.html', form=form)
+		else:
+			msg = Message(form.senderssubject.data, sender='HomeARteam@gmail.com',
+			 recipients=['kulsneha04@gmail.com'])
+			msg.html = """ <b>From:</b> <i>%s</i> <br> <b>Email-id:</b> <i>%s</i> <br> <b>Message:</b> <i>%s</i>""" \
+				% (form.sendersname.data, form.sendersemail.data, form.sendersmessage.data)
+			mail.send(msg)
+			form = ContactForm()
+			return render_template('customerDashboard.html', form=form, success=True)
 	return render_template('customerDashboard.html')
 	#, status = "Search Successful!", item2 = listProd, itemlist = listProd)
 
 @app.route('/retailerDashboard', methods =['GET','POST'])
 def retailer_dashboard():
+	form = ContactForm()
 	if request.method == 'GET':
-		return render_template("retailerDashboard.html")
+		return render_template("retailerDashboard.html", form = form)
+	if request.method == 'POST':
+		print "==== print:"
+		print form.validate()
+		if form.validate() == False:
+			flash('All fields are required.')
+			return render_template('retailerDashboard.html', form=form)
+		else:
+			msg = Message(form.senderssubject.data, sender='HomeARteam@gmail.com',
+			 recipients=['kulsneha04@gmail.com'])
+			msg.html = """ <b>From:</b> <i>%s</i> <br> <b>Email-id:</b> <i>%s</i> <br> <b>Message:</b> <i>%s</i>""" \
+				% (form.sendersname.data, form.sendersemail.data, form.sendersmessage.data)
+			mail.send(msg)
+			form = ContactForm()
+			return render_template('retailerDashboard.html', form=form, success=True)
 	# return render_template('retailerDashboard.html', data = read_file('test.csv'), fileList = generate_file_data(get_list_of_files()))
 
-@app.route('/contactUs',methods =['POST'])
+@app.route('/contactus',methods =['GET','POST'])
 def contact():
+	form = ContactForm()
 	if request.method == 'POST':
-		return "message"
+		print "==== print:"
+		print form.validate()
+		if form.validate() == False:
+			flash('All fields are required.')
+			return render_template('index.html', form=form)
+		else:
+			msg = Message(form.senderssubject.data, sender='HomeARteam@gmail.com',
+			 recipients=['kulsneha04@gmail.com'])
+			msg.html = """ <b>From:</b> <i>%s</i> <br> <b>Email-id:</b> <i>%s</i> <br> <b>Message:</b> <i>%s</i>""" \
+				% (form.sendersname.data, form.sendersemail.data, form.sendersmessage.data)
+			mail.send(msg)
+			form = ContactForm()
+			return render_template('index.html', form=form, success=True)
+	elif request.method =='GET':
+		# form = ""
+		return render_template('index.html',form=form)
 
-@app.route('/aboutUs')
+@app.route('/aboutUs',methods = ['GET','POST'])
 def about():
+	form = ContactForm()
+	if request.method == 'POST':
+		print "==== print:"
+		print form.validate()
+		if form.validate() == False:
+			flash('All fields are required.')
+			return render_template('aboutUs.html', form=form)
+		else:
+			msg = Message(form.senderssubject.data, sender='HomeARteam@gmail.com',
+			 recipients=['kulsneha04@gmail.com'])
+			msg.html = """ <b>From:</b> <i>%s</i> <br> <b>Email-id:</b> <i>%s</i> <br> <b>Message:</b> <i>%s</i>""" \
+				% (form.sendersname.data, form.sendersemail.data, form.sendersmessage.data)
+			mail.send(msg)
+			form = ContactForm()
+			return render_template('aboutUs.html', form=form, success=True)
+	elif request.method =='GET':
+		# form = ""
+		return render_template('aboutUs.html',form=form)
 	return render_template('aboutUs.html')
 
 @app.route('/services')
@@ -269,7 +290,7 @@ def getUserData():
 		else:
 			if 'userEmail' in request.args:
 				client = pymongo.MongoClient(MONGODB_URI)
-
+				uemail = request.args["userEmail"]
 				db = client.get_default_database()
 				user_details =db['user_details']
 				user = user_details.find({"l_email" : uemail.lower() })
@@ -293,7 +314,7 @@ def updateRecords():
 			return "No form Data Arguments!"
 			# return render_template('LoginPage.html')
 
-		uemail = request.form["Email"]
+		uemail = request.form["email"]
 		# upass = request.form["Password"]
 		
 		client = pymongo.MongoClient(MONGODB_URI)
@@ -364,6 +385,7 @@ def login():
 		return json.dumps(message)
 		# return render_template('LoginPage.html', message= message)
 	return "Error:Login Unsucessful!"
+
 
 @app.route('/register', methods =['POST'])
 def register():
@@ -494,7 +516,8 @@ def getProdDetailsbyCategory():
 			print products
 			# message = json.dumps(products)
 			for prod in products:
-				print "\n" + prod['prodName'] + "\t" + prod['prodCategory'] + "\t" + prod['prodImgUrl'] + "\t" + prod['prod3DUrl']
+				print "\n" + prod['prodName'] + "\t" + prod['prodCategory'] \
+					+ "\t" + prod['prodImgUrl'] + "\t" + prod['prod3DUrl']
 				listProdDetailItem = []
 				listProdDetailItem.append(prod['prodName'])
 				listProdDetailItem.append(prod['prodImgUrl'])

@@ -6,7 +6,7 @@
 	<script src="bootstrap-select.js"></script>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<link rel="stylesheet" href="{{ url_for('static',filename='css/firstpage.css') }} ">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
@@ -278,49 +278,64 @@ function logout(){
 </div>
 </div>
 <!-- Main Body Section ends -->
-<!-- Footer of the page -->
+
+<!--Footer starts--> 
 <footer>
 	<div class="container-fluid" style="background:black;">
+		<form name="sendMessage" id="contactForm" method="POST">
+			<div class="col-lg-12 text-center">
+				<h4 class="contact"> CONTACT US </h4>
 
-		<div class="col-lg-12 text-center">
-			<h4 class="contact"> CONTACT US </h4>
-		</div>
+				{% if success %}
+				<h3 style="color:#ffffff;font-size:20px;font-weight: bold;">The email was sent successfully!</h3>
+				{% endif %}
 
-		<form name="sentMessage" id="contactForm2" >
+				{% for message in form.sendersname.errors %}
+				<div class="flash">{{ message }}</div>
+				{% endfor %}
+
+				{% for message in form.sendersemail.errors %}
+				<div class="flash">{{ message }}</div>
+				{% endfor %}
+
+				{% for message in form.senderssubject.errors %}
+				<div class="flash">{{ message }}</div>
+				{% endfor %}
+
+				{% for message in form.sendersmessage.errors %}
+				<div class="flash">{{ message }}</div>
+				{% endfor %}
+
+			</div> {{ form.hidden_tag() }}
 			<div class="row">
 				<div class="col-md-4 col-md-offset-2">
 					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Your Name *" id="name3"> 
-
+						<h3 style="color:#FFFFFF">{{ form.sendersname.label }}</h3> {{ form.sendersname }}
 					</div>
 					<div class="form-group">
-						<input type="email" class="form-control" placeholder="Your Email *" id="email3">
-
+						<h3 style="color:#FFFFFF">{{ form.sendersemail.label }}</h3> {{ form.sendersemail }}
 					</div>
 					<div class="form-group">
-						<input type="number" class="form-control" placeholder="Your Phone *" id="phone">
-
+						<h3 style="color:#FFFFFF">{{ form.senderssubject.label }}</h3> {{ form.senderssubject }}
 					</div>
 				</div>
+
 				<div class="col-md-4">
 					<div class="form-group">
-						<textarea class="form-control" placeholder="Your Message *" id="message"></textarea>
-
+						<h3 style="color:#FFFFFF">{{ form.sendersmessage.label }}</h3> {{ form.sendersmessage }}
 					</div>
 				</div>
 			</div>
 			<div class="button">
-				<div class="col-md-12 text-center">
-
-					<button type="submit" class="btn btn-xl">Send Message</button>
+				<div class="col-lg-12 text-center"> 
+					{{ form.submit }}
 				</div>
 			</div>
-
 		</form>
-
-
 		<p style="text-align:center;margin-top:150px;color:#fed136;">Copy rights- HomeAR inc 2015</p>
+	</div>
+</footer>
+<!-- Footer closed -->
 
-	</footer>
 </body>
 </html>
