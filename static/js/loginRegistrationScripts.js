@@ -133,8 +133,6 @@ function registerCall(type_picked) {
 	ajaxRequest.send(dataString);
 
 	//Set local Storage for Useremail
-	
-
 }
 
 function login_user() {
