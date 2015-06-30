@@ -1,0 +1,497 @@
+    1  open Eclipse.app
+    2  open Eclipse.app
+    3  mongoimport
+    4  mongoimport mongodb://sneha:test123@ds061370.mongolab.com:61370/homear
+    5  mongod
+    6  scp /Users/snehakulkarni/Documents/MSSE/CMPE295B/Resources/LinodeRes/stuhl.jpg root@50.116.3.141:~/catlog/textures/
+    7  scp /Users/snehakulkarni/Documents/MSSE/CMPE295B/Resources/LinodeRes/stuhl.jpg root@50.116.3.141:~/catlog/textures
+    8  scp /Users/snehakulkarni/Documents/MSSE/CMPE295B/Resources/LinodeRes/stuhl.jpg root@50.116.3.141:~/catalog/textures
+    9  scp /Users/snehakulkarni/Documents/MSSE/CMPE295B/Resources/LinodeRes/stuhl.mtl root@50.116.3.141:~/catalog/3DModels
+   10  scp /Users/snehakulkarni/Documents/MSSE/CMPE295B/Resources/LinodeRes/stuhl.obj root@50.116.3.141:~/catalog/3DModels
+   11  ifconfig
+   12  mongoexport --host mongodb://sneha:test123@ds061370.mongolab.com:61370 --db homear --collection product_details --out product_details.csv
+   13  mongoexport --host mongodb://sneha:test123@ds061370.mongolab.com:61370 --db homear --collection product_details --out product_details.json
+   14  mongoimport mongodb://sneha:test123@ds061370.mongolab.com:61370/homear
+   15  mongoimport
+   16  mongoexport --host mongodb://sneha:test123@ds061370.mongolab.com:61370 --db homear --collection product_details --out product_details.json
+   17  mongoexport --host mongodb://sneha:test123@ds061370.mongolab.com --port 61370 --db homear --collection product_details --out product_details.json
+   18  mongoexport 
+   19  mongoexport --host mongodb://sneha:test123@ds061370.mongolab.com --port 61370 --db homear
+   20  help mongoexport
+   21  man mongoexport
+   22  mongoexport ds061370.mongolab.com:61370/homear -u sneha -p test123
+   23  mongoexport --help
+   24  mongoexport -h ds061370.mongolab.com:61370 -d homear -c product_details -u sneha -p test123 -o product_details.csv --csv -f ProdImgUrl,Prod3DUrl,ProdDesc,ProdName,ProdLikes,ProdCategory
+   25  open .
+   26  open Eclipse.app
+   27  ssh root@50.116.3.141
+   28  ssh root@50.116.3.141
+   29  ssh root@50.116.3.141
+   30  ssh root@50.116.3.141
+   31  open Eclipse.app
+   32  adb kill-server
+   33  adb devices
+   34  adb devices
+   35  ssh root@50.116.3.141
+   36  open Eclipse.app
+   37  monitor
+   38  ddms
+   39  adb logcat
+   40  open Eclipse.app
+   41  open Eclipse.app
+   42  open Eclipse.app
+   43  ifconfig
+   44  ifconfig
+   45  open Eclipse.app
+   46  open Eclipse.app
+   47  open Eclipse.app
+   48  pip install -U flask-cors
+   49  pip install -U flask-cors
+   50  sudo pip install -U flask-cors
+   51  ifconfig
+   52  open Eclipse.app
+   53  open Eclipse.app
+   54  open Eclipse.app
+   55  open Eclipse.app
+   56  ifconfg
+   57  ifconfig
+   58  ifconfig
+   59  cleat
+   60  clear
+   61  ifconfig
+   62  ifconfig
+   63  ifconfig
+   64  ifconfig
+   65  ssh root@50.116.3.141
+   66  ssh root@50.116.3.141
+   67  ssh root@50.116.3.141
+   68  ssh root@50.116.3.141
+   69  adb shell
+   70  ssh root@50.116.3.141
+   71  adb logcat
+   72  adb logcat
+   73  adb devices
+   74  adb -s 009939d34ce44be7 logcat
+   75  cd ~/Documents/MSSE/CMPE295B/Resources/LinodeRes/
+   76  scp couch1_texture1.jpg root@50.116.3.141:/catalog/images/
+   77  scp couch1_texture1.jpg root@50.116.3.141:/catalog/images
+   78  scp couch1_texture1.jpg root@50.116.3.141:~/catalog/images
+   79  scp couch1_texture2.jpg root@50.116.3.141:~/catalog/images
+   80  scp button_chair_selected.png root@50.116.3.141:~/catalog/images
+   81  scp button_chair_unselected.png root@50.116.3.141:~/catalog/images
+   82  scp bonaparte_sofa_unselected_product.png root@50.116.3.141:~/catalog/images
+   83  scp NewSmart_Bump.jpg root@50.116.3.141:~/catalog/textures
+   84  scp NewSmart_Dif.jpg.jpg root@50.116.3.141:~/catalog/textures
+   85  scp NewSmart_Dif.jpg root@50.116.3.141:~/catalog/textures
+   86  scp -r FENDI_OBJ root@50.116.3.141:~/catalog/3DModels/FENDI_OBJ
+   87  scp -r FENDI_OBJ root@50.116.3.141:~/catalog/3DModels/
+   88  scp -r Sofa_GM_Plutone_OBJ root@50.116.3.141:~/catalog/3DModels/
+   89  ssh root@50.116.3.114
+   90  ssh root@50.116.3.114
+   91  ssh root@50.116.3.114
+   92  ssh root@50.116.3.114
+   93  ssh root@50.116.3.114
+   94  ssh root@50.116.3.114
+   95  ssh root@50.116.3.114
+   96  ssh root@50.116.3.141
+   97  ls -la
+   98  cd ..
+   99  ls -la
+  100  cd MongoDB/
+  101  vi product_details_opened_in_Excel.csv
+  102  cd LinodeRes/
+  103  ssh root@50.116.3.141
+  104  scp stuhl.obj root@50.116.3.141:~/catalog/static/3DModels
+  105  vi stuhl.obj
+  106  scp stuhl.obj root@50.116.3.141:~/catalog/static/3DModels
+  107  scp stuhl.mtl root@50.116.3.141:~/catalog/static/3DModels
+  108  ssh root@50.116.3.141
+  109  scp stuhl.jpg root@50.116.3.141:~/catalog/static/3DModels
+  110  cd ../MongoDB/
+  111  vi product_details.csv
+  112  cd ../LinodeRes/
+  113  scp bar006_OBJ root@50.116.3.141:~/catalog/static/3DModels
+  114  scp -r bar006_OBJ root@50.116.3.141:~/catalog/static/3DModels
+  115  scp -r OCCASIONAL_obj root@50.116.3.141:~/catalog/static/3DModels
+  116  scp *.png root@50.116.3.141:~/catalog/static/images
+  117  scp *.obj root@50.116.3.141:~/catalog/static/3DModels
+  118  ssh root@50.116.3.141
+  119  ssh root@50.116.3.141
+  120  git add .
+  121  git commit -m "Changing highchart generation"
+  122  git push heroku master
+  123  python server.py
+  124  python server.py
+  125  python server.py
+  126  python server.py
+  127  python server.py
+  128  python server.py
+  129  python server.py
+  130  python server.py
+  131  git add .
+  132  git commit -m "Minor Changes"
+  133  git push heroku master
+  134  python server.py
+  135  heroku ps:scale web=1
+  136  git --version
+  137  git --version
+  138  python server.py
+  139  git add *
+  140  git commit -m "Checking for IS  error"
+  141  git push heroku master
+  142  python server.py
+  143  python server.py
+  144  python server.py
+  145  heroku logs
+  146  heroku logs
+  147  heroku heroku logs --tail
+  148  heroku logs --tail
+  149  heroku logs --source heroku
+  150  python server.py
+  151  python server.py
+  152  git add .
+  153  git commit -m "Checking for errors"
+  154  git push heroku master
+  155  heroku logs
+  156  heroku logs
+  157  heroku logs --tail
+  158  ls - la
+  159  ls -la
+  160  vi .gitignore 
+  161  heroku run bash
+  162  heroku restart -a homear
+  163  heroku logs --tail
+  164  heroku run bash
+  165  python server.py 
+  166  python server.py 
+  167  git add .
+  168  git commit -m "Checking for errors"
+  169  git push heroku master
+  170  heroku logs --tail
+  171  python server.py 
+  172  git status
+  173  java --version
+  174  java -v
+  175  java -version
+  176  eclipse -v
+  177  eclipse -version
+  178  eclipse --version
+  179  ifconfig
+  180  ifconfig
+  181  gdit
+  182  pip install gedit
+  183  sudo pip install gedit
+  184  sudo apt-get install gedit
+  185  sudo brew install gedit
+  186  brew install gedit
+  187  vi /etc/apache2/hhtpd.conf
+  188  vi /etc/apache2/httpd.conf
+  189  mongod
+  190  ssh root@50.116.3.141
+  191  python webServer.py 
+  192  python webServer.py 
+  193  python webServer.py 
+  194  python webServer.py 
+  195  python webServer.py 
+  196  sudo bash
+  197  python webServer.py 
+  198  python webServer.py 
+  199  python webServer.py 
+  200  open Eclipse.app
+  201  python -version
+  202  python -v
+  203  python --version
+  204  clean
+  205  clear
+  206  ifconfig
+  207  ifconfig
+  208  python webServer.py 
+  209  python server.py 
+  210  python server.py 
+  211  history
+  212  git add .
+  213  git commit "pavan"
+  214  git commit -m "pavan"
+  215  git push
+  216  git add .
+  217  git commit -m "pavan"
+  218  git push
+  219  history | grep git
+  220  git push heroku master
+  221  git add .
+  222  git commit -m "Pavan"
+  223  git push heroku master
+  224  git add .
+  225  git commit -m "Pavan"
+  226  git push heroku master
+  227  heroku run upgrade
+  228  git add .
+  229  git commit -m "Pavan"
+  230  git push heroku master
+  231  git add .
+  232  git commit -m "Pavan"
+  233  git push heroku master
+  234  git commit -m "Pavan"
+  235  git push heroku master
+  236  git add .
+  237  git commit -m "Pavan"
+  238  git push heroku master
+  239  git add .
+  240  git commit -m "Pavan"
+  241  git push heroku master
+  242  git add .
+  243  git commit -m "Adding the new changes to reflect register and login plugin"
+  244  git add .
+  245  git commit -m "Adding the new changes to reflect register and login plugin"
+  246  git push heroku master
+  247  heroku open
+  248  python server.py 
+  249  python server.py 
+  250  python server.py 
+  251  python server.py 
+  252  python server.py 
+  253  python server.py 
+  254  git add .
+  255  git add --all
+  256  git commit -m "Adding API changes in the server."
+  257  git push heroku master
+  258  heroku open
+  259  git update
+  260  git --help
+  261  brew upgrade git
+  262  sudo brew upgrade git
+  263  sudo pip install upgrade git
+  264  clear
+  265  git add .
+  266  git commit -m "Adding CORS support"
+  267  git push heroku master
+  268  git add .
+  269  git commit -m "Adding the new UI"
+  270  git push heroku master
+  271  python server.py 
+  272  python server.py 
+  273  python server.py 
+  274  python server.py 
+  275  python server.py 
+  276  python server.py 
+  277  python server.py 
+  278  clear
+  279  python server.py 
+  280  python server.py 
+  281  python server.py 
+  282  python server.py 
+  283  python server.py 
+  284  git add .
+  285  git commit -m "adding some UI changes"
+  286  git push heroku master
+  287  python server.py 
+  288  git add .
+  289  git commit -m "Adding logout buttons"
+  290  git push heroku master
+  291  heroku ps:scale web=2
+  292  heroku ps
+  293  heroku ps:scale web=2
+  294  git --version
+  295  brew update
+  296  heroku ps:scale web=2
+  297  sudo mv /usr/bin/git /usr/bin/git-system
+  298  source /etc/profile
+  299  python webServer.py 
+  300  mongoexport -h ds061370.mongolab.com:61370 -d homear -c user_details -u sneha -p test123 -o user_details.csv --csv -f user_email,email_id,firstname,lastname,user_password,address,pincode
+  301  open .
+  302  mongoexport -h ds061370.mongolab.com:61370 -d homear -c user_details -u sneha -p test123 -o user_details.csv --csv -f useremail,id,firstname,lastname,userpassword
+  303  vi user_details_ms.csv 
+  304  vi user_details_ms.csv 
+  305  vi user_details.csv
+  306  vi user_details.csv
+  307  vi user_details.csv
+  308  mongoimport -h ds061370.mongolab.com:61370 -d homear -c universal_user_details -u sneha -p test123 --file user_details.csv --type csv --headerline useremail,l_email,username,userpassword
+  309  mongoimport -h ds061370.mongolab.com:61370 -d homear -c universal_user_details -u sneha -p test123 --file user_details.csv --type csv --headerline useremail,l_email,username,userpassword
+  310  mongoimport -h ds061370.mongolab.com:61370 -d homear -c universal_user_details -u sneha -p test123 --file user_details.csv --type csv
+  311  mongoimport -h ds061370.mongolab.com:61370 -d homear -c universal_user_details -u sneha -p test123 --file user_details.csv --type csv --headline
+  312  vi user_details_original.csv 
+  313  mongoimport -h ds061370.mongolab.com:61370 -d homear -c universal_user_details -u sneha -p test123 --file user_details_original.csv --type csv --headline
+  314  mongoimport -h ds061370.mongolab.com:61370 -d homear -c universal_user_details -u sneha -p test123 --file user_details.csv --type csv --headerline
+  315  mongoexport -h ds061370.mongolab.com:61370 -d homear -c universal_user_details -u sneha -p test123 -o universal_user_details.csv --csv -f useremail,l_email,username,userpassword
+  316  open universal_user_details.csv 
+  317  vi universal_user_details.csv 
+  318  vi universal_user_details.csv 
+  319  vi universal_user_details.csv 
+  320  mongoimport -h ds061370.mongolab.com:61370 -d homear -c universal_user_details -u sneha -p test123 --file universal_user_details.csv --type csv --headerline
+  321  mongoimport -h ds061370.mongolab.com:61370 -d homear -c universal_user_details -u sneha -p test123 --file universal_user_details.csv --type csv --headerline
+  322  open .
+  323  history
+  324  heroku run bash
+  325  history | heroku
+  326  history | grep heroku
+  327  heroku -app homear run bash 
+  328  heroku homear run bash 
+  329  heroku run bash 
+  330  heroku run bash --app homear
+  331  heroku run bash --app homear
+  332  history
+  333  heroku run bash --app homear
+  334  vi universal_user_details.csv 
+  335  vi universal_user_details.csv 
+  336  mongoexport -h ds061370.mongolab.com:61370 -d homear -c product_details -u sneha -p test123 -o homear_product_details.csv --csv -f prodImgUrl,prod3DUrl,prodTextureUrl,prodDesc,prodName,prodLikes,prodCategory
+  337  vi homear_product_details.csv 
+  338  mongoexport -h ds061370.mongolab.com:61370 -d homear -c product_details -u sneha -p test123 -o homear_product_details.csv --csv
+  339  mongoexport -h ds061370.mongolab.com:61370 -d homear -c product_details -u sneha -p test123 -o homear_product_details.csv --csv -f ProdImgUrl,Prod3DUrl,ProdTextureUrl,ProdDesc,ProdName,ProdLikes,ProdCategory
+  340  vi homear_product_details.csv 
+  341  mongoexport -h ds063150.mongolab.com:63150 -d testmongolabs -c prod_details -u sneha -p test123 -o testmongo_prod_details.csv --csv -f ProdImg,ProdDesc, ProdName, ProdCount, ProdId
+  342  mongoexport -h ds063150.mongolab.com:63150 -d testmongolabs -c prod_details -u sneha -p test123 -o testmongo_prod_details.csv --csv -f ProdImg,ProdDesc,ProdName,ProdCount,ProdId
+  343  vi testmongo_prod_details.csv 
+  344  vi universal_user_details.csv 
+  345  vi universal_user_details.csv 
+  346  vi testmongo_prod_details.csv 
+  347  history
+  348  mongoexport -h ds061370.mongolab.com:61370 -d homear -c universal_user_details -u sneha -p test123 -o homear_user_details.csv --csv -f useremail,l_email,username,userpassword,is_retailer
+  349  vi homear_product_details.csv 
+  350  mongoimport -h ds061370.mongolab.com:61370 -d homear -c user_details -u sneha -p test123 --file homear_user_details.csv --type csv --headerline
+  351  vi homear_product_details.csv 
+  352  mongoimport -h ds061370.mongolab.com:61370 -d homear -c product_details -u sneha -p test123 --file homear_product_details.csv --type csv --headerline
+  353  mongoimport -h ds061370.mongolab.com:61370 -d homear -c prod_details -u sneha -p test123 --file homear_product_details.csv --type csv --headerline
+  354  cd ..
+  355  vi homear_product_details.csv 
+  356  vi homear_product_details.csv 
+  357  vi homear_product_details.csv 
+  358  vi homear_product_details.csv 
+  359  vi homear_product_details.csv 
+  360  vi homear_product_details.csv 
+  361  mongoimport -h ds061370.mongolab.com:61370 -d homear -c product_details -u sneha -p test123 --file homear_product_details.csv --type csv --headerline
+  362  vi homear_product_details.csv 
+  363  mongoimport -h ds061370.mongolab.com:61370 -d homear -c product_details -u sneha -p test123 --file homear_product_details.csv --type csv --headerline
+  364  mongoimport -h ds061370.mongolab.com:61370 -d homear -c product_details -u sneha -p test123 --file homear_product_details.csv --type csv --headerline
+  365  mongoimport -h ds061370.mongolab.com:61370 -d homear -c product_details -u sneha -p test123 --file homear_product_details.csv --type csv --headerline
+  366  vi homear_product_details.csv 
+  367  vi homear_product_details.csv 
+  368  mongoimport -h ds061370.mongolab.com:61370 -d homear -c product_details -u sneha -p test123 --file homear_product_details.csv --type csv --headerline
+  369  vi homear_product_details.csv 
+  370  vi homear_product_details.csv 
+  371  vi homear_product_details.csv 
+  372  vi homear_product_details_1.csv 
+  373  vi homear_product_details_1.csv 
+  374  vi homear_product_details_1.csv 
+  375  vi homear_product_details_1.csv 
+  376  mongoimport -h ds061370.mongolab.com:61370 -d homear -c product_details -u sneha -p test123 --file homear_product_details_1.csv --type csv --headerline
+  377  vi homear_product_details_1.csv 
+  378  vi homear_product_details_1.csv 
+  379  mongoimport -h ds061370.mongolab.com:61370 -d homear -c product_details -u sneha -p test123 --file homear_product_details_1.csv --type csv --headerline
+  380  vi homear_product_details_1.csv 
+  381  vi homear_product_details.csv 
+  382  mongoimport -h ds061370.mongolab.com:61370 -d homear -c product_details -u sneha -p test123 --file homear_product_details.csv --type csv --headerline
+  383  vi homear_product_details.csv 
+  384  vi homear_product_details.csv 
+  385  vi homear_product_details.csv 
+  386  vi homear_product_details.csv 
+  387  mongoimport -h ds061370.mongolab.com:61370 -d homear -c product_details -u sneha -p test123 --file homear_product_details.csv --type csv --headerline
+  388  history
+  389  heroul logs 
+  390  history | grep heroku
+  391  heroku logs 
+  392  heroku logs --app homear --source app
+  393  heroku logs --app homear --source app --tail
+  394  heroku logs --app homear --source heroku --tail
+  395  heroku logs --app homear --source heroku --tail
+  396  heroku logs --app homear --source app --tail
+  397  heroku logs --app homear --source app --tail
+  398  heroku logs --app homear
+  399  heroku logs --app homear --tail
+  400  ssh root@50.116.3.141
+  401  ssh root@50.116.3.141
+  402  ssh root@50.116.3.141
+  403  cd ~/Documents/MSSE/CMPE297/Project/HomeAR/
+  404  /Volumes/Git\ 2.3.5\ Mavericks\ Intel\ Universal/uninstall.sh /Volumes/Git\ 2.3.5\ Mavericks\ Intel\ Universal/uninstall.sh 
+  405  /Volumes/Git\ 2.3.5\ Mavericks\ Intel\ Universal/VERSION-2.3.5-universal-mavericks 
+  406  sudo /Volumes/Git\ 2.3.5\ Mavericks\ Intel\ Universal/VERSION-2.3.5-universal-mavericks 
+  407  git upgrade
+  408  brew install git
+  409  sudo brew install git
+  410  sudo apt-get git
+  411  sudo apt-get install git
+  412  sudo pip install git
+  413  cd ~/Documents/MSSE/CMPE297/Project/HomeAR/
+  414  git --version
+  415  apt-get update
+  416  heroku ps:scale web=2
+  417  ssh root@50.116.3.141
+  418  python server.py 
+  419  python server.py 
+  420  python server.py 
+  421  pip show flask
+  422  pip show flask
+  423  python server.py 
+  424  git --version
+  425  git upgrade
+  426  git --help
+  427  heroku open
+  428  heroku open
+  429  ssh root@50.116.3.141
+  430  python server.py 
+  431  git add .
+  432  git commit -m "Adding jquery to highcharts"
+  433  git push heroku master
+  434  pip install flask-wtf
+  435  clear
+  436  git add .
+  437  git commit -m "changing highchart scripts"
+  438  git push heroku master
+  439  git add .
+  440  git commit -m "reverting the changes to the server"
+  441  git push heroku master
+  442  git add .
+  443  git commit -m "checking in to resolve highchart error 16"
+  444  git push heroku master
+  445  python server.py 
+  446  python server.py 
+  447  python server.py 
+  448  python server.py 
+  449  python server.py 
+  450  clear
+  451  python server.py 
+  452  pip install flask-login
+  453  sudo pip install flask-wtf
+  454  sudo pip install flask-login
+  455  sudo pip install flask-openid
+  456  clear
+  457  python server.py 
+  458  sudo pip install flask-mail
+  459  sudo pip install flask-sqlalchemy
+  460  sudo pip install sqlalchemy-migrate
+  461  sudo pip install whooshalchemy
+  462  sudo pip install guess_language
+  463  sudo pip install flipflop
+  464  sudo pip install coverage
+  465  python server.py 
+  466  flask-wtf --version
+  467  flask-wtf -version
+  468  flask-wtf
+  469  pip show flask-wtf
+  470  pip install flask-wtforms
+  471  pip install wtforms
+  472  pip show wtforms
+  473  python server.py 
+  474  python server.py 
+  475  python server.py 
+  476  python server.py 
+  477  python server.py 
+  478  python server.py 
+  479  python server.py 
+  480  python server.py 
+  481  python server.py 
+  482  python server.py 
+  483  python server.py 
+  484  python server.py 
+  485  python server.py 
+  486  python server.py 
+  487  python server.py 
+  488  python server.py 
+  489  clear
+  490  clear
+  491  python server.py 
+  492  python server.py 
+  493  python server.py 
+  494  python server.py 
+  495  python server.py 
+  496  python server.py 
+  497  history > ~/Documents/MSSE/CMPE297/Project/HomeAR/Terminal\ Outputs\ and\ Commands/Command_History_tab4.txt

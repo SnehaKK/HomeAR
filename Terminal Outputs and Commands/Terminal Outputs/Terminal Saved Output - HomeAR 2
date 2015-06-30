@@ -1,0 +1,1364 @@
+Last login: Wed Apr 29 02:04:20 on console
+~$cd ~/Documents/MSSE/CMPE297/Project/
+~/Documents/MSSE/CMPE297/Project$cd HomeAR/
+~/Documents/MSSE/CMPE297/Project/HomeAR$python server.py 
+  File "server.py", line 419
+    + "\t" + prod['prodImgUrl'] + "\t" + prod['prod3DUrl']
+    ^
+IndentationError: unexpected indent
+~/Documents/MSSE/CMPE297/Project/HomeAR$python server.py 
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+
+Searching for Category Id: 2
+<pymongo.cursor.Cursor object at 0x10b9f1dd0>
+
+Chair frame	Chairs	http://50.116.3.141:5500/static/chairs/chair0/newchair.png	http://50.116.3.141:5500/static/chairs/chair0/stuhl.obj
+
+Chair cushion	Chairs	http://50.116.3.141:5500/static/chairs/chair1/chair1_image.JPG	http://50.116.3.141:5500/static/chairs/chair1/Redarmchair.obj
+
+Poang stool	Chairs	http://50.116.3.141:5500/static/chairs/chair2/chair2_image.JPG	http://50.116.3.141:5500/static/chairs/chair2/chair2.obj
+
+Chair frame	Chairs	http://50.116.3.141:5500/static/chairs/chair3/chair3_image.JPG	http://50.116.3.141:5500/static/chairs/chair3/chair3.obj
+
+Chair cushion	Chairs	http://50.116.3.141:5500/static/chairs/chair4/chair4_image.JPG	http://50.116.3.141:5500/static/chairs/chair4/chair4.obj
+
+Poang stool	Chairs	http://50.116.3.141:5500/static/chairs/chair5/chair5_image.JPG	http://50.116.3.141:5500/static/chairs/chair5/Chair.obj
+
+Chair frame	Chairs	http://50.116.3.141:5500/static/chairs/chair6/chair6_image.JPG	http://50.116.3.141:5500/static/chairs/chair6/chair6.obj
+
+Chair cushion	Chairs	http://50.116.3.141:5500/static/chairs/chair7/chair7_image.JPG	http://50.116.3.141:5500/static/chairs/chair7/chair7.obj
+127.0.0.1 - - [29/Apr/2015 14:51:28] "GET /prodDetails?categoryId=2 HTTP/1.1" 200 -
+127.0.0.1 - - [29/Apr/2015 14:51:29] "GET /favicon.ico HTTP/1.1" 404 -
+^C~/Documents/MSSE/CMPE297/Project/HomeAR$python --version
+Python 2.7.5
+~/Documents/MSSE/CMPE297/Project/HomeAR$python
+Python 2.7.5 (default, Mar  9 2014, 22:15:05) 
+[GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> use flask
+  File "<stdin>", line 1
+    use flask
+            ^
+SyntaxError: invalid syntax
+>>> use Flask
+  File "<stdin>", line 1
+    use Flask
+            ^
+SyntaxError: invalid syntax
+>>> impoert Flask
+  File "<stdin>", line 1
+    impoert Flask
+                ^
+SyntaxError: invalid syntax
+>>> import Flask
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ImportError: No module named Flask
+>>> import flask
+>>> version
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'version' is not defined
+>>> flask -version
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'version' is not defined
+>>> flask --version
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'version' is not defined
+>>> flask -v
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'v' is not defined
+>>> flask 
+<module 'flask' from '/Library/Python/2.7/site-packages/flask/__init__.pyc'>
+>>> flask.__version__
+'0.10.1'
+>>> exit
+Use exit() or Ctrl-D (i.e. EOF) to exit
+>>> exit()
+~/Documents/MSSE/CMPE297/Project/HomeAR$bash --version
+GNU bash, version 3.2.53(1)-release (x86_64-apple-darwin13)
+Copyright (C) 2007 Free Software Foundation, Inc.
+~/Documents/MSSE/CMPE297/Project/HomeAR$git --verison
+Unknown option: --verison
+usage: git [--version] [--help] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+~/Documents/MSSE/CMPE297/Project/HomeAR$git --verison
+Unknown option: --verison
+usage: git [--version] [--help] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+~/Documents/MSSE/CMPE297/Project/HomeAR$git --version
+git version 1.8.4
+~/Documents/MSSE/CMPE297/Project/HomeAR$heroku --version
+Your version of git is 1.8.4. Which has serious security vulnerabilities.
+More information here: https://blog.heroku.com/archives/2014/12/23/update_your_git_clients_on_windows_and_os_x
+heroku-toolbelt/3.32.0 (x86_64-darwin10.8.0) ruby/1.9.3
+You have no installed plugins.
+~/Documents/MSSE/CMPE297/Project/HomeAR$ssh root@50.116.3.141
+root@50.116.3.141's password: 
+Write failed: Broken pipe
+~/Documents/MSSE/CMPE297/Project/HomeAR$python server.py 
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+127.0.0.1 - - [03/May/2015 13:45:57] "GET /retailerDashboard HTTP/1.1" 200 -
+127.0.0.1 - - [03/May/2015 13:45:58] "GET /static/css/firstpage.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/May/2015 13:45:58] "GET /static/js/profileManipulationScripts.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/May/2015 13:45:58] "GET /static/js/loginRegistrationScripts.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/May/2015 13:47:07] "GET /searchRetailer HTTP/1.1" 200 -
+127.0.0.1 - - [03/May/2015 13:47:08] "GET /bootstrap-select.js HTTP/1.1" 404 -
+127.0.0.1 - - [03/May/2015 13:47:08] "GET /static/js/i18n.js HTTP/1.1" 304 -
+---------
+127.0.0.1 - - [03/May/2015 13:47:14] "GET /searchRetailer?searchKeyword=Sofas HTTP/1.1" 200 -
+127.0.0.1 - - [03/May/2015 13:47:14] "GET /bootstrap-select.js HTTP/1.1" 404 -
+---------
+127.0.0.1 - - [03/May/2015 13:47:41] "GET /searchRetailer?searchKeyword=Tables HTTP/1.1" 200 -
+127.0.0.1 - - [03/May/2015 13:47:41] "GET /bootstrap-select.js HTTP/1.1" 404 -
+hello
+38
+127.0.0.1 - - [03/May/2015 13:47:43] "GET /likeItem?id=553d2d701a2987873025207e HTTP/1.1" 200 -
+127.0.0.1 - - [03/May/2015 13:47:59] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [03/May/2015 13:47:59] "GET /static/images/image2.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [03/May/2015 13:47:59] "GET /static/images/image1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [03/May/2015 13:47:59] "GET /static/images/image3.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [03/May/2015 13:47:59] "GET /static/images/product.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [03/May/2015 13:47:59] "GET /static/images/augmented.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [03/May/2015 13:47:59] "GET /static/images/android.jpg HTTP/1.1" 304 -
+==== print:
+True
+127.0.0.1 - - [03/May/2015 13:54:26] "POST /contactus HTTP/1.1" 200 -
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+==== print:
+True
+127.0.0.1 - - [03/May/2015 14:12:48] "POST /contactus HTTP/1.1" 200 -
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+127.0.0.1 - - [03/May/2015 14:15:37] "GET / HTTP/1.1" 200 -
+==== print:
+False
+127.0.0.1 - - [03/May/2015 16:46:19] "POST /contactus HTTP/1.1" 200 -
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+127.0.0.1 - - [03/May/2015 16:47:06] "GET / HTTP/1.1" 200 -
+==== print:
+True
+127.0.0.1 - - [03/May/2015 16:47:26] "POST /contactus HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py", line 170, in contact
+    return render_template('index.html', success=True)
+  File "/Library/Python/2.7/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/Library/Python/2.7/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/Library/Python/2.7/site-packages/jinja2/environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Library/Python/2.7/site-packages/jinja2/environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/templates/index.html", line 294, in top-level template code
+    {% for message in form.sendersname.errors %}
+  File "/Library/Python/2.7/site-packages/jinja2/environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'form' is undefined
+127.0.0.1 - - [03/May/2015 16:47:26] "GET /contactus?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/May/2015 16:47:26] "GET /contactus?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/May/2015 16:47:26] "GET /contactus?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/May/2015 16:47:26] "GET /contactus?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+127.0.0.1 - - [03/May/2015 16:47:26] "GET /contactus?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/May/2015 16:47:26] "GET /contactus?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/May/2015 16:47:27] "GET /contactus?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+127.0.0.1 - - [03/May/2015 16:49:31] "GET / HTTP/1.1" 200 -
+==== print:
+False
+127.0.0.1 - - [03/May/2015 18:57:31] "POST /contactus HTTP/1.1" 200 -
+127.0.0.1 - - [03/May/2015 18:57:39] "GET / HTTP/1.1" 200 -
+==== print:
+True
+127.0.0.1 - - [03/May/2015 19:10:16] "POST /contactus HTTP/1.1" 200 -
+127.0.0.1 - - [03/May/2015 19:10:40] "GET /contactus HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py", line 172, in contact
+    return render_template('index.html')
+  File "/Library/Python/2.7/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/Library/Python/2.7/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/Library/Python/2.7/site-packages/jinja2/environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Library/Python/2.7/site-packages/jinja2/environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/templates/index.html", line 294, in top-level template code
+    {% for message in form.sendersname.errors %}
+  File "/Library/Python/2.7/site-packages/jinja2/environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'form' is undefined
+127.0.0.1 - - [03/May/2015 19:10:40] "GET /contactus?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/May/2015 19:10:40] "GET /contactus?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/May/2015 19:10:40] "GET /contactus?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/May/2015 19:10:40] "GET /contactus?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+127.0.0.1 - - [03/May/2015 19:10:40] "GET /contactus?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/May/2015 19:10:40] "GET /contactus?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+  File "server.py", line 170
+    return render_template('index.html'form=form,, success=True)
+                                          ^
+SyntaxError: invalid syntax
+~/Documents/MSSE/CMPE297/Project/HomeAR$python server.py 
+  File "server.py", line 170
+    return render_template('index.html'form=form,, success=True)
+                                          ^
+SyntaxError: invalid syntax
+~/Documents/MSSE/CMPE297/Project/HomeAR$python server.py 
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+127.0.0.1 - - [03/May/2015 19:12:09] "GET /contactus HTTP/1.1" 200 -
+==== print:
+True
+127.0.0.1 - - [03/May/2015 19:12:32] "POST /contactus HTTP/1.1" 200 -
+127.0.0.1 - - [03/May/2015 19:12:42] "GET /contactus HTTP/1.1" 200 -
+127.0.0.1 - - [03/May/2015 19:13:08] "GET /contactus HTTP/1.1" 200 -
+==== print:
+True
+127.0.0.1 - - [03/May/2015 19:13:50] "POST /contactus HTTP/1.1" 200 -
+127.0.0.1 - - [03/May/2015 19:14:06] "GET /contactus HTTP/1.1" 200 -
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+127.0.0.1 - - [03/May/2015 19:14:46] "GET /contactus HTTP/1.1" 200 -
+==== print:
+True
+127.0.0.1 - - [03/May/2015 19:15:04] "POST /contactus HTTP/1.1" 200 -
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/forms.py', reloading
+ * Restarting with stat
+127.0.0.1 - - [04/May/2015 11:25:37] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [04/May/2015 11:25:37] "GET /static/css/firstpage.css HTTP/1.1" 304 -
+127.0.0.1 - - [04/May/2015 11:25:37] "GET /static/js/loginRegistrationScripts.js HTTP/1.1" 304 -
+127.0.0.1 - - [04/May/2015 11:25:37] "GET /static/images/image1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [04/May/2015 11:25:37] "GET /static/images/image2.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [04/May/2015 11:25:37] "GET /static/images/image3.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [04/May/2015 11:25:37] "GET /static/images/augmented.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [04/May/2015 11:25:37] "GET /static/images/android.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [04/May/2015 11:25:37] "GET /static/images/product.jpg HTTP/1.1" 304 -
+
+  [Restored]
+Last login: Tue May  5 07:57:33 on console
+~/Documents/MSSE/CMPE297/Project/HomeAR$
+~/Documents/MSSE/CMPE297/Project/HomeAR$
+~/Documents/MSSE/CMPE297/Project/HomeAR$python server.py 
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+127.0.0.1 - - [05/May/2015 08:08:41] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 08:08:41] "GET /static/css/firstpage.css HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 08:08:41] "GET /static/js/loginRegistrationScripts.js HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 08:08:41] "GET /static/images/image1.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 08:08:41] "GET /static/images/image2.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 08:08:41] "GET /static/images/image3.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 08:08:41] "GET /static/images/augmented.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 08:08:42] "GET /static/images/android.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 08:08:42] "GET /static/images/product.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 08:08:42] "GET /favicon.ico HTTP/1.1" 404 -
+==== print:
+True
+127.0.0.1 - - [05/May/2015 08:09:12] "POST /contactus HTTP/1.1" 200 -
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+==== print:
+True
+127.0.0.1 - - [05/May/2015 08:47:59] "POST /contactus HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 08:48:24] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 08:48:24] "GET /static/css/firstpage.css HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 08:48:24] "GET /static/js/loginRegistrationScripts.js HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 08:48:24] "GET /static/images/image1.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 08:48:24] "GET /static/images/image2.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 08:48:24] "GET /static/images/image3.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 08:48:24] "GET /static/images/augmented.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 08:48:24] "GET /static/images/android.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 08:48:25] "GET /static/images/product.jpg HTTP/1.1" 200 -
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+  File "server.py", line 58
+    print "==== print:"
+        ^
+IndentationError: expected an indented block
+~/Documents/MSSE/CMPE297/Project/HomeAR$python server.py 
+  File "server.py", line 58
+    print "==== print:"
+        ^
+IndentationError: expected an indented block
+~/Documents/MSSE/CMPE297/Project/HomeAR$python server.py 
+  File "server.py", line 77
+    return 'Hello World!'
+                        ^
+IndentationError: unindent does not match any outer indentation level
+~/Documents/MSSE/CMPE297/Project/HomeAR$python server.py 
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+127.0.0.1 - - [05/May/2015 11:02:09] "GET / HTTP/1.1" 200 -
+==== print:
+True
+127.0.0.1 - - [05/May/2015 11:02:40] "POST /contactus HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 11:03:27] "GET / HTTP/1.1" 200 -
+==== print:
+True
+127.0.0.1 - - [05/May/2015 11:03:56] "POST / HTTP/1.1" 200 -
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+127.0.0.1 - - [05/May/2015 11:05:47] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py", line 75, in index
+    return render_template('index.html',form=form)
+  File "/Library/Python/2.7/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/Library/Python/2.7/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/Library/Python/2.7/site-packages/jinja2/environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Library/Python/2.7/site-packages/jinja2/environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/templates/index.html", line 294, in top-level template code
+    {% for message in form.sendersname.errors %}
+  File "/Library/Python/2.7/site-packages/jinja2/environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'str object' has no attribute 'sendersname'
+127.0.0.1 - - [05/May/2015 11:05:47] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 11:05:47] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 11:05:47] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 11:05:47] "GET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 11:05:47] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 11:05:47] "GET /?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 11:05:47] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+127.0.0.1 - - [05/May/2015 11:12:59] "GET / HTTP/1.1" 200 -
+==== print:
+True
+127.0.0.1 - - [05/May/2015 11:13:39] "POST / HTTP/1.1" 200 -
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+127.0.0.1 - - [05/May/2015 11:16:50] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 11:18:10] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 11:18:10] "GET /static/css/firstpage.css HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:18:10] "GET /static/js/loginRegistrationScripts.js HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:18:10] "GET /static/images/image1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:18:10] "GET /static/images/image2.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:18:10] "GET /static/images/image3.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:18:10] "GET /static/images/augmented.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:18:10] "GET /static/images/android.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:18:10] "GET /static/images/product.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:18:15] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 11:19:37] "GET / HTTP/1.1" 200 -
+==== print:
+True
+127.0.0.1 - - [05/May/2015 11:20:44] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 11:33:51] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 11:37:56] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 11:38:00] "GET / HTTP/1.1" 200 -
+==== print:
+False
+127.0.0.1 - - [05/May/2015 11:38:15] "POST / HTTP/1.1" 200 -
+==== print:
+True
+127.0.0.1 - - [05/May/2015 11:38:30] "POST / HTTP/1.1" 200 -
+==== print:
+True
+127.0.0.1 - - [05/May/2015 11:41:46] "POST / HTTP/1.1" 200 -
+==== print:
+True
+127.0.0.1 - - [05/May/2015 11:42:19] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 11:43:10] "GET / HTTP/1.1" 200 -
+==== print:
+False
+127.0.0.1 - - [05/May/2015 11:43:22] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 11:45:26] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 11:46:29] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 11:46:29] "GET /static/css/firstpage.css HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 11:46:29] "GET /static/js/loginRegistrationScripts.js HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:46:30] "GET /static/images/image1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:46:32] "GET /static/images/image2.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:46:33] "GET /static/images/image3.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:46:33] "GET /static/images/augmented.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:46:33] "GET /static/images/android.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:46:33] "GET /static/images/product.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:48:11] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 11:48:12] "GET /static/css/firstpage.css HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 11:48:12] "GET /static/js/loginRegistrationScripts.js HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:48:12] "GET /static/images/image1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:48:12] "GET /static/images/image2.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:48:12] "GET /static/images/image3.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:48:12] "GET /static/images/augmented.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:48:12] "GET /static/images/android.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:48:12] "GET /static/images/product.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:48:21] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 11:48:41] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 11:48:41] "GET /static/css/firstpage.css HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 11:48:41] "GET /static/js/loginRegistrationScripts.js HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:48:41] "GET /static/images/image1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:48:41] "GET /static/images/image2.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:48:41] "GET /static/images/image3.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:48:41] "GET /static/images/augmented.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:48:41] "GET /static/images/android.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:48:41] "GET /static/images/product.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:48:52] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 11:50:12] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 11:51:06] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 11:51:06] "GET /static/css/firstpage.css HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:51:06] "GET /static/js/loginRegistrationScripts.js HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:51:06] "GET /static/images/image1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:51:06] "GET /static/images/image2.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:51:06] "GET /static/images/image3.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:51:06] "GET /static/images/augmented.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:51:06] "GET /static/images/android.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:51:06] "GET /static/images/product.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 11:51:37] "GET /retailerDashboard HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 11:51:37] "GET /static/js/profileManipulationScripts.js HTTP/1.1" 200 -
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+127.0.0.1 - - [05/May/2015 21:29:29] "GET /retailerDashboard HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:30:22] "GET /retailerDashboard HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:30:27] "GET /retailerDashboard HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:30:49] "GET /retailerDashboard HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:31:09] "GET /retailerDashboard HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:31:38] "GET /retailerDashboard HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:31:38] "GET /static/css/firstpage.css HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:31:38] "GET /static/js/loginRegistrationScripts.js HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 21:31:39] "GET /static/js/profileManipulationScripts.js HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 21:31:47] "GET /retailerDashboard HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:31:47] "GET /static/css/firstpage.css HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:31:47] "GET /static/js/loginRegistrationScripts.js HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 21:31:47] "GET /static/js/profileManipulationScripts.js HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 21:31:53] "GET /retailerDashboard HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:31:53] "GET /static/css/firstpage.css HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:31:53] "GET /static/js/loginRegistrationScripts.js HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 21:31:53] "GET /static/js/profileManipulationScripts.js HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 21:31:59] "GET /retailerDashboard HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:31:59] "GET /static/css/firstpage.css HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:31:59] "GET /static/js/loginRegistrationScripts.js HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 21:31:59] "GET /static/js/profileManipulationScripts.js HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 21:32:55] "GET /retailerDashboard HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:32:55] "GET /static/css/firstpage.css HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:32:55] "GET /static/js/loginRegistrationScripts.js HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 21:32:55] "GET /static/js/profileManipulationScripts.js HTTP/1.1" 304 -
+==== print:
+True
+127.0.0.1 - - [05/May/2015 21:33:40] "POST /retailerDashboard HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:34:50] "GET /retailerDashboard HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:35:44] "GET /retailerDashboard HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:37:24] "GET /retailerDashboard HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:37:40] "GET /retailerDashboard HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:37:56] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:39:09] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:41:39] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:41:39] "GET /static/css/firstpage.css HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:41:39] "GET /static/js/loginRegistrationScripts.js HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 21:41:39] "GET /static/images/image1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 21:41:39] "GET /static/images/image2.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 21:41:39] "GET /static/images/image3.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 21:41:39] "GET /static/images/augmented.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 21:41:39] "GET /static/images/android.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 21:41:39] "GET /static/images/product.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 21:41:47] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:43:25] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:43:25] "GET /static/css/firstpage.css HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:43:25] "GET /static/js/loginRegistrationScripts.js HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 21:43:25] "GET /static/images/image1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 21:43:25] "GET /static/images/image2.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 21:43:25] "GET /static/images/image3.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 21:43:25] "GET /static/images/augmented.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 21:43:25] "GET /static/images/android.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2015 21:43:25] "GET /static/images/product.jpg HTTP/1.1" 304 -
+==== print:
+False
+127.0.0.1 - - [05/May/2015 21:43:32] "POST / HTTP/1.1" 200 -
+==== print:
+True
+127.0.0.1 - - [05/May/2015 21:43:47] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:44:40] "GET / HTTP/1.1" 200 -
+==== print:
+False
+127.0.0.1 - - [05/May/2015 21:44:51] "POST / HTTP/1.1" 200 -
+==== print:
+True
+127.0.0.1 - - [05/May/2015 21:45:01] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:45:09] "GET /retailerDashboard HTTP/1.1" 200 -
+==== print:
+True
+127.0.0.1 - - [05/May/2015 21:45:28] "POST /retailerDashboard HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:46:09] "GET /retailerDashboard HTTP/1.1" 200 -
+==== print:
+True
+127.0.0.1 - - [05/May/2015 21:46:37] "POST /retailerDashboard HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 21:47:03] "GET /retailerDashboard HTTP/1.1" 200 -
+==== print:
+True
+127.0.0.1 - - [05/May/2015 21:47:33] "POST /retailerDashboard HTTP/1.1" 200 -
+==== print:
+True
+127.0.0.1 - - [05/May/2015 22:32:33] "POST /retailerDashboard HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2015 22:32:38] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 01:00:42] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 01:01:02] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 01:01:02] "GET /static/css/firstpage.css HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 01:01:02] "GET /static/js/loginRegistrationScripts.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 01:01:02] "GET /static/images/image1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 01:01:02] "GET /static/images/image2.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 01:01:02] "GET /static/images/image3.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 01:01:02] "GET /static/images/augmented.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 01:01:02] "GET /static/images/android.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 01:01:02] "GET /static/images/product.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 01:01:08] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 01:01:08] "GET /static/css/firstpage.css HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 01:01:08] "GET /static/js/loginRegistrationScripts.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 01:01:08] "GET /static/images/image1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 01:01:08] "GET /static/images/image2.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 01:01:08] "GET /static/images/image3.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 01:01:08] "GET /static/images/augmented.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 01:01:08] "GET /static/images/android.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 01:01:08] "GET /static/images/product.jpg HTTP/1.1" 304 -
+==== print:
+True
+127.0.0.1 - - [06/May/2015 01:08:58] "POST / HTTP/1.1" 200 -
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/forms.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+  File "server.py", line 94
+    elif request.method =='GET'
+                              ^
+SyntaxError: invalid syntax
+~/Documents/MSSE/CMPE297/Project/HomeAR$python server.py 
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+127.0.0.1 - - [06/May/2015 01:37:36] "GET /search HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 01:37:37] "GET /static/js/i18n.js HTTP/1.1" 200 -
+Armrest frame
+Sofa frame
+Soderhamn seating series
+Armrest frame
+Soderhamn seating series
+Sofa frame
+127.0.0.1 - - [06/May/2015 01:40:21] "GET /search?searchKeyword=Sofas HTTP/1.1" 200 -
+==== print:
+True
+127.0.0.1 - - [06/May/2015 01:40:59] "POST /search?searchKeyword=Sofas HTTP/1.1" 200 -
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+127.0.0.1 - - [06/May/2015 01:43:30] "GET /searchRetailer HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 01:43:31] "GET /bootstrap-select.js HTTP/1.1" 404 -
+---------
+127.0.0.1 - - [06/May/2015 01:43:35] "GET /searchRetailer?searchKeyword=Chairs HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 01:43:35] "GET /bootstrap-select.js HTTP/1.1" 404 -
+127.0.0.1 - - [06/May/2015 01:44:00] "POST /searchRetailer?searchKeyword=Chairs HTTP/1.1" 405 -
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+---------
+127.0.0.1 - - [06/May/2015 01:44:19] "GET /searchRetailer?searchKeyword=Chairs HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 01:44:19] "GET /bootstrap-select.js HTTP/1.1" 404 -
+==== print:
+True
+127.0.0.1 - - [06/May/2015 01:44:48] "POST /searchRetailer?searchKeyword=Chairs HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 01:45:15] "GET /aboutUs HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 01:45:15] "GET /static/images/ashwini.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 01:45:15] "GET /static/images/2.png HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 01:45:15] "GET /static/images/richa.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 01:45:15] "GET /static/images/teju_pic.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 01:45:15] "GET /static/images/sneha.jpg HTTP/1.1" 200 -
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+127.0.0.1 - - [06/May/2015 01:46:55] "GET /aboutUs HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 01:47:53] "GET /aboutUs HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 01:47:54] "GET /static/css/firstpage.css HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 01:47:54] "GET /static/images/ashwini.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 01:47:54] "GET /static/images/richa.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 01:47:54] "GET /static/images/teju_pic.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 01:47:54] "GET /static/images/sneha.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 01:47:54] "GET /static/images/2.png HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 01:49:17] "GET /aboutUs HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 01:49:17] "GET /static/css/firstpage.css HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 01:49:17] "GET /static/images/ashwini.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 01:49:17] "GET /static/images/richa.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 01:49:17] "GET /static/images/teju_pic.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 01:49:17] "GET /static/images/sneha.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 01:49:17] "GET /static/images/2.png HTTP/1.1" 304 -
+==== print:
+True
+127.0.0.1 - - [06/May/2015 01:50:23] "POST /aboutUs HTTP/1.1" 200 -
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+No Arguments to get the user data!
+127.0.0.1 - - [06/May/2015 09:36:54] "GET /viewUserDetails HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 10:29:45] "GET /viewUserDetails?userEmail=sneha@gmail.com HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py", line 296, in getUserData
+    user = user_details.find({"l_email" : uemail.lower() })
+NameError: global name 'uemail' is not defined
+127.0.0.1 - - [06/May/2015 10:29:45] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [06/May/2015 10:29:45] "GET /viewUserDetails?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 10:29:45] "GET /viewUserDetails?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 10:29:45] "GET /viewUserDetails?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 10:29:45] "GET /viewUserDetails?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 10:29:45] "GET /viewUserDetails?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 10:29:45] "GET /viewUserDetails?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 10:29:46] "GET /viewUserDetails?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 10:29:48] "GET /favicon.ico HTTP/1.1" 404 -
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+ * Detected change in '/Users/snehakulkarni/Documents/MSSE/CMPE297/Project/HomeAR/server.py', reloading
+ * Restarting with stat
+Sneha
+127.0.0.1 - - [06/May/2015 10:33:12] "GET /viewUserDetails?userEmail=sneha@gmail.com HTTP/1.1" 200 -
+Sneha
+127.0.0.1 - - [06/May/2015 11:17:17] "GET /viewUserDetails?userEmail=sneha@gmail.com HTTP/1.1" 200 -
+Sneha
+127.0.0.1 - - [06/May/2015 11:17:46] "GET /viewUserDetails?userEmail=sneha@gmail.com HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 11:18:03] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 11:18:04] "GET /static/css/firstpage.css HTTP/1.1" 200 -
+127.0.0.1 - - [06/May/2015 11:18:04] "GET /static/js/loginRegistrationScripts.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 11:18:04] "GET /static/images/image1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 11:18:04] "GET /static/images/image2.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 11:18:04] "GET /static/images/image3.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 11:18:04] "GET /static/images/augmented.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 11:18:04] "GET /static/images/android.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [06/May/2015 11:18:04] "GET /static/images/product.jpg HTTP/1.1" 304 -
+^C~/Documents/MSSE/CMPE297/Project/HomeAR$
+~/Documents/MSSE/CMPE297/Project/HomeAR$
+~/Documents/MSSE/CMPE297/Project/HomeAR$
+~/Documents/MSSE/CMPE297/Project/HomeAR$
+~/Documents/MSSE/CMPE297/Project/HomeAR$git add .
+~/Documents/MSSE/CMPE297/Project/HomeAR$git commit -m "Updating the Contact Us page"
+[master cb40580] Updating the Contact Us page
+ 11 files changed, 923 insertions(+), 531 deletions(-)
+ create mode 100644 fileUpload.py
+ rewrite forms.py (89%)
+ rewrite templates/aboutUs.html (95%)
+ create mode 100644 templates/contact.html
+~/Documents/MSSE/CMPE297/Project/HomeAR$git commit -m "Updating the Contact Us sections on all pages"
+# On branch master
+# Your branch is ahead of 'origin/master' by 18 commits.
+#   (use "git push" to publish your local commits)
+#
+nothing to commit, working directory clean
+~/Documents/MSSE/CMPE297/Project/HomeAR$git push heroku master
+Counting objects: 31, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (17/17), done.
+Writing objects: 100% (17/17), 7.54 KiB | 0 bytes/s, done.
+Total 17 (delta 12), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote: 
+remote: -----> Python app detected
+remote: -----> Installing dependencies with pip
+remote: /app/.heroku/python/lib/python2.7/site-packages/pip-6.1.1-py2.7.egg/pip/_vendor/requests/packages/urllib3/util/ssl_.py:79: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+remote:   InsecurePlatformWarning
+remote: 
+remote: -----> Discovering process types
+remote:        Procfile declares types -> web
+remote: 
+remote: -----> Compressing... done, 44.2MB
+remote: -----> Launching... done, v36
+remote:        https://homear.herokuapp.com/ deployed to Heroku
+remote: 
+remote: Verifying deploy... done.
+To https://git.heroku.com/homear.git
+   351536a..cb40580  master -> master
+~/Documents/MSSE/CMPE297/Project/HomeAR$git push heroku master
+Everything up-to-date
+~/Documents/MSSE/CMPE297/Project/HomeAR$python server.py 
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+127.0.0.1 - - [06/May/2015 11:28:37] "GET / HTTP/1.1" 200 -
+^C~/Documents/MSSE/CMPE297/Project/HomeAR$git add .
+~/Documents/MSSE/CMPE297/Project/HomeAR$git commit -m "Adding changes"
+# On branch master
+# Your branch is ahead of 'origin/master' by 18 commits.
+#   (use "git push" to publish your local commits)
+#
+nothing to commit, working directory clean
+~/Documents/MSSE/CMPE297/Project/HomeAR$git push heroku master
+Everything up-to-date
+~/Documents/MSSE/CMPE297/Project/HomeAR$heroku open
+Your version of git is 1.8.4. Which has serious security vulnerabilities.
+More information here: https://blog.heroku.com/archives/2014/12/23/update_your_git_clients_on_windows_and_os_x
+Opening homear... done
+~/Documents/MSSE/CMPE297/Project/HomeAR$vi requirements.txt 
+~/Documents/MSSE/CMPE297/Project/HomeAR$heroku logs
+Your version of git is 1.8.4. Which has serious security vulnerabilities.
+More information here: https://blog.heroku.com/archives/2014/12/23/update_your_git_clients_on_windows_and_os_x
+2015-05-06T18:26:25.916722+00:00 app[web.1]:     return self.load_wsgiapp()
+2015-05-06T18:26:25.916724+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+2015-05-06T18:26:25.916714+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+2015-05-06T18:26:25.916719+00:00 app[web.1]:     self.callable = self.load()
+2015-05-06T18:26:25.916727+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+2015-05-06T18:26:25.916739+00:00 app[web.1]: ImportError: No module named flask.ext.wtf
+2015-05-06T18:26:25.916729+00:00 app[web.1]:     __import__(module)
+2015-05-06T18:26:25.916725+00:00 app[web.1]:     return util.import_app(self.app_uri)
+2015-05-06T18:26:25.916730+00:00 app[web.1]:   File "/app/server.py", line 10, in <module>
+2015-05-06T18:26:25.916731+00:00 app[web.1]:     from forms import ContactForm
+2015-05-06T18:26:25.916733+00:00 app[web.1]:   File "/app/forms.py", line 1, in <module>
+2015-05-06T18:26:25.916734+00:00 app[web.1]:     from flask.ext.wtf import Form
+2015-05-06T18:26:25.916736+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/flask/exthook.py", line 87, in load_module
+2015-05-06T18:26:25.916737+00:00 app[web.1]:     raise ImportError('No module named %s' % fullname)
+2015-05-06T18:26:25.916740+00:00 app[web.1]: Traceback (most recent call last):
+2015-05-06T18:26:25.916742+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+2015-05-06T18:26:25.916743+00:00 app[web.1]:     worker.init_process()
+2015-05-06T18:26:25.916745+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+2015-05-06T18:26:25.916748+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+2015-05-06T18:26:25.916746+00:00 app[web.1]:     self.wsgi = self.app.wsgi()
+2015-05-06T18:26:25.916749+00:00 app[web.1]:     self.callable = self.load()
+2015-05-06T18:26:25.916750+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+2015-05-06T18:26:25.916752+00:00 app[web.1]:     return self.load_wsgiapp()
+2015-05-06T18:26:25.916753+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+2015-05-06T18:26:25.916755+00:00 app[web.1]:     return util.import_app(self.app_uri)
+2015-05-06T18:26:25.917281+00:00 app[web.1]:     worker.init_process()
+2015-05-06T18:26:25.916756+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+2015-05-06T18:26:25.916757+00:00 app[web.1]:     __import__(module)
+2015-05-06T18:26:25.916759+00:00 app[web.1]:   File "/app/server.py", line 10, in <module>
+2015-05-06T18:26:25.916760+00:00 app[web.1]:     from forms import ContactForm
+2015-05-06T18:26:25.916761+00:00 app[web.1]:   File "/app/forms.py", line 1, in <module>
+2015-05-06T18:26:25.916763+00:00 app[web.1]:     from flask.ext.wtf import Form
+2015-05-06T18:26:25.916764+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/flask/exthook.py", line 87, in load_module
+2015-05-06T18:26:25.916766+00:00 app[web.1]:     raise ImportError('No module named %s' % fullname)
+2015-05-06T18:26:25.916767+00:00 app[web.1]: ImportError: No module named flask.ext.wtf
+2015-05-06T18:26:25.916856+00:00 app[web.1]: [2015-05-06 18:26:25 +0000] [10] [INFO
+] Worker exiting (pid: 10)
+2015-05-06T18:26:25.917275+00:00 app[web.1]: [2015-05-06 18:26:25 +0000] [9] [ERROR] Exception in worker process:
+2015-05-06T18:26:25.917278+00:00 app[web.1]: Traceback (most recent call last):
+2015-05-06T18:26:25.917279+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+2015-05-06T18:26:25.954917+00:00 app[web.1]: [2015-05-06 18:26:25 +0000] [3] [INFO] Shutting down: Master
+2015-05-06T18:26:25.955022+00:00 app[web.1]: [2015-05-06 18:26:25 +0000] [3] [INFO] Reason: Worker failed to boot.
+2015-05-06T18:26:25.917282+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+2015-05-06T18:26:25.916708+00:00 app[web.1]: Traceback (most recent call last):
+2015-05-06T18:26:25.917283+00:00 app[web.1]:     self.wsgi = self.app.wsgi()
+2015-05-06T18:26:25.917285+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+2015-05-06T18:26:25.917288+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+2015-05-06T18:26:25.917289+00:00 app[web.1]:     return self.load_wsgiapp()
+2015-05-06T18:26:25.917286+00:00 app[web.1]:     self.callable = self.load()
+2015-05-06T18:26:25.917295+00:
+00 app[web.1]:     __import__(module)
+2015-05-06T18:26:25.917296+00:00 app[web.1]:   File "/app/server.py", line 10, in <module>
+2015-05-06T18:26:25.917297+00:00 app[web.1]:     from forms import ContactForm
+2015-05-06T18:26:25.917291+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+2015-05-06T18:26:25.916721+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+2015-05-06T18:26:25.916718+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+2015-05-06T18:26:25.917299+00:00 app[web.1]:   File "/app/forms.py", line 1, in <module>
+2015-05-06T18:26:25.917300+00:00 app[web.1]:     from flask.ext.wtf import Form
+2015-05-06T18:26:25.917301+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/flask/exthook.py", line 87, in load_module
+2015-05-06T18:26:25.917303+00:00 app[web.1]:     raise ImportError('No module named %s' % fullname)
+2015-05-06T18:26:25.917307+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+2015-05-06T18:26:25.917304+00:00 app[web.1]: ImportError: No module named flask.ext.wtf
+2015-05-06T18:26:25.917310+00:00 app[web.1]:   File "/app/.heroku/python/lib/pyth
+on2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+2015-05-06T18:26:25.917311+00:00 app[web.1]:     self.wsgi = self.app.wsgi()
+2015-05-06T18:26:25.917308+00:00 app[web.1]:     worker.init_process()
+2015-05-06T18:26:25.917318+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+2015-05-06T18:26:25.917313+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+2015-05-06T18:26:25.917314+00:00 app[web.1]:     self.callable = self.load()
+2015-05-06T18:26:25.917315+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+2015-05-06T18:26:25.917317+00:00 app[web.1]:     return self.load_wsgiapp()
+2015-05-06T18:26:25.917320+00:00 app[web.1]:     return util.import_app(self.app_uri)
+2015-05-06T18:26:25.917324+00:00 app[web.1]:   File "/app/server.py", line 10, in <module>
+2015-05-06T18:26:25.917325+00:00 app[web.1]:     from forms import ContactForm
+2015-05-06T18:26:25.917326+00:00 app[web.1]:   File "/app/forms.py", line 1, in <module>
+2015-05-06T18:26:25.917322+00:00 app[web.1]:     __import__(module)
+2015-05-06T18:26:25.917293+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+2015-05-06T18:26:25.917328+00:00 app[web.1]:     from flask.ext.wtf import Form
+2015-05-06T18:26:25.917329+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/flask/exthook.py", line 87, in load_module
+2015-05-06T18:26:25.917348+00:00 app[web.1]:     raise ImportError('No module named %s' % fullname)
+2015-05-06T18:26:25.917350+00:00 app[web.1]: ImportError: No module named flask.ext.wtf
+2015-05-06T18:26:25.917557+00:00 app[web.1]: [2015-05-06 18:26:25 +0000] [9] [INFO] Worker exiting (pid: 9)
+2015-05-06T18:26:25.917292+00:00 app[web.1]:     return util.import_app(self.app_uri)
+2015-05-06T18:26:25.917321+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+2015-05-06T18:26:25.917306+00:00 app[web.1]: Traceback (most recent call last):
+2015-05-06T18:26:26.490684+00:00 heroku[web.1]: State changed from up to crashed
+2015-05-06T18:26:26.727275+00:00 heroku[web.1]: Process exited with status 3
+2015-05-06T18:26:32.212208+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=homear.herokuapp.com request_id=5bba751b-7e98-409f-8644-a86a08d75185 fwd="73.223.236.228" dyno=web.1 connect=5000ms service= status=503 bytes=
+2015-05-06T18:26:33.289890+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=homear.herokuapp.com request_id=7cb39d90-3f56-4dfd-bad1-7147bca5ea21 fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:27:17.810597+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=homear.herokuapp.com request_id=e06d5763-1478-4ab8-8c1b-a4c52da444ed fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:27:19.072113+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=homear.herokuapp.com request_id=9a96ed25-8801-44b2-8632-0fc23a8b0227 fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:27:22.817796+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=homear.herokuapp.com request_id=ca57ff59-06b3-4a2b-b6f6-f7d0fa7feeb3 fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:27:23.467023+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=homear.herokuapp.com request_id=af9fce90-578e-40a9-9d8e-9f5ad81873b2 fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:27:40.633630+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=homear.herokuapp.com request_id=8f4403d7-869f-48f6-be22-3696b189d953 fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:27:41.072130+00:00 heroku[router]: at=error
+ code=H10 desc="App crashed" method=GET path="/favicon.ico" host=homear.herokuapp.com request_id=cd2a0e85-556d-492f-8445-dc7f296bc304 fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:27:42.939669+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=homear.herokuapp.com request_id=c46144c3-f4be-4e16-bb89-5d34991e324c fwd="104.131.98.28" dyno= connect= service= status=503 bytes=
+2015-05-06T18:28:11.058607+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=homear.herokuapp.com request_id=3064b822-8605-49f9-9607-77fa4c8ba992 fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:28:11.446377+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=homear.herokuapp.com request_id=900a36d9-94ee-4a95-bdb5-c5e16fcf911c fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:30:32.538280+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/prodDetails?categoryId=1" host=homear.herokuapp.com request_id=8f8c7393-8f2a-44fb-acb6-46c10bd6d215 fwd="172.56.16.67" dyno= connect= service= status=503 bytes=
+2015-05-06T18:30:17.415372+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=POST path="/login" host=homear.herokuapp.com request_id=b116b755-3a7d-48ed-b636-0e051633d0be fwd="172.56.16.67" 
+dyno= connect= service= status=503 bytes=
+2015-05-06T18:30:38.105750+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=homear.herokuapp.com request_id=869b8519-5275-414f-ba61-1eaa4726a226 fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:30:40.128328+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/prodDetails?categoryId=3" host=homear.herokuapp.com request_id=8bfb4bed-6785-4242-b2b3-f9114dccb5df fwd="172.56.16.67" dyno= connect= service= status=503 bytes=
+2015-05-06T18:30:49.201146+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/prodDetails?categoryId=9" host=homear.herokuapp.com request_id=fa8ad46c-2325-4678-b9df-e7058a08de69 fwd="172.56.16.67" dyno= connect= service= status=503 bytes=
+2015-05-06T18:30:45.510210+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=homear.herokuapp.com request_id=54893745-ecb8-4e79-baaf-f9617f8a409e fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+~/Documents/MSSE/CMPE297/Project/HomeAR$heroku logs -tail
+Your version of git is 1.8.4. Which has serious security vulnerabilities.
+More information here: https://blog.heroku.com/archives/2014/12/23/update_your_git_clients_on_windows_and_os_x
+ !    App not found.
+~/Documents/MSSE/CMPE297/Project/HomeAR$heroku logs --tails
+Your version of git is 1.8.4. Which has serious security vulnerabilities.
+More information here: https://blog.heroku.com/archives/2014/12/23/update_your_git_clients_on_windows_and_os_x
+ !    Invalid argument: "--tails"
+Usage: heroku logs
+
+ display recent log output
+
+ -n, --num NUM        # the number of lines to display
+ -p, --ps PS          # only display logs from the given process
+ -s, --source SOURCE  # only display logs from the given source
+ -t, --tail           # continually stream logs
+
+Example:
+
+ $ heroku logs
+ 2012-01-01T12:00:00+00:00 heroku[api]: Config add EXAMPLE by email@example.com
+ 2012-01-01T12:00:01+00:00 heroku[api]: Release v1 created by email@example.com
+
+~/Documents/MSSE/CMPE297/Project/HomeAR$heroku logs --tail
+Your version of git is 1.8.4. Which has serious security vulnerabilities.
+More information here: https://blog.heroku.com/archives/2014/12/23/update_your_git_clients_on_windows_and_os_x
+2015-05-06T18:26:25.916722+00:00 app[web.1]:     return self.load_wsgiapp()
+2015-05-06T18:26:25.916724+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+2015-05-06T18:26:25.916714+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+2015-05-06T18:26:25.916719+00:00 app[web.1]:     self.callable = self.load()
+2015-05-06T18:26:25.916727+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+2015-05-06T18:26:25.916739+00:00 app[web.1]: ImportError: No module named flask.ext.wtf
+2015-05-06T18:26:25.916729+00:00 app[web.1]:     __import__(module)
+2015-05-06T18:26:25.916725+00:00 app[web.1]:     return util.import_app(self.app_uri)
+2015-05-06T18:26:25.916730+00:00 app[web.1]:   File "/app/server.py", line 10, in <module>
+2015-05-06T18:26:25.916731+00:00 app[web.1]:     from forms import ContactForm
+2015-05-06T18:26:25.916733+00:00 app[web.1]:   File "/app/forms.py", line 1, in <module>
+2015-05-06T18:26:25.916734+00:00 app[web.1]:     from flask.ext.wtf import Form
+2015-05-06T18:26:25.916736+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/flask/exthook.py", line 87, in load_module
+2015-05-06T18:26:25.916737+00:00 app[web.1]:     raise ImportError('No module named %s' % fullname)
+2015-05-06T18:26:25.916740+00:00 app[web.1]: Traceback (most recent call last):
+2015-05-06T18:26:25.916742+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+2015-05-06T18:26:25.916743+00:00 app[web.1]:     worker.init_process()
+2015-05-06T18:26:25.916745+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+2015-05-06T18:26:25.916748+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+2015-05-06T18:26:25.916746+00:00 app[web.1]:     self.wsgi = self.app.wsgi()
+2015-05-06T18:26:25.916749+00:00 app[web.1]:     self.callable = self.load()
+2015-05-06T18:26:25.916750+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+2015-05-06T18:26:25.916752+00:00 app[web.1]:     return self.load_wsgiapp()
+2015-05-06T18:26:25.916753+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+2015-05-06T18:26:25.916755+00:00 app[web.1]:     return util.import_app(self.app_uri)
+2015-05-06T18:26:25.917281+00:00 app[web.1]:     worker.init_process()
+2015-05-06T18:26:25.916756+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+2015-05-06T18:26:25.916757+00:00 app[web.1]:     __import__(module)
+2015-05-06T18:26:25.916759+00:00 app[web.1]:   File "/app/server.py", line 10, in <module>
+2015-05-06T18:26:25.916760+00:00 app[web.1]:     from forms import ContactForm
+2015-05-06T18:26:25.916761+00:00 app[web.1]:   File "/app/forms.py", line 1, in <module>
+2015-05-06T18:26:25.916763+00:00 app[web.1]:     from flask.ext.wtf import Form
+2015-05-06T18:26:25.916764+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/flask/exthook.py", line 87, in load_module
+2015-05-06T18:26:25.916766+00:00 app[web.1]:     raise ImportError('No module named %s' % fullname)
+2015-05-06T18:26:25.916767+00:00 app[web.1]: ImportError: No module named flask.ext.wtf
+2015-05-06T18:26:25.916856+00:00 app[web.1]: [2015-05-06 18:26:25 +0000] [10] [INFO] Worker exiting (pid: 10)
+2015-05-06T18:26:25.917275+00:00 app[web.1]: [2015-05-06 18:26:25 +0000] [9] [ERROR] Exception in worker process:
+2015-05-06T18:26:25.917278+00:00 app[web.1]: Traceback (most recent call last):
+2015-05-06T18:26:25.917279+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+2015-05-06T18:26:25.954917+00:00 app[web.1]: [2015-05-06 18:26:25 +0000] [3] [INFO] Shutting down: Master
+2015-05-06T18:26:25.955022+00:00 app[web.1]: [2015-05-06 18:26:25 +0000] [3] [INFO] Reason: Worker failed to boot.
+2015-05-06T18:26:25.917282+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+2015-05-06T18:26:25.916708+00:00 app[web.1]: Traceback (most recent call last):
+2015-05-06T18:26:25.917283+00:00 app[web.1]:     self.wsgi = self.app.wsgi()
+2015-05-06T18:26:25.917285+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+2015-05-06T18:26:25.917288+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+2015-05-06T18:26:25.917289+00:00 app[web.1]:     return self.load_wsgiapp()
+2015-05-06T18:26:25.917286+00:00 app[web.1]:     self.callable = self.load()
+2015-05-06T18:26:25.917295+00:00 app[web.1]:     __import__(module)
+2015-05-06T18:26:25.917296+00:00 app[web.1]:   File "/app/server.py", line 10, in <module>
+2015-05-06T18:26:25.917297+00:00 app[web.1]:     from forms import ContactForm
+2015-05-06T18:26:25.917291+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+2015-05-06T18:26:25.916721+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+2015-05-06T18:26:25.916718+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+2015-05-06T18:26:25.917299+00:00 app[web.1]:   File "/app/forms.py", line 1, in <module>
+2015-05-06T18:26:25.917300+00:00 app[web.1]:     from flask.ext.wtf import Form
+2015-05-06T18:26:25.917301+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/flask/exthook.py", line 87, in load_module
+2015-05-06T18:26:25.917303+00:00 app[web.1]:     raise ImportError('No module named %s' % fullname)
+2015-05-06T18:26:25.917307+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+2015-05-06T18:26:25.917304+00:00 app[web.1]: ImportError: No module named flask.ext.wtf
+2015-05-06T18:26:25.917310+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+2015-05-06T18:26:25.917311+00:00 app[web.1]:     self.wsgi = self.app.wsgi()
+2015-05-06T18:26:25.917308+00:00 app[web.1]:     worker.init_process()
+2015-05-06T18:26:25.917318+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+2015-05-06T18:26:25.917313+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+2015-05-06T18:26:25.917314+00:00 app[web.1]:     self.callable = self.load()
+2015-05-06T18:26:25.917315+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+2015-05-06T18:26:25.917317+00:00 app[web.1]:     return self.load_wsgiapp()
+2015-05-06T18:26:25.917320+00:00 app[web.1]:     return util.import_app(self.app_uri)
+2015-05-06T18:26:25.917324+00:00 app[web.1]:   File "/app/server.py", line 10, in <module>
+2015-05-06T18:26:25.917325+00:00 app[web.1]:     from forms import ContactForm
+2015-05-06T18:26:25.917326+00:00 app[web.1]:   File "/app/forms.py", line 1, in <module>
+2015-05-06T18:26:25.917322+00:00 app[web.1]:     __import__(module)
+2015-05-06T18:26:25.917293+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+2015-05-06T18:26:25.917328+00:00 app[web.1]:     from flask.ext.wtf import Form
+2015-05-06T18:26:25.917329+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/flask/exthook.py", line 87, in load_module
+2015-05-06T18:26:25.917348+00:00 app[web.1]:     raise ImportError('No module named %s' % fullname)
+2015-05-06T18:26:25.917350+00:00 app[web.1]: ImportError: No module named flask.ext.wtf
+2015-05-06T18:26:25.917557+00:00 app[web.1]: [2015-05-06 18:26:25 +0000] [9] [INFO] Worker exiting (pid: 9)
+2015-05-06T18:26:25.917292+00:00 app[web.1]:     return util.import_app(self.app_uri)
+2015-05-06T18:26:25.917321+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+2015-05-06T18:26:25.917306+00:00 app[web.1]: Traceback (most recent call last):
+2015-05-06T18:26:26.490684+00:00 heroku[web.1]: State changed from up to crashed
+2015-05-06T18:26:26.727275+00:00 heroku[web.1]: Process exited with status 3
+2015-05-06T18:26:32.212208+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=homear.herokuapp.com request_id=5bba751b-7e98-409f-8644-a86a08d75185 fwd="73.223.236.228" dyno=web.1 connect=5000ms service= status=503 bytes=
+2015-05-06T18:26:33.289890+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=homear.herokuapp.com request_id=7cb39d90-3f56-4dfd-bad1-7147bca5ea21 fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:27:17.810597+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=homear.herokuapp.com request_id=e06d5763-1478-4ab8-8c1b-a4c52da444ed fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:27:19.072113+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=homear.herokuapp.com request_id=9a96ed25-8801-44b2-8632-0fc23a8b0227 fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:27:22.817796+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=homear.herokuapp.com request_id=ca57ff59-06b3-4a2b-b6f6-f7d0fa7feeb3 fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:27:23.467023+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=homear.herokuapp.com request_id=af9fce90-578e-40a9-9d8e-9f5ad81873b2 fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:27:40.633630+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=homear.herokuapp.com request_id=8f4403d7-869f-48f6-be22-3696b189d953 fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:27:41.072130+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=homear.herokuapp.com request_id=cd2a0e85-556d-492f-8445-dc7f296bc304 fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:27:42.939669+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=homear.herokuapp.com request_id=c46144c3-f4be-4e16-bb89-5d34991e324c fwd="104.131.98.28" dyno= connect= service= status=503 bytes=
+2015-05-06T18:28:11.058607+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=homear.herokuapp.com request_id=3064b822-8605-49f9-9607-77fa4c8ba992 fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:28:11.446377+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=homear.herokuapp.com request_id=900a36d9-94ee-4a95-bdb5-c5e16fcf911c fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:30:32.538280+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/prodDetails?categoryId=1" host=homear.herokuapp.com request_id=8f8c7393-8f2a-44fb-acb6-46c10bd6d215 fwd="172.56.16.67" dyno= connect= service= status=503 bytes=
+2015-05-06T18:30:17.415372+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=POST path="/login" host=homear.herokuapp.com request_id=b116b755-3a7d-48ed-b636-0e051633d0be fwd="172.56.16.67" dyno= connect= service= status=503 bytes=
+2015-05-06T18:30:38.105750+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=homear.herokuapp.com request_id=869b8519-5275-414f-ba61-1eaa4726a226 fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:30:40.128328+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/prodDetails?categoryId=3" host=homear.herokuapp.com request_id=8bfb4bed-6785-4242-b2b3-f9114dccb5df fwd="172.56.16.67" dyno= connect= service= status=503 bytes=
+2015-05-06T18:30:49.201146+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/prodDetails?categoryId=9" host=homear.herokuapp.com request_id=fa8ad46c-2325-4678-b9df-e7058a08de69 fwd="172.56.16.67" dyno= connect= service= status=503 bytes=
+2015-05-06T18:30:45.510210+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=homear.herokuapp.com request_id=54893745-ecb8-4e79-baaf-f9617f8a409e fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:35:39.288466+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=homear.herokuapp.com request_id=341878dd-a4b0-4ae6-a2f9-a45f84c04600 fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:35:38.776770+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=homear.herokuapp.com request_id=dadf7cd4-447d-4c10-bdb6-22e3db54cecb fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+^C
+ !    Command cancelled.
+~/Documents/MSSE/CMPE297/Project/HomeAR$
+~/Documents/MSSE/CMPE297/Project/HomeAR$
+~/Documents/MSSE/CMPE297/Project/HomeAR$
+~/Documents/MSSE/CMPE297/Project/HomeAR$
+~/Documents/MSSE/CMPE297/Project/HomeAR$
+~/Documents/MSSE/CMPE297/Project/HomeAR$
+~/Documents/MSSE/CMPE297/Project/HomeAR$foreman start
+11:47:56 web.1  | started with pid 5413
+11:47:59 web.1  | [2015-05-06 11:47:59 -0700] [5413] [INFO] Starting gunicorn 19.1.1
+11:47:59 web.1  | [2015-05-06 11:47:59 -0700] [5413] [INFO] Listening at: http://0.0.0.0:5000 (5413)
+11:47:59 web.1  | [2015-05-06 11:47:59 -0700] [5413] [INFO] Using worker: sync
+11:47:59 web.1  | [2015-05-06 11:47:59 -0700] [5416] [INFO] Booting worker with pid: 5416
+^CSIGINT received
+/usr/local/foreman/lib/foreman/engine.rb:226:in `synchronize': can't be called from trap context (ThreadError)
+	from /usr/local/foreman/lib/foreman/engine.rb:226:in `output_with_mutex'
+	from /usr/local/foreman/lib/foreman/engine.rb:232:in `system'
+	from /usr/local/foreman/lib/foreman/engine.rb:304:in `terminate_gracefully'
+	from /usr/local/foreman/lib/foreman/engine.rb:41:in `block in start'
+	from /usr/local/foreman/lib/foreman/engine.rb:289:in `call'
+	from /usr/local/foreman/lib/foreman/engine.rb:289:in `wait2'
+	from /usr/local/foreman/lib/foreman/engine.rb:289:in `watch_for_termination'
+	from /usr/local/foreman/lib/foreman/engine.rb:48:in `start'
+	from /usr/local/foreman/lib/foreman/cli.rb:40:in `start'
+	from /usr/local/foreman/vendor/gems/thor-0.16.0/lib/thor/task.rb:27:in `run'
+	from /usr/local/foreman/vendor/gems/thor-0.16.0/lib/thor/invocation.rb:120:in `invoke_task'
+	from /usr/local/foreman/vendor/gems/thor-0.16.0/lib/thor.rb:275:in `dispatch'
+	from /usr/local/foreman/vendor/gems/thor-0.16.0/lib/thor/base.rb:425:in `start'
+	from /usr/bin/foreman:15:in `<main>'
+~/Documents/MSSE/CMPE297/Project/HomeAR$heroku open
+Your version of git is 1.8.4. Which has serious security vulnerabilities.
+More information here: https://blog.heroku.com/archives/2014/12/23/update_your_git_clients_on_windows_and_os_x
+Opening homear... done
+~/Documents/MSSE/CMPE297/Project/HomeAR$foreman start
+11:48:42 web.1  | started with pid 5461
+11:48:43 web.1  | [2015-05-06 11:48:43 -0700] [5461] [INFO] Starting gunicorn 19.1.1
+11:48:43 web.1  | [2015-05-06 11:48:43 -0700] [5461] [INFO] Listening at: http://0.0.0.0:5000 (5461)
+11:48:43 web.1  | [2015-05-06 11:48:43 -0700] [5461] [INFO] Using worker: sync
+11:48:43 web.1  | [2015-05-06 11:48:43 -0700] [5464] [INFO] Booting worker with pid: 5464
+^[[A^CSIGINT received
+/usr/local/foreman/lib/foreman/engine.rb:226:in `synchronize': can't be called from trap context (ThreadError)
+	from /usr/local/foreman/lib/foreman/engine.rb:226:in `output_with_mutex'
+	from /usr/local/foreman/lib/foreman/engine.rb:232:in `system'
+	from /usr/local/foreman/lib/foreman/engine.rb:304:in `terminate_gracefully'
+	from /usr/local/foreman/lib/foreman/engine.rb:41:in `block in start'
+	from /usr/local/foreman/lib/foreman/engine.rb:289:in `call'
+	from /usr/local/foreman/lib/foreman/engine.rb:289:in `wait2'
+	from /usr/local/foreman/lib/foreman/engine.rb:289:in `watch_for_termination'
+	from /usr/local/foreman/lib/foreman/engine.rb:48:in `start'
+	from /usr/local/foreman/lib/foreman/cli.rb:40:in `start'
+	from /usr/local/foreman/vendor/gems/thor-0.16.0/lib/thor/task.rb:27:in `run'
+	from /usr/local/foreman/vendor/gems/thor-0.16.0/lib/thor/invocation.rb:120:in `invoke_task'
+	from /usr/local/foreman/vendor/gems/thor-0.16.0/lib/thor.rb:275:in `dispatch'
+	from /usr/local/foreman/vendor/gems/thor-0.16.0/lib/thor/base.rb:425:in `start'
+	from /usr/bin/foreman:15:in `<main>'
+~/Documents/MSSE/CMPE297/Project/HomeAR$heroku run python
+Your version of git is 1.8.4. Which has serious security vulnerabilities.
+More information here: https://blog.heroku.com/archives/2014/12/23/update_your_git_clients_on_windows_and_os_x
+Running `python` attached to terminal... up, run.2738
+^CPython 2.7.8 (default, Jul 15 2014, 15:37:51) 
+[GCC 4.8.2] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> exit
+Use exit() or Ctrl-D (i.e. EOF) to exit
+>>> exit()
+~/Documents/MSSE/CMPE297/Project/HomeAR$heroku logs --tail
+Your version of git is 1.8.4. Which has serious security vulnerabilities.
+More information here: https://blog.heroku.com/archives/2014/12/23/update_your_git_clients_on_windows_and_os_x
+2015-05-06T18:26:25.916731+00:00 app[web.1]:     from forms import ContactForm
+2015-05-06T18:26:25.916733+00:00 app[web.1]:   File "/app/forms.py", line 1, in <module>
+2015-05-06T18:26:25.916734+00:00 app[web.1]:     from flask.ext.wtf import Form
+2015-05-06T18:26:25.916736+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/flask/exthook.py", line 87, in load_module
+2015-05-06T18:26:25.916737+00:00 app[web.1]:     raise ImportError('No module named %s' % fullname)
+2015-05-06T18:26:25.916740+00:00 app[web.1]: Traceback (most recent call last):
+2015-05-06T18:26:25.916742+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+2015-05-06T18:26:25.916743+00:00 app[web.1]:     worker.init_process()
+2015-05-06T18:26:25.916745+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+2015-05-06T18:26:25.916748+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+2015-05-06T18:26:25.916746+00:00 app[web.1]:     self.wsgi = self.app.wsgi()
+2015-05-06T18:26:25.916749+00:00 app[web.1]:     self.callable = self.load()
+2015-05-06T18:26:25.916750+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+2015-05-06T18:26:25.916752+00:00 app[web.1]:     return self.load_wsgiapp()
+2015-05-06T18:26:25.916753+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+2015-05-06T18:26:25.916755+00:00 app[web.1]:     return util.import_app(self.app_uri)
+2015-05-06T18:26:25.917281+00:00 app[web.1]:     worker.init_process()
+2015-05-06T18:26:25.916756+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+2015-05-06T18:26:25.916757+00:00 app[web.1]:     __import__(module)
+2015-05-06T18:26:25.916759+00:00 app[web.1]:   File "/app/server.py", line 10, in <module>
+2015-05-06T18:26:25.916760+00:00 app[web.1]:     from forms import ContactForm
+2015-05-06T18:26:25.916761+00:00 app[web.1]:   File "/app/forms.py", line 1, in <module>
+2015-05-06T18:26:25.916763+00:00 app[web.1]:     from flask.ext.wtf import Form
+2015-05-06T18:26:25.916764+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/flask/exthook.py", line 87, in load_module
+2015-05-06T18:26:25.916766+00:00 app[web.1]:     raise ImportError('No module named %s' % fullname)
+2015-05-06T18:26:25.916767+00:00 app[web.1]: ImportError: No module named flask.ext.wtf
+2015-05-06T18:26:25.916856+00:00 app[web.1]: [2015-05-06 18:26:25 +0000] [10] [INFO] Worker exiting (pid: 10)
+2015-05-06T18:26:25.917275+00:00 app[web.1]: [2015-05-06 18:26:25 +0000] [9] [ERROR] Exception in worker process:
+2015-05-06T18:26:25.917278+00:00 app[web.1]: Traceback (most recent call last):
+2015-05-06T18:26:25.917279+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+2015-05-06T18:26:25.954917+00:00 app[web.1]: [2015-05-06 18:26:25 +0000] [3] [INFO] Shutting down: Master
+2015-05-06T18:26:25.955022+00:00 app[web.1]: [2015-05-06 18:26:25 +0000] [3] [INFO] Reason: Worker failed to boot.
+2015-05-06T18:26:25.917282+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+2015-05-06T18:26:25.916708+00:00 app[web.1]: Traceback (most recent call last):
+2015-05-06T18:26:25.917283+00:00 app[web.1]:     self.wsgi = self.app.wsgi()
+2015-05-06T18:26:25.917285+00:00 app[web.1]:
+   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+2015-05-06T18:26:25.917288+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+2015-05-06T18:26:25.917289+00:00 app[web.1]:     return self.load_wsgiapp()
+2015-05-06T18:26:25.917286+00:00 app[web.1]:     self.callable = self.load()
+2015-05-06T18:26:25.917295+00:00 app[web.1]:     __import__(module)
+2015-05-06T18:26:25.917296+00:00 app[web.1]:   File "/app/server.py", line 10, in <module>
+2015-05-06T18:26:25.917297+00:00 app[web.1]:     from forms import ContactForm
+2015-05-06T18:26:25.917291+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+2015-05-06T18:26:25.916721+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+2015-05-06T18:26:25.916718+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+2015-05-06T18:26:25.917299+00:00 app[web.1]:   File "/app/forms.py", line 1, in <module>
+2015-05-06T18:26:25.917300+00:00 app[web.1]:     from flask.ext.wtf import Form
+2015-05-06T18:26:25.917301+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/flask/exthook.py", line 87, in load_module
+2015-05-06T18:26:25.917303+00:00 app[web.1]:     raise ImportError('No module named %s' % fullname)
+2015-05-06T18:26:25.917307+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+2015-05-06T18:26:25.917304+00:00 app[web.1]: ImportError: No module named flask.ext.wtf
+2015-05-06T18:26:25.917310+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+2015-05-06T18:26:25.917311+00:00 app[web.1]:     self.wsgi = self.app.wsgi()
+2015-05-06T18:26:25.917308+00:00 app[web.1]:     worker.init_process()
+2015-05-06T18:26:25.917318+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+2015-05-06T18:26:25.917313+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+2015-05-06T18:26:25.917314+00:00 app[web.1]:     self.callable = self.load()
+2015-05-06T18:26:25.917315+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+2015-05-06T18:26:25.917317+00:00 app[web.1]:     return self.load_wsgiapp()
+2015-05-06T18:26:25.917320+00:00 app[web.1]:     return util.import_app(self.app_uri)
+2015-05-06T18:26:25.917324+00:00 app[web.1]:   Fi
+le "/app/server.py", line 10, in <module>
+2015-05-06T18:26:25.917325+00:00 app[web.1]:     from forms import ContactForm
+2015-05-06T18:26:25.917326+00:00 app[web.1]:   File "/app/forms.py", line 1, in <module>
+2015-05-06T18:26:25.917322+00:00 app[web.1]:     __import__(module)
+2015-05-06T18:26:25.917293+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+2015-05-06T18:26:25.917328+00:00 app[web.1]:     from flask.ext.wtf import Form
+2015-05-06T18:26:25.917329+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/flask/exthook.py", line 87, in load_module
+2015-05-06T18:26:25.917348+00:00 app[web.1]:     raise ImportError('No module named %s' % fullname)
+2015-05-06T18:26:25.917350+00:00 app[web.1]: ImportError: No module named flask.ext.wtf
+2015-05-06T18:26:25.917557+00:00 app[web.1]: [2015-05-06 18:26:25 +0000] [9] [INFO] Worker exiting (pid: 9)
+2015-05-06T18:26:25.917292+00:00 app[web.1]:     return util.import_app(self.app_uri)
+2015-05-06T18:26:25.917321+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+2015-05-06T18:26:25.917306+00:00 app[web.1]: Traceback (most recent call last):
+2015-05-06T18:26:26.490684+00:00 heroku[web.1]: State changed from up to crashed
+2015-05-06T18:26:26.727275+00:0
+0 heroku[web.1]: Process exited with status 3
+2015-05-06T18:26:32.212208+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=homear.herokuapp.com request_id=5bba751b-7e98-409f-8644-a86a08d75185 fwd="73.223.236.228" dyno=web.1 connect=5000ms service= status=503 bytes=
+2015-05-06T18:26:33.289890+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=homear.herokuapp.com request_id=7cb39d90-3f56-4dfd-bad1-7147bca5ea21 fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:27:17.810597+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=homear.herokuapp.com request_id=e06d5763-1478-4ab8-8c1b-a4c52da444ed fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:27:19.072113+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=homear.herokuapp.com request_id=9a96ed25-8801-44b2-8632-0fc23a8b0227 fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:27:22.817796+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=homear.herokuapp.com request_id=ca57ff59-06b3-4a2b-b6f6-f7d0fa7feeb3 fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:27:23.467023+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=homear.herokuapp.com request_id=af9fce90-578e-40a9-9d8e-9f5ad81873b2 fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:27:40.633630+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=homear.herokuapp.com request_id=8f4403d7-869f-48f6-be22-3696b189d953 fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:27:41.072130+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=homear.herokuapp.com request_id=cd2a0e85-556d-492f-8445-dc7f296bc304 fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:27:42.939669+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=homear.herokuapp.com request_id=c46144c3-f4be-4e16-bb89-5d34991e324c fwd="104.131.98.28" dyno= connect= service= status=503 bytes=
+2015-05-06T18:28:11.058607+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=homear.herokuapp.com request_id=3064b822-8605-49f9-9607-77fa4c8ba992 fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:28:11.446377+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=homear.herokuapp.com request_id=900a36d9-94ee-4a95-bdb5-c5e16fcf911c fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:30:32.538280+0
+0:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/prodDetails?categoryId=1" host=homear.herokuapp.com request_id=8f8c7393-8f2a-44fb-acb6-46c10bd6d215 fwd="172.56.16.67" dyno= connect= service= status=503 bytes=
+2015-05-06T18:30:17.415372+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=POST path="/login" host=homear.herokuapp.com request_id=b116b755-3a7d-48ed-b636-0e051633d0be fwd="172.56.16.67" dyno= connect= service= status=503 bytes=
+2015-05-06T18:30:38.105750+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=homear.herokuapp.com request_id=869b8519-5275-414f-ba61-1eaa4726a226 fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:30:40.128328+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/prodDetails?categoryId=3" host=homear.herokuapp.com request_id=8bfb4bed-6785-4242-b2b3-f9114dccb5df fwd="172.56.16.67" dyno= connect= service= status=503 bytes=
+2015-05-06T18:30:49.201146+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/prodDetails?categoryId=9" host=homear.herokuapp.com request_id=fa8ad46c-2325-4678-b9df-e7058a08de69 fwd="172.56.16.67" dyno= connect= service= status=503 bytes=
+2015-05-06T18:30:45.510210+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=homear.herokuapp.com request_id=54893745-ecb8-4e79-baaf-f9617f8a409e fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:35:39.288466+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=homear.herokuapp.com request_id=341878dd-a4b0-4ae6-a2f9-a45f84c04600 fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:35:38.776770+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=homear.herokuapp.com request_id=dadf7cd4-447d-4c10-bdb6-22e3db54cecb fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:48:24.167490+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=homear.herokuapp.com request_id=52912a75-b146-4b1f-8998-21abb91d3f07 fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:50:07.888921+00:00 heroku[api]: Starting process with command `python` by kulsneha04@gmail.com
+2015-05-06T18:50:13.725111+00:00 heroku[run.2738]: Starting process with command `python`
+2015-05-06T18:50:13.693721+00:00 heroku[run.2738]: Awaiting client
+2015-05-06T18:50:14.091922+00:00 heroku[run.2738]: State changed from starting to up
+2015-05-06T18:50:23.202610+00:00 heroku[run.2738]: Process exited with status 0
+2015-05-06T18:50:23.217652+00:00 heroku[run.2738]: State changed from up to complete
+2015-05-06T18:55:04.398678+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=POST path="/login" host=homear.herokuapp.com request_id=1d91cb33-173a-436a-8bec-7347daf9e625 fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+2015-05-06T18:55:20.367913+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/prodDetails?categoryId=3" host=homear.herokuapp.com request_id=c76ccb55-b808-45ba-9db7-3cdc70e9e45b fwd="73.223.236.228" dyno= connect= service= status=503 bytes=
+^C
+ !    Command cancelled.
+~/Documents/MSSE/CMPE297/Project/HomeAR$python
+Python 2.7.5 (default, Mar  9 2014, 22:15:05) 
+[GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import flask.ext.mail
+>>> flask.ext.mail.__version__
+'0.9.1'
+>>> exit()
+~/Documents/MSSE/CMPE297/Project/HomeAR$pip freeze > requirements.txt
+~/Documents/MSSE/CMPE297/Project/HomeAR$open requirements.txt 
+~/Documents/MSSE/CMPE297/Project/HomeAR$git add .
+~/Documents/MSSE/CMPE297/Project/HomeAR$git commit -m "Updating dependencies"
+[master 59b12ce] Updating dependencies
+ 2 files changed, 9 insertions(+), 5 deletions(-)
+~/Documents/MSSE/CMPE297/Project/HomeAR$git push heroku master
+Counting objects: 7, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 485 bytes | 0 bytes/s, done.
+Total 4 (delta 3), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote: 
+remote: -----> Python app detected
+remote: -----> Installing dependencies with pip
+remote: /app/.heroku/python/lib/python2.7/site-packages/pip-6.1.1-py2.7.egg/pip/_vendor/requests/packages/urllib3/util/ssl_.py:79: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+remote:   InsecurePlatformWarning
+remote:        Collecting Flask-WTF==0.11 (from -r requirements.txt (line 12))
+remote: /app/.heroku/python/lib/python2.7/site-packages/pip-6.1.1-py2.7.egg/pip/_vendor/requests/packages/urllib3/util/ssl_.py:79: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+remote:   InsecurePlatformWarning
+remote:          Downloading Flask_WTF-0.11-py2.py3-none-any.whl
+remote:        Collecting Flask-Mail==0.9.1 (from -r requirements.txt (line 13))
+remote:          Downloading Flask-Mail-0.9.1.tar.gz (45kB)
+remote:        Collecting WTForms==2.0.2 (from -r requirements.txt (line 14))
+remote:          Downloading WTForms-2.0.2-py27-none-any.whl (128kB)
+remote:        Collecting requests==2.4.1 (from -r requirements.txt (line 15))
+remote:          Downloading requests-2.4.1-py2.py3-none-any.whl (458kB)
+remote:        Collecting blinker (from Flask-Mail==0.9.1->-r requirements.txt (line 13))
+remote:          Downloading blinker-1.3.tar.gz (91kB)
+remote:        Installing collected packages: WTForms, Flask-WTF, blinker, Flask-Mail, requests
+remote:          Running setup.py install for blinker
+remote:          Running setup.py install for Flask-Mail
+remote:        Successfully installed Flask-Mail-0.9.1 Flask-WTF-0.11 WTForms-2.0.2 blinker-1.3 requests-2.4.1
+remote: 
+remote: -----> Discovering process types
+remote:        Procfile declares types -> web
+remote: 
+remote: -----> Compressing... done, 45.8MB
+remote: -----> Launching... done, v37
+remote:        https://homear.herokuapp.com/ deployed to Heroku
+remote: 
+remote: Verifying deploy.... done.
+To https://git.heroku.com/homear.git
+   cb40580..59b12ce  master -> master
+~/Documents/MSSE/CMPE297/Project/HomeAR$heroku open
+Your version of git is 1.8.4. Which has serious security vulnerabilities.
+More information here: https://blog.heroku.com/archives/2014/12/23/update_your_git_clients_on_windows_and_os_x
+Opening homear... done
+~/Documents/MSSE/CMPE297/Project/HomeAR$ssh root@50.116.3.141
+root@50.116.3.141's password: 
+root@localhost:~# cd catalog/
+root@localhost:~/catalog# ls -la
+total 396
+drwxr-xr-x  3 root root   4096 Apr 22 20:01 .
+drwx------ 20 root root   4096 Apr 24 21:18 ..
+-rw-r--r--  1 root root   6148 Apr  3 23:16 .DS_Store
+-rw-r--r--  1 root root    322 Apr 21 04:09 linodeserver.py
+-rw-------  1 root root 374050 May  6 12:32 nohup.out
+drwxr-xr-x 14 root root   4096 Apr 26 03:50 static
+root@localhost:~/catalog# cd static/
+root@localhost:~/catalog/static# ls -la
+total 56
+drwxr-xr-x 14 root root 4096 Apr 26 03:50 .
+drwxr-xr-x  3 root root 4096 Apr 22 20:01 ..
+drwxr-xr-x  6 root root 4096 Apr 21 18:19 3DModels
+drwxrwxrwx  7 root root 4096 Apr 26 03:33 beds
+drwxrwxrwx 10 root root 4096 Apr 26 03:34 chairs
+drwxr-xr-x  2 root root 4096 Apr 21 18:14 images
+drwxrwxrwx  6 root root 4096 Apr 26 03:34 lamps
+drwxrwxrwx  6 root root 4096 Apr 26 03:34 patiobenches
+drwxrwxrwx  6 root root 4096 Apr 26 03:35 patiochairs
+drwxr-xr-x  8 root root 4096 Apr 26 03:45 sofas
+drwxrwxrwx  7 root root 4096 Apr 26 03:35 tables
+drwxr-xr-x  2 root root 4096 Apr 19 17:13 textures
+drwxrwxrwx  7 root root 4096 Apr 26 03:35 tvstands
+drwxrwxrwx  6 root root 4096 Apr 26 03:36 vases
+root@localhost:~/catalog/static# Write failed: Broken pipe
+~/Documents/MSSE/CMPE297/Project/HomeAR$
+  [Restored]
+Last login: Fri May 15 09:29:50 on console
+~/Documents/MSSE/CMPE297/Project/HomeAR$
+  [Restored]
+Last login: Fri Jun  5 11:53:20 on console
+~/Documents/MSSE/CMPE297/Project/HomeAR$
+  [Restored]
+Last login: Fri Jun  5 12:07:17 on console
+~/Documents/MSSE/CMPE297/Project/HomeAR$
+  [Restored]
+Last login: Fri Jun  5 13:50:24 on console
+~/Documents/MSSE/CMPE297/Project/HomeAR$
+  [Restored]
+Last login: Sat Jun  6 11:41:32 on console
+~/Documents/MSSE/CMPE297/Project/HomeAR$
+  [Restored]
+Last login: Sat Jun  6 18:32:32 on console
+~/Documents/MSSE/CMPE297/Project/HomeAR$
+  [Restored]
+Last login: Tue Jun  9 10:13:48 on console
+~/Documents/MSSE/CMPE297/Project/HomeAR$
